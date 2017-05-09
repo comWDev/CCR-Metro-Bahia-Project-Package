@@ -37,6 +37,9 @@
         <ul class="nav navbar-nav">
             @if(isHome) {
                             var cssClass = CurrentPage.Site().Id == CurrentPage.Id ? "active" : null;
+                            <li class="@cssClass">
+                              <a class="dropdown-toggle menuTextMain" href="@CurrentPage.Site().Url" role="button" aria-haspopup="false" aria-expanded="false">@CurrentPage.Site().Name</a>
+                            </li>
                             isHome = false;
                         }
             @foreach (var childPage in selection.Where("Visible"))
