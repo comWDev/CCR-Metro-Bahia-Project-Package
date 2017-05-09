@@ -4,6 +4,36 @@
 	Layout = null;
 }
 
-@Html.Partial("dynamicNAV")
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="~/css/bootstrap.css">
+    <link rel="stylesheet" href="~/css/main.css">
+    <!-- <link rel="stylesheet" href="~/css/nav.css"> -->
+
+		
+  </head>
+
+  <body>
+
+@Html.Partial("navDropdown")
+
+<h1>master template conetent</h1>
 
 @RenderBody()
+
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="~/scripts/bootstrap.min.js"></script>
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,13 @@
+.myNav .nav {
+	display: none !important;
+	position: absolute !important;
+	box-shadow: black 1px 2px 1px;
+}
+	
+.myNav .nav .nav li {
+	float: none !important;
+}
+	
+.myNav .nav li:hover .nav {
+	display: block !important;
+}
