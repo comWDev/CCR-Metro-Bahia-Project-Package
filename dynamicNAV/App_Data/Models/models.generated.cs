@@ -19,8 +19,8 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "8e22bfedc56594b9")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.3")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "16f9f7db93232f39")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.8")]
 
 namespace Umbraco.Web.PublishedContentModels
 {
@@ -118,6 +118,33 @@ namespace Umbraco.Web.PublishedContentModels
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
+
+		///<summary>
+		/// Section Icon
+		///</summary>
+		[ImplementPropertyType("sectionIcon")]
+		public IPublishedContent SectionIcon
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("sectionIcon"); }
+		}
+
+		///<summary>
+		/// Section Intro
+		///</summary>
+		[ImplementPropertyType("sectionIntro")]
+		public IHtmlString SectionIntro
+		{
+			get { return this.GetPropertyValue<IHtmlString>("sectionIntro"); }
+		}
+
+		///<summary>
+		/// Section Title
+		///</summary>
+		[ImplementPropertyType("sectionTitle")]
+		public string SectionTitle
+		{
+			get { return this.GetPropertyValue<string>("sectionTitle"); }
+		}
 	}
 
 	/// <summary>Guia Content Page</summary>
@@ -143,6 +170,33 @@ namespace Umbraco.Web.PublishedContentModels
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<GuiaContentPage, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Page Body Text
+		///</summary>
+		[ImplementPropertyType("pageBodyText")]
+		public IHtmlString PageBodyText
+		{
+			get { return this.GetPropertyValue<IHtmlString>("pageBodyText"); }
+		}
+
+		///<summary>
+		/// Sub Title
+		///</summary>
+		[ImplementPropertyType("subTitle")]
+		public string SubTitle
+		{
+			get { return this.GetPropertyValue<string>("subTitle"); }
+		}
+
+		///<summary>
+		/// Sub Title Icon
+		///</summary>
+		[ImplementPropertyType("subTitleIcon")]
+		public IPublishedContent SubTitleIcon
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("subTitleIcon"); }
 		}
 	}
 
@@ -170,6 +224,33 @@ namespace Umbraco.Web.PublishedContentModels
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
+
+		///<summary>
+		/// Section Icon
+		///</summary>
+		[ImplementPropertyType("sectionIcon")]
+		public IPublishedContent SectionIcon
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("sectionIcon"); }
+		}
+
+		///<summary>
+		/// Section Intro
+		///</summary>
+		[ImplementPropertyType("sectionIntro")]
+		public IHtmlString SectionIntro
+		{
+			get { return this.GetPropertyValue<IHtmlString>("sectionIntro"); }
+		}
+
+		///<summary>
+		/// Section Title
+		///</summary>
+		[ImplementPropertyType("sectionTitle")]
+		public string SectionTitle
+		{
+			get { return this.GetPropertyValue<string>("sectionTitle"); }
+		}
 	}
 
 	/// <summary>Institucional Content Page</summary>
@@ -195,6 +276,33 @@ namespace Umbraco.Web.PublishedContentModels
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<InstitucionalContentPage, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Page Body Text
+		///</summary>
+		[ImplementPropertyType("pageBodyText")]
+		public IHtmlString PageBodyText
+		{
+			get { return this.GetPropertyValue<IHtmlString>("pageBodyText"); }
+		}
+
+		///<summary>
+		/// Sub Title
+		///</summary>
+		[ImplementPropertyType("subTitle")]
+		public string SubTitle
+		{
+			get { return this.GetPropertyValue<string>("subTitle"); }
+		}
+
+		///<summary>
+		/// Sub Title Icon
+		///</summary>
+		[ImplementPropertyType("subTitleIcon")]
+		public IPublishedContent SubTitleIcon
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("subTitleIcon"); }
 		}
 	}
 

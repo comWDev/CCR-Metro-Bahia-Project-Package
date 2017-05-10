@@ -1,6 +1,5 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 
-
 @*
     This snippet makes a list of links of all visible pages of the site, as nested unordered html lists.
 
@@ -14,10 +13,29 @@
 
 }
 
-<nav class="nav navbar navbar-default"
+<nav class="nav navbar navbar-default">
 <div class="container navWrap col-centered">
+    
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav">
     @* Render the sitemap by passing the root node to the traverse helper, below *@
     @Traverse(selection, isHome)
+    </ul>
+        <form class="navbar-form navbar-right">
+        <div class="form-group has-feedback">
+          <input type="text" class="form-control" placeholder="Pesquisar"><i class="form-control-feedback glyphicon glyphicon-search"></i>
+        </div>
+        <!-- REMOVE BUTTON <button type="submit" class="btn btn-default">Enviar</button> -->
+      </form>
+    </div>
 </div>
 </nav>
 
@@ -34,32 +52,39 @@
     @* If any items are returned, render a list *@
     if (selection.Any())
     {
-        <ul class="nav navbar-nav">
-            @if(isHome) {
+            
+            
+            if(isHome) {
                             var cssClass = CurrentPage.Site().Id == CurrentPage.Id ? "active" : null;
                             isHome = false;
                         }
-            @foreach (var childPage in selection.Where("Visible"))
+            foreach (var childPage in selection.Where("Visible"))
                         {   
                             if (childPage.Children.Any())
                             {                    
-                                <li class="has-child @(childPage.IsAncestorOrSelf(CurrentPage) ? "selected" : null) dropdown">
-                                <a href="#">@childPage.Name</a>
-                                </li>                                
+                                <li class="has-child @(childPage.IsAncestorOrSelf(CurrentPage) ? "selected" : null)">
+                                <a class="dropdown-toggle menuTextMain" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">@childPage.Name</a>
+                                
+                            
+                            <ul class="dropdown-menu navItems">
+                                <li class="dropdown">
+                                    @* Run the traverse helper again for any child pages *@
+                                    @Traverse(childPage, isHome)
+                                </li>
+                            </ul>
+                            </li>
                             }
                             else
                             {
-                                <li class="@(childPage.IsAncestorOrSelf(CurrentPage) ? "selected" : null) dropdown">
-                                <a href="@childPage.Url">@childPage.Name</a>
+                                <li class="@(childPage.IsAncestorOrSelf(CurrentPage) ? "selected" : null)">
+                                <a class="menuTextMain" href="@childPage.Url">@childPage.Name</a>
                                 </li>
                             }            
-                            
-                            @* Run the traverse helper again for any child pages
-                            @Traverse(childPage, isHome) *@
+
                             
                         }
-        </ul>
-    }
+    
+            }
 }
 
 
