@@ -1,8 +1,8 @@
 
     $(document).ready(function(){
       $('.sliderTemp').slick({
-      	prevArrow:"<img class='a-left control-c prev slick-prev' src='/media/1042/prev_60x60.png'>",
-      nextArrow:"<img class='a-right control-c next slick-next' src='/media/1034/next_60x60.png'>",
+      	prevArrow:"<img class='a-left control-c prev slick-prev' src='/media/1012/prev_60x60.png'>",
+      nextArrow:"<img class='a-right control-c next slick-next' src='/media/1013/next_60x60.png'>",
       dots: true,
   infinite: true,
   autoplay: true,
@@ -42,8 +42,8 @@
 
 });
       $('.sliderBicicletario').slick({
-        prevArrow:"<img class='a-left control-c prev slick-prev' src='/media/1042/prev_60x60.png'>",
-      nextArrow:"<img class='a-right control-c next slick-next' src='/media/1034/next_60x60.png'>",
+        prevArrow:"<img class='a-left control-c prev slick-prev' src='/media/1012/prev_60x60.png'>",
+      nextArrow:"<img class='a-right control-c next slick-next' src='/media/1013/next_60x60.png'>",
       dots: false,
   infinite: true,
   autoplay: true,
@@ -98,8 +98,8 @@
 });
 
       $('.sliderAcessibilidade').slick({
-        prevArrow:"<img class='a-left control-c prev slick-prev' src='/media/1042/prev_60x60.png'>",
-      nextArrow:"<img class='a-right control-c next slick-next' src='/media/1034/next_60x60.png'>",
+        prevArrow:"<img class='a-left control-c prev slick-prev' src='/media/1012/prev_60x60.png'>",
+      nextArrow:"<img class='a-right control-c next slick-next' src='/media/1013/next_60x60.png'>",
       dots: false,
   infinite: true,
   autoplay: true,
@@ -154,8 +154,8 @@
 });
 
       $('.sliderQuemSomos').slick({
-        prevArrow:"<img class='a-left control-c prev slick-prev' src='/media/1042/prev_60x60.png'>",
-      nextArrow:"<img class='a-right control-c next slick-next' src='/media/1034/next_60x60.png'>",
+        prevArrow:"<img class='a-left control-c prev slick-prev' src='/media/1012/prev_60x60.png'>",
+      nextArrow:"<img class='a-right control-c next slick-next' src='/media/1013/next_60x60.png'>",
       dots: false,
   infinite: true,
   autoplay: true,
@@ -210,8 +210,8 @@
 });
 
       $('.sliderReconhecimento').slick({
-        prevArrow:"<img class='a-left control-c prev slick-prev' src='/media/1042/prev_60x60.png'>",
-      nextArrow:"<img class='a-right control-c next slick-next' src='/media/1034/next_60x60.png'>",
+        prevArrow:"<img class='a-left control-c prev slick-prev' src='/media/1012/prev_60x60.png'>",
+      nextArrow:"<img class='a-right control-c next slick-next' src='/media/1013/next_60x60.png'>",
       dots: false,
   infinite: true,
   autoplay: true,
@@ -266,8 +266,8 @@
 });
 
           $('.sliderSustentabilidade').slick({
-        prevArrow:"<img class='a-left control-c prev slick-prev' src='/media/1042/prev_60x60.png'>",
-      nextArrow:"<img class='a-right control-c next slick-next' src='/media/1034/next_60x60.png'>",
+        prevArrow:"<img class='a-left control-c prev slick-prev' src='/media/1012/prev_60x60.png'>",
+      nextArrow:"<img class='a-right control-c next slick-next' src='/media/1013/next_60x60.png'>",
       dots: false,
   infinite: true,
   autoplay: true,
@@ -322,8 +322,8 @@
 });
 
           $('.sliderSEDE').slick({
-        prevArrow:"<img class='a-left control-c prev slick-prev' src='/media/1042/prev_60x60.png'>",
-      nextArrow:"<img class='a-right control-c next slick-next' src='/media/1034/next_60x60.png'>",
+        prevArrow:"<img class='a-left control-c prev slick-prev' src='/media/1012/prev_60x60.png'>",
+      nextArrow:"<img class='a-right control-c next slick-next' src='/media/1013/next_60x60.png'>",
       dots: false,
   infinite: true,
   autoplay: true,

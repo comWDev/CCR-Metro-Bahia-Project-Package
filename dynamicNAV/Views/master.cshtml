@@ -5,33 +5,80 @@
 }
 
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>@Umbraco.Field("pageName") | CCR Metrô Bahia</title>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="~/css/bootstrap.css">
     <link rel="stylesheet" href="~/css/main.css">
-    <!-- <link rel="stylesheet" href="~/css/nav.css"> -->
+    <!-- slick carosel -->
+    <link rel="stylesheet" type="text/css" href="~/slick/slick.css"/>
+    <!-- slick-theme.css if you want the default styling -->
+    <link rel="stylesheet" type="text/css" href="~/slick/slickcss/slick-theme.css"/>
 
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesnt work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+		
+<!-- SEO -->
+	
+	<meta name="description" content="@Umbraco.Field("seoMetaDescription", removeParagraphTags: true)">
+	
+<!-- SEO END -->
 		
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target=".navbar" data-offset="50">
+
+<div class="container-fluid containerMarginFix">
+    <div class="row col-md-12 headSpace rowMarginFix ">
+    <div class="row col-md-12 headWrap col-centered">
+        <div class="row col-xs-12 col-centered" >
+          <a href="/home/"><img class="img-responsive main-marca" src="/media/1010/marca-ccr-metro.png" alt=""></a>
+
+          <div class="langWrap"><a href="#"><span class="languageText">English</span></a></div>
+
+          <div class="flagWrap"><a href="#"><img src="/media/1008/flag_us.png" alt=""/></a></div>
+
+          <a href="#"><img class="clockStyle" src="/media/1007/clock-icon.png" alt=""></a>
+
+          
+          <a href="#"><img class="phoneWrap" src="/media/1009/phone-icon.png" alt=""></a>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--  HEADER SPACE END  -->
+  
+    <!--  NAV START  -->
 
 @Html.Partial("navDropdown")
 
+  <!--  NAV END  -->
+
 @RenderBody()
 
+@Html.Partial("navFooter")
 
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="~/scripts/bootstrap.min.js"></script>
   <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-
+<script type="text/javascript" src="~/slick/slick.min.js"></script>
+<!-- initialization script -->
+    <script type="text/javascript" src="/scripts/slideinit.js"></script>
   </body>
 </html>

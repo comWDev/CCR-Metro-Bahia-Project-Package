@@ -903,6 +903,7 @@ ul.navItems {
 
 .footerNavCols {
   max-width: 170px;
+	height:100% !important;
   padding: 0 0 0 0;
   margin:0;
 }
