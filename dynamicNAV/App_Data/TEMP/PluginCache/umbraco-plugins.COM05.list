@@ -844,9 +844,18 @@ Umbraco.Web.Cache.UserCacheRefresher, umbraco, Version=1.0.6331.7975, Culture=ne
 Umbraco.Web.Cache.UserPermissionsCacheRefresher, umbraco, Version=1.0.6331.7975, Culture=neutral, PublicKeyToken=null
 Umbraco.Web.Cache.UserTypeCacheRefresher, umbraco, Version=1.0.6331.7975, Culture=neutral, PublicKeyToken=null
 
-Umbraco.Web.Editors.IEditorValidator
+Umbraco.Web.HealthCheck.HealthCheck
 
-Umbraco.ModelsBuilder.Validation.ContentTypeModelValidator, Umbraco.ModelsBuilder, Version=3.0.7.99, Culture=neutral, PublicKeyToken=null
-Umbraco.ModelsBuilder.Validation.MediaTypeModelValidator, Umbraco.ModelsBuilder, Version=3.0.7.99, Culture=neutral, PublicKeyToken=null
-Umbraco.ModelsBuilder.Validation.MemberTypeModelValidator, Umbraco.ModelsBuilder, Version=3.0.7.99, Culture=neutral, PublicKeyToken=null
+Umbraco.Web.HealthCheck.Checks.Config.MacroErrorsCheck, umbraco, Version=1.0.6331.7975, Culture=neutral, PublicKeyToken=null
+Umbraco.Web.HealthCheck.Checks.Config.NotificationEmailCheck, umbraco, Version=1.0.6331.7975, Culture=neutral, PublicKeyToken=null
+Umbraco.Web.HealthCheck.Checks.Config.TrySkipIisCustomErrorsCheck, umbraco, Version=1.0.6331.7975, Culture=neutral, PublicKeyToken=null
+Umbraco.Web.HealthCheck.Checks.Config.CustomErrorsCheck, umbraco, Version=1.0.6331.7975, Culture=neutral, PublicKeyToken=null
+Umbraco.Web.HealthCheck.Checks.Config.TraceCheck, umbraco, Version=1.0.6331.7975, Culture=neutral, PublicKeyToken=null
+Umbraco.Web.HealthCheck.Checks.Config.CompilationDebugCheck, umbraco, Version=1.0.6331.7975, Culture=neutral, PublicKeyToken=null
+Umbraco.Web.HealthCheck.Checks.Services.SmtpCheck, umbraco, Version=1.0.6331.7975, Culture=neutral, PublicKeyToken=null
+Umbraco.Web.HealthCheck.Checks.Permissions.FolderAndFilePermissionsCheck, umbraco, Version=1.0.6331.7975, Culture=neutral, PublicKeyToken=null
+Umbraco.Web.HealthCheck.Checks.Security.ExcessiveHeadersCheck, umbraco, Version=1.0.6331.7975, Culture=neutral, PublicKeyToken=null
+Umbraco.Web.HealthCheck.Checks.Security.ClickJackingCheck, umbraco, Version=1.0.6331.7975, Culture=neutral, PublicKeyToken=null
+Umbraco.Web.HealthCheck.Checks.Security.HttpsCheck, umbraco, Version=1.0.6331.7975, Culture=neutral, PublicKeyToken=null
+Umbraco.Web.HealthCheck.Checks.DataIntegrity.XmlDataIntegrityHealthCheck, umbraco, Version=1.0.6331.7975, Culture=neutral, PublicKeyToken=null
 
