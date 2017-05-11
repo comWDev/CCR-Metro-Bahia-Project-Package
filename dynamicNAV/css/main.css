@@ -782,6 +782,15 @@ h2.accordionTitle {
     margin: 0 auto;
 }
 
+.menuHeader {
+	text-transform: uppercase;
+}
+
+.menuHeaderFoot {
+	text-transform: uppercase;
+	max-width: 115px !important;
+}
+
 .menuTextMain {
     font-family: 'robotoregular', Arial, sans-serif;
     font-size: 13px;

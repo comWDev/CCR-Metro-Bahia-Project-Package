@@ -4,4 +4,25 @@
 	Layout = "master.cshtml";
 }
 
-<h1>Por dentro do Metrô Content</h1>
+	<div class="container-fluid heroWrap heroSpaceGuia">
+        <div class="header-icon">	
+@if (Model.Content.HasValue("sectionIcon"))
+{
+    var caseStudyImagesList1 = Model.Content.GetPropertyValue<string>("sectionIcon").Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse);
+    var caseStudyImagesCollection1 = Umbraco.TypedMedia(caseStudyImagesList1).Where(x => x != null);
+
+    foreach (var sectionIcon in caseStudyImagesCollection1)
+        {      
+            <img src="@sectionIcon.Url" />      
+        }                                                               
+}
+
+			
+			</div>
+        <div>
+           <h1 class="internal-header">@Umbraco.Field("sectionTitle")</h1>
+        </div>
+        <p class="intro-text">@Umbraco.Field("sectionIntro", removeParagraphTags: true)</p>
+  </div>
+
+@RenderBody()

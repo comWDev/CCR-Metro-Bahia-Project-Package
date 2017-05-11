@@ -8,7 +8,7 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "16f9f7db93232f39")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "7b6477f479c33edd")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 
@@ -421,6 +421,110 @@ namespace Umbraco.Web.PublishedContentModels
 #pragma warning restore 0109
 
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Contato, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+	}
+
+	/// <summary>Por Dentro Content Page</summary>
+	[PublishedContentModel("porDentroContentPage")]
+	public partial class PorDentroContentPage : PorDentroDoMetro
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "porDentroContentPage";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public PorDentroContentPage(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<PorDentroContentPage, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+	}
+
+	/// <summary>Imprensa Content Page</summary>
+	[PublishedContentModel("imprensaContentPage")]
+	public partial class ImprensaContentPage : Imprensa
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "imprensaContentPage";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public ImprensaContentPage(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ImprensaContentPage, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+	}
+
+	/// <summary>Comericial Content Page</summary>
+	[PublishedContentModel("comericialContentPage")]
+	public partial class ComericialContentPage : Comercial
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "comericialContentPage";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public ComericialContentPage(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ComericialContentPage, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+	}
+
+	/// <summary>Contato Content Page</summary>
+	[PublishedContentModel("contatoContentPage")]
+	public partial class ContatoContentPage : Contato
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "contatoContentPage";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public ContatoContentPage(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ContatoContentPage, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}

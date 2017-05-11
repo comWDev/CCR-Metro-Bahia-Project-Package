@@ -63,7 +63,7 @@
                             if (childPage.Children.Any())
                             {                    
                                 <li class="has-child @(childPage.IsAncestorOrSelf(CurrentPage) ? "selected" : null)">
-                                <a class="dropdown-toggle menuTextMain" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">@childPage.Name</a>
+                                <a class="menuHeader dropdown-toggle menuTextMain" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">@childPage.Name</a>
                                 
                             
                             <ul class="dropdown-menu navItems">
