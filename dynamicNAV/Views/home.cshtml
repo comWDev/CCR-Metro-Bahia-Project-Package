@@ -4,18 +4,23 @@
 	Layout = "master.cshtml";
 }
 
-<!--  HERO SLIDER  -->
-
   <div class="container-fluid heroWrap col-centered center-block">
- <div class="sliderTemp">
 
-    <div><img class="img-responsive" src="/media/1011/CCRMetro_Bannersite_1200X540.jpg"></div>
-    <div><img class="img-responsive" src="/media/1011/CCRMetro_Bannersite_1200X540.jpg"></div>
-    <div><img class="img-responsive" src="/media/1011/CCRMetro_Bannersite_1200X540.jpg"></div>
-    <div><img class="img-responsive" src="/media/1011/CCRMetro_Bannersite_1200X540.jpg"></div>
-    <!-- FPO  <div><img src="http://placehold.it/1200x540"></div> -->
-
-  </div>
-  </div>
+ <!-- ------------------ Slider ------------------ -->
   
-  <!--  HERO SLIDER END  -->
+      <div class="sliderTemp">
+
+@if (Model.Content.HasValue("sliderPictures"))
+{
+    var caseStudyImagesCollection = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("sliderPictures");
+
+    foreach (var sliderPictures in caseStudyImagesCollection)
+        {      
+            <div><img  class="img-responsive" src="@sliderPictures.Url" /></div>      
+        }                                                               
+}
+  </div>
+
+<!-- ------------------ Slider ------------------ -->
+
+  </div>

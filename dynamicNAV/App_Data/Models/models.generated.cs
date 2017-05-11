@@ -19,8 +19,8 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "7b6477f479c33edd")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "b43364cfced966dd")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.4")]
 
 namespace Umbraco.Web.PublishedContentModels
 {
@@ -91,6 +91,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Home, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Slider Pictures
+		///</summary>
+		[ImplementPropertyType("sliderPictures")]
+		public IEnumerable<IPublishedContent> SliderPictures
+		{
+			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("sliderPictures"); }
 		}
 	}
 
@@ -179,6 +188,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public IHtmlString PageBodyText
 		{
 			get { return this.GetPropertyValue<IHtmlString>("pageBodyText"); }
+		}
+
+		///<summary>
+		/// Slider Pictures
+		///</summary>
+		[ImplementPropertyType("sliderPictures")]
+		public IEnumerable<IPublishedContent> SliderPictures
+		{
+			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("sliderPictures"); }
 		}
 
 		///<summary>
@@ -330,6 +348,33 @@ namespace Umbraco.Web.PublishedContentModels
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
+
+		///<summary>
+		/// Section Icon
+		///</summary>
+		[ImplementPropertyType("sectionIcon")]
+		public IPublishedContent SectionIcon
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("sectionIcon"); }
+		}
+
+		///<summary>
+		/// Section Intro
+		///</summary>
+		[ImplementPropertyType("sectionIntro")]
+		public IHtmlString SectionIntro
+		{
+			get { return this.GetPropertyValue<IHtmlString>("sectionIntro"); }
+		}
+
+		///<summary>
+		/// Section Title
+		///</summary>
+		[ImplementPropertyType("sectionTitle")]
+		public string SectionTitle
+		{
+			get { return this.GetPropertyValue<string>("sectionTitle"); }
+		}
 	}
 
 	/// <summary>Comercial</summary>
@@ -355,6 +400,33 @@ namespace Umbraco.Web.PublishedContentModels
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Comercial, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Section Icon
+		///</summary>
+		[ImplementPropertyType("sectionIcon")]
+		public IPublishedContent SectionIcon
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("sectionIcon"); }
+		}
+
+		///<summary>
+		/// Section Intro
+		///</summary>
+		[ImplementPropertyType("sectionIntro")]
+		public IHtmlString SectionIntro
+		{
+			get { return this.GetPropertyValue<IHtmlString>("sectionIntro"); }
+		}
+
+		///<summary>
+		/// Section Title
+		///</summary>
+		[ImplementPropertyType("sectionTitle")]
+		public string SectionTitle
+		{
+			get { return this.GetPropertyValue<string>("sectionTitle"); }
 		}
 	}
 
@@ -382,6 +454,33 @@ namespace Umbraco.Web.PublishedContentModels
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
+
+		///<summary>
+		/// Section Icon
+		///</summary>
+		[ImplementPropertyType("sectionIcon")]
+		public IPublishedContent SectionIcon
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("sectionIcon"); }
+		}
+
+		///<summary>
+		/// Section Intro
+		///</summary>
+		[ImplementPropertyType("sectionIntro")]
+		public IHtmlString SectionIntro
+		{
+			get { return this.GetPropertyValue<IHtmlString>("sectionIntro"); }
+		}
+
+		///<summary>
+		/// Section Title
+		///</summary>
+		[ImplementPropertyType("sectionTitle")]
+		public string SectionTitle
+		{
+			get { return this.GetPropertyValue<string>("sectionTitle"); }
+		}
 	}
 
 	/// <summary>Contato</summary>
@@ -407,6 +506,33 @@ namespace Umbraco.Web.PublishedContentModels
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Contato, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Section Icon
+		///</summary>
+		[ImplementPropertyType("sectionIcon")]
+		public IPublishedContent SectionIcon
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("sectionIcon"); }
+		}
+
+		///<summary>
+		/// Section Intro
+		///</summary>
+		[ImplementPropertyType("sectionIntro")]
+		public IHtmlString SectionIntro
+		{
+			get { return this.GetPropertyValue<IHtmlString>("sectionIntro"); }
+		}
+
+		///<summary>
+		/// Section Title
+		///</summary>
+		[ImplementPropertyType("sectionTitle")]
+		public string SectionTitle
+		{
+			get { return this.GetPropertyValue<string>("sectionTitle"); }
 		}
 	}
 
@@ -434,6 +560,33 @@ namespace Umbraco.Web.PublishedContentModels
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
+
+		///<summary>
+		/// Page Body Text
+		///</summary>
+		[ImplementPropertyType("pageBodyText")]
+		public IHtmlString PageBodyText
+		{
+			get { return this.GetPropertyValue<IHtmlString>("pageBodyText"); }
+		}
+
+		///<summary>
+		/// Sub Title
+		///</summary>
+		[ImplementPropertyType("subTitle")]
+		public string SubTitle
+		{
+			get { return this.GetPropertyValue<string>("subTitle"); }
+		}
+
+		///<summary>
+		/// Sub Title Icon
+		///</summary>
+		[ImplementPropertyType("subTitleIcon")]
+		public IPublishedContent SubTitleIcon
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("subTitleIcon"); }
+		}
 	}
 
 	/// <summary>Imprensa Content Page</summary>
@@ -459,6 +612,33 @@ namespace Umbraco.Web.PublishedContentModels
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ImprensaContentPage, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Page Body Text
+		///</summary>
+		[ImplementPropertyType("pageBodyText")]
+		public IHtmlString PageBodyText
+		{
+			get { return this.GetPropertyValue<IHtmlString>("pageBodyText"); }
+		}
+
+		///<summary>
+		/// Sub Title
+		///</summary>
+		[ImplementPropertyType("subTitle")]
+		public string SubTitle
+		{
+			get { return this.GetPropertyValue<string>("subTitle"); }
+		}
+
+		///<summary>
+		/// Sub Title Icon
+		///</summary>
+		[ImplementPropertyType("subTitleIcon")]
+		public IPublishedContent SubTitleIcon
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("subTitleIcon"); }
 		}
 	}
 
@@ -486,6 +666,33 @@ namespace Umbraco.Web.PublishedContentModels
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
+
+		///<summary>
+		/// Page Body Text
+		///</summary>
+		[ImplementPropertyType("pageBodyText")]
+		public IHtmlString PageBodyText
+		{
+			get { return this.GetPropertyValue<IHtmlString>("pageBodyText"); }
+		}
+
+		///<summary>
+		/// Sub Title
+		///</summary>
+		[ImplementPropertyType("subTitle")]
+		public string SubTitle
+		{
+			get { return this.GetPropertyValue<string>("subTitle"); }
+		}
+
+		///<summary>
+		/// Sub Title Icon
+		///</summary>
+		[ImplementPropertyType("subTitleIcon")]
+		public IPublishedContent SubTitleIcon
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("subTitleIcon"); }
+		}
 	}
 
 	/// <summary>Contato Content Page</summary>
@@ -511,6 +718,33 @@ namespace Umbraco.Web.PublishedContentModels
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ContatoContentPage, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Page Body Text
+		///</summary>
+		[ImplementPropertyType("pageBodyText")]
+		public IHtmlString PageBodyText
+		{
+			get { return this.GetPropertyValue<IHtmlString>("pageBodyText"); }
+		}
+
+		///<summary>
+		/// Sub Title
+		///</summary>
+		[ImplementPropertyType("subTitle")]
+		public string SubTitle
+		{
+			get { return this.GetPropertyValue<string>("subTitle"); }
+		}
+
+		///<summary>
+		/// Sub Title Icon
+		///</summary>
+		[ImplementPropertyType("subTitleIcon")]
+		public IPublishedContent SubTitleIcon
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("subTitleIcon"); }
 		}
 	}
 
