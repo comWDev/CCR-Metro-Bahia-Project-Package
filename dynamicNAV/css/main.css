@@ -530,7 +530,7 @@ html, body {
 }
 
 .greyBody {
-  padding: 40px 18px 0 18px !important;
+  padding: 40px 18px 50px 18px !important;
   margin: 0 !important;
 }
 
@@ -739,7 +739,7 @@ h2.accordionTitle {
 }
 
 .greyBody {
-  padding: 40px 40px 0 53px;
+  padding: 40px 40px 100px 53px;
 }
 
 .body-copy {
@@ -1234,3 +1234,13 @@ a.assessoriaEmailAddy:hover {
 .noticiasDesc {
   padding: 5px 5px 0 0 !important;
 }
+.HighlightBlue {
+	background-color: #fff000;
+}
+.HighlightGrey {
+	background-color: #dddddd;
+}
+.HighlightWhite {
+	background-color: #ffffff;
+}
+
