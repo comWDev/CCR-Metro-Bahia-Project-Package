@@ -8,8 +8,8 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "ba5c427c4cb6e0dc")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "130a4ad2c68f2ac2")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.7")]
 
 
 // FILE: models.generated.cs
@@ -770,6 +770,94 @@ namespace Umbraco.Web.PublishedContentModels
 		public IPublishedContent SubTitleIcon
 		{
 			get { return this.GetPropertyValue<IPublishedContent>("subTitleIcon"); }
+		}
+	}
+
+	/// <summary>Articles Main</summary>
+	[PublishedContentModel("articlesMain")]
+	public partial class ArticlesMain : Master
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "articlesMain";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public ArticlesMain(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ArticlesMain, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Articles Body Text
+		///</summary>
+		[ImplementPropertyType("articlesBodyText")]
+		public IHtmlString ArticlesBodyText
+		{
+			get { return this.GetPropertyValue<IHtmlString>("articlesBodyText"); }
+		}
+
+		///<summary>
+		/// Article Title
+		///</summary>
+		[ImplementPropertyType("articleTitle")]
+		public string ArticleTitle
+		{
+			get { return this.GetPropertyValue<string>("articleTitle"); }
+		}
+	}
+
+	/// <summary>Articles Item</summary>
+	[PublishedContentModel("articlesItem")]
+	public partial class ArticlesItem : Master
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "articlesItem";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public ArticlesItem(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ArticlesItem, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Article Contents
+		///</summary>
+		[ImplementPropertyType("articleContents")]
+		public IHtmlString ArticleContents
+		{
+			get { return this.GetPropertyValue<IHtmlString>("articleContents"); }
+		}
+
+		///<summary>
+		/// Article Title
+		///</summary>
+		[ImplementPropertyType("articleTitle")]
+		public string ArticleTitle
+		{
+			get { return this.GetPropertyValue<string>("articleTitle"); }
 		}
 	}
 
