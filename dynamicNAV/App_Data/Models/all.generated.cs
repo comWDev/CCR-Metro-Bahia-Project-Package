@@ -8,8 +8,8 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "130a4ad2c68f2ac2")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.7")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "1108e7a279d93cd8")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
 
 
 // FILE: models.generated.cs
@@ -858,6 +858,129 @@ namespace Umbraco.Web.PublishedContentModels
 		public string ArticleTitle
 		{
 			get { return this.GetPropertyValue<string>("articleTitle"); }
+		}
+	}
+
+	/// <summary>Numeros Main</summary>
+	[PublishedContentModel("numerosMain")]
+	public partial class NumerosMain : Master
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "numerosMain";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public NumerosMain(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<NumerosMain, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Numeros Data
+		///</summary>
+		[ImplementPropertyType("numerosData")]
+		public string NumerosData
+		{
+			get { return this.GetPropertyValue<string>("numerosData"); }
+		}
+
+		///<summary>
+		/// Numeros Text
+		///</summary>
+		[ImplementPropertyType("numerosText")]
+		public IHtmlString NumerosText
+		{
+			get { return this.GetPropertyValue<IHtmlString>("numerosText"); }
+		}
+	}
+
+	/// <summary>Numeros Item</summary>
+	[PublishedContentModel("numerosItem")]
+	public partial class NumerosItem : Master
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "numerosItem";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public NumerosItem(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<NumerosItem, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Numeros Data Block
+		///</summary>
+		[ImplementPropertyType("numerosDataBlock")]
+		public string NumerosDataBlock
+		{
+			get { return this.GetPropertyValue<string>("numerosDataBlock"); }
+		}
+
+		///<summary>
+		/// Numeros Description
+		///</summary>
+		[ImplementPropertyType("numerosDescription")]
+		public IHtmlString NumerosDescription
+		{
+			get { return this.GetPropertyValue<IHtmlString>("numerosDescription"); }
+		}
+	}
+
+	/// <summary>Metrô em números</summary>
+	[PublishedContentModel("metroEmNumeros")]
+	public partial class MetroEmNumeros : PorDentroDoMetro
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "metroEmNumeros";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public MetroEmNumeros(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<MetroEmNumeros, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Numeros List
+		///</summary>
+		[ImplementPropertyType("numerosList")]
+		public Newtonsoft.Json.Linq.JToken NumerosList
+		{
+			get { return this.GetPropertyValue<Newtonsoft.Json.Linq.JToken>("numerosList"); }
 		}
 	}
 

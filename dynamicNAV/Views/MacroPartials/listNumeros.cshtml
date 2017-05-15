@@ -1,0 +1,22 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+
+
+@inherits Umbraco.Web.Macros.PartialViewMacroPage
+@{ 
+    var selection = CurrentPage.Children.Where("Visible").OrderBy("CreateDate desc"); 
+    @* OrderBy() takes the property to sort by and optionally order desc/asc *@
+}
+
+@foreach (var item in selection)
+{
+
+    
+    
+       <div class="row col-md-12 metroNumerosWrap">
+      
+      <div class="metroNumeroInnerWrap"><p class="metroNumeros">@item.numerosDataBlock<br><span class="metroDetail">NONO</span></p></div>
+      <div class="metroBodyWrap"><p class="metroNumerosTexto">@item.numerosDescription</p></div>
+
+    </div>
+    
+}

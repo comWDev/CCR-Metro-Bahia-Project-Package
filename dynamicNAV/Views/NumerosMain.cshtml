@@ -1,0 +1,13 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.NumerosMain>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+	Layout = "master.cshtml";
+}
+  <div class="container-fluid col-centered mobileMargins">
+    <div class="container-fluid greyBody"  style="max-width: 1200px; background-color: #f9f9f9; padding-bottom: 200px;">
+        
+			@Umbraco.RenderMacro("listNumeros")
+			
+    
+    </div>
+  </div>

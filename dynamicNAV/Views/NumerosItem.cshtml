@@ -1,0 +1,16 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.NumerosItem>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+	Layout = "master.cshtml";
+}
+
+<div class="row col-md-12 metroNumerosWrap">
+      
+      <div class="metroNumeroInnerWrap"><p class="metroNumeros">@Umbraco.Field("numerosDataBlock")<br><span class="metroDetail">NONO</span></p></div>
+      <div class="metroBodyWrap"><p class="metroNumerosTexto">@Umbraco.Field("numerosDescription")</p></div>
+
+    </div>
+	    
+	    
+	    
+	   
