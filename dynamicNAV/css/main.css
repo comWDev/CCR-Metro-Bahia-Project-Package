@@ -1095,7 +1095,7 @@ ul.navItems {
     font-size: 14px;
     line-height: 23px;
     text-align: left !important;
-    color: #777777;
+    color: #777777 !important;
     padding: 0 0 0 0;
     margin: 0 0 0 0;
 }

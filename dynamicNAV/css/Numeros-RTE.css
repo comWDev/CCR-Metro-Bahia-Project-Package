@@ -1,0 +1,10 @@
+/**umb_name:metroNumerosTexto*/
+.metroNumerosTexto {
+    font-family: 'robotoregular', Arial, sans-serif;
+    font-size: 14px;
+    line-height: 23px;
+    text-align: left !important;
+    color: #777777 !important;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+}

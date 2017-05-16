@@ -22,7 +22,7 @@ namespace Umbraco.Web.PublishedContentModels
 {
 	/// <summary>Anchor Links</summary>
 	[PublishedContentModel("anchorLinks")]
-	public partial class AnchorLinks : PublishedContentModel
+	public partial class AnchorLinks : Master
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "anchorLinks";
@@ -46,12 +46,12 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Anchor Link Info
+		/// Anchor Link
 		///</summary>
-		[ImplementPropertyType("anchorLinkInfo")]
-		public Umbraco.Web.Models.RelatedLinks AnchorLinkInfo
+		[ImplementPropertyType("anchorLink")]
+		public Umbraco.Web.Models.RelatedLinks AnchorLink
 		{
-			get { return this.GetPropertyValue<Umbraco.Web.Models.RelatedLinks>("anchorLinkInfo"); }
+			get { return this.GetPropertyValue<Umbraco.Web.Models.RelatedLinks>("anchorLink"); }
 		}
 	}
 }
