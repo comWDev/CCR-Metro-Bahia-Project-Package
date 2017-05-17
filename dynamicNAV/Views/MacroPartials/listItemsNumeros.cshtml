@@ -1,0 +1,38 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+
+@{ 
+    var selection = CurrentPage.informações.Children.Where("Visible").OrderBy("CreateDate"); 
+    @* OrderBy() takes the property to sort by and optionally order desc/asc ... possible bug ... for ascending add desc ... "CreateDate desc" *@
+}
+
+
+
+@foreach (var item in selection)
+{
+
+    
+    
+    <div class="row col-md-12 dezInstrucoesWrap">
+      
+      <div class="numeroWrap"><p class="dezInstrucoesNumeros">@item.itemnumber</p></div>
+      
+      <div class="iconWrap">
+      
+@{
+    var mediaItem = @item.itemIcon;
+    var file = mediaItem.UmbracoFile;
+}
+
+<img src="@file" />
+
+
+      </div>
+      
+      <div class="dezBodyWrap"><p class="dezInstrucoesBody">@item.itemDescription</p></div>
+
+    </div>
+
+    
+}
+
+

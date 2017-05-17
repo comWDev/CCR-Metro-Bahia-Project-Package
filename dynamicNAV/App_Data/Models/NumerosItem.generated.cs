@@ -55,6 +55,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Numeros Data NONO
+		///</summary>
+		[ImplementPropertyType("numerosDataNONO")]
+		public string NumerosDataNono
+		{
+			get { return this.GetPropertyValue<string>("numerosDataNONO"); }
+		}
+
+		///<summary>
 		/// Numeros Description
 		///</summary>
 		[ImplementPropertyType("numerosDescription")]

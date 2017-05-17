@@ -60,6 +60,7 @@
                         }
             foreach (var childPage in selection.Where("Visible"))
                         {   
+                            
                             if (childPage.Children.Any())
                             {                    
                                 <li class="has-child @(childPage.IsAncestorOrSelf(CurrentPage) ? "selected" : null)">
@@ -74,6 +75,7 @@
                             </ul>
                             </li>
                             }
+                  
                             else
                             {
                                 <li class="@(childPage.IsAncestorOrSelf(CurrentPage) ? "selected" : null)">
