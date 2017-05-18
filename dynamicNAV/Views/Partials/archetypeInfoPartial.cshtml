@@ -1,0 +1,29 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using Archetype.Models;
+@using Archetype.Extensions;
+
+
+
+@foreach(var fieldset in Model.Content.GetPropertyValue<ArchetypeModel>("infoAtypeItem"))
+{
+ 
+ 
+ <div class="row col-md-12 dezInstrucoesWrap">
+      
+      <div class="numeroWrap"><p class="dezInstrucoesNumeros">@fieldset.GetValue("infoNumber")</p></div>
+      
+      
+      <div class="iconWrap">
+          
+            <img class="img-responsive icon-Info" src="@fieldset.GetValue("infoIcon")" />
+
+          
+      </div>
+      
+      
+      <div class="dezBodyWrap"><p class="dezInstrucoesBody">@fieldset.GetValue("infoDescription")</p></div>
+
+    </div>
+    
+    
+}

@@ -55,6 +55,33 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Page Body Text
+		///</summary>
+		[ImplementPropertyType("pageBodyText")]
+		public IHtmlString PageBodyText
+		{
+			get { return this.GetPropertyValue<IHtmlString>("pageBodyText"); }
+		}
+
+		///<summary>
+		/// Sub Title
+		///</summary>
+		[ImplementPropertyType("subTitle")]
+		public string SubTitle
+		{
+			get { return this.GetPropertyValue<string>("subTitle"); }
+		}
+
+		///<summary>
+		/// Sub Title Icon
+		///</summary>
+		[ImplementPropertyType("subTitleIcon")]
+		public IPublishedContent SubTitleIcon
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("subTitleIcon"); }
+		}
+
+		///<summary>
 		/// numAtype
 		///</summary>
 		[ImplementPropertyType("numAtype")]
