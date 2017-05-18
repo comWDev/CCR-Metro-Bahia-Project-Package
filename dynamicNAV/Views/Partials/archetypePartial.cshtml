@@ -1,0 +1,28 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using Archetype.Models;
+@using Archetype.Extensions;
+
+  <div class="container-fluid col-centered mobileMargins">
+    <div class="container-fluid greyBody"  style="max-width: 1200px; background-color: #f9f9f9; padding-bottom: 200px;">
+
+@foreach(var fieldset in Model.Content.GetPropertyValue<ArchetypeModel>("numAtype"))
+{
+ 
+ 
+ 
+ 
+    
+           <div class="row col-md-12 metroNumerosWrap">
+      
+      <div class="metroNumeroInnerWrap"><p class="metroNumeros">@fieldset.GetValue("numberInput")<br><span class="metroDetail">@fieldset.GetValue("numberDetail")</span></p></div>
+      <div class="metroBodyWrap">@fieldset.GetValue("descriptionInput")</div>
+
+    </div>
+    
+    
+}
+
+
+
+    </div>
+  </div>

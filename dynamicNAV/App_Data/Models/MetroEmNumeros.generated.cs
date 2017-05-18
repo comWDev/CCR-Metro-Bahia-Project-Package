@@ -22,7 +22,7 @@ namespace Umbraco.Web.PublishedContentModels
 {
 	/// <summary>Metrô em números</summary>
 	[PublishedContentModel("metroEmNumeros")]
-	public partial class MetroEmNumeros : PorDentroDoMetro
+	public partial class MetroEmNumeros : PorDentroDoMetro, INumerosAtype
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "metroEmNumeros";
@@ -52,6 +52,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public Newtonsoft.Json.Linq.JToken NumerosList
 		{
 			get { return this.GetPropertyValue<Newtonsoft.Json.Linq.JToken>("numerosList"); }
+		}
+
+		///<summary>
+		/// numAtype
+		///</summary>
+		[ImplementPropertyType("numAtype")]
+		public Archetype.Models.ArchetypeModel NumAtype
+		{
+			get { return Umbraco.Web.PublishedContentModels.NumerosAtype.GetNumAtype(this); }
 		}
 	}
 }
