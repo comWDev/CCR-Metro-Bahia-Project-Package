@@ -14,16 +14,15 @@
     
     <div class="row col-md-12 dezInstrucoesWrap">
       
-      <div class="numeroWrap"><p class="dezInstrucoesNumeros">@item.itemnumber</p></div>
+      <div class="numeroWrap"><p class="dezInstrucoesNumeros">@item.itemNumber</p></div>
       
       <div class="iconWrap">
       
 @{
-    var mediaItem = @item.itemIcon;
+    var mediaItem = Umbraco.Media(1225);
+    var height = mediaItem.UmbracoHeight;
     var file = mediaItem.UmbracoFile;
 }
-
-<img src="@file" />
 
 
       </div>

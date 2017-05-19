@@ -2,8 +2,9 @@
 @using Archetype.Models;
 @using Archetype.Extensions;
 
-
-
+@{
+    Layout = null;
+}
 @foreach(var fieldset in Model.Content.GetPropertyValue<ArchetypeModel>("infoAtypeItem"))
 {
  
@@ -14,10 +15,13 @@
       
       
       <div class="iconWrap">
-          
-            <img class="img-responsive icon-Info" src="@fieldset.GetValue("infoIcon")" />
 
-          
+
+@{
+        var imageUrl = fieldset.GetValue<IPublishedContent>("iconInfo").Url;
+     }
+     <img src="@imageUrl" alt="@fieldset.GetValue("name")" />
+  
       </div>
       
       
