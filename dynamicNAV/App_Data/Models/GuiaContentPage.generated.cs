@@ -22,7 +22,7 @@ namespace Umbraco.Web.PublishedContentModels
 {
 	/// <summary>Guia Content Page</summary>
 	[PublishedContentModel("guiaContentPage")]
-	public partial class GuiaContentPage : GuiaDoUsuario
+	public partial class GuiaContentPage : GuiaDoUsuario, ICustomTabs
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "guiaContentPage";
@@ -79,6 +79,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public IPublishedContent SubTitleIcon
 		{
 			get { return this.GetPropertyValue<IPublishedContent>("subTitleIcon"); }
+		}
+
+		///<summary>
+		/// customTabsA
+		///</summary>
+		[ImplementPropertyType("customTabsA")]
+		public Archetype.Models.ArchetypeModel CustomTabsA
+		{
+			get { return Umbraco.Web.PublishedContentModels.CustomTabs.GetCustomTabsA(this); }
 		}
 	}
 }

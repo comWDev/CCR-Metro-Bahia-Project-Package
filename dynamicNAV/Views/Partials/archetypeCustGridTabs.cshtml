@@ -1,0 +1,27 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using Archetype.Models;
+@using Archetype.Extensions;
+
+@{
+    Layout = null;
+}
+@foreach(var fieldset in Model.Content.GetPropertyValue<ArchetypeModel>("customTabsA"))
+{
+
+<div class="panel panel-default" style=" border-radius: 0px; border: 0;  background-color: transparent;">
+    <div class="susPanelMobile panel-heading" style="height: 36px; padding: 0; background-color: #134bab;">
+    <h2 class="accordionTitle"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#@fieldset.GetValue("nome")">
+        <div class="accordionTitle" style="height: 100%; width: 88%; float:left;">@fieldset.GetValue("tabTitle")</div></a></h2>
+    </div>
+
+    <div id="@fieldset.GetValue("nome")" class="panel-collapse collapse in" style=" background-color: transparent;">
+      <div class="panel-body body-copy-grey" style="background-color: transparent;">
+
+
+
+
+      </div>
+    </div>
+  </div>
+  
+  }

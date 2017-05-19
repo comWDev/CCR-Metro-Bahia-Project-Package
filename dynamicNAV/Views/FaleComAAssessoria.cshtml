@@ -1,0 +1,63 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.FaleComAassessoria>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+	Layout = "Imprensa.cshtml";
+}
+
+<div class="mobileMargins container-fluid col-centered">
+    <div class="container-fluid greyBody"  style="max-width: 1200px; background-color: #f9f9f9;">
+    <div class="row col-12-md">
+    <h2 class="subhead">@Umbraco.Field("subTitle", removeParagraphTags: true)</h2>
+	
+		
+@if (Model.Content.HasValue("subTitleIcon"))
+{
+    var caseStudyImagesList = Model.Content.GetPropertyValue<string>("subTitleIcon").Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse);
+    var caseStudyImagesCollection = Umbraco.TypedMedia(caseStudyImagesList).Where(x => x != null);
+
+    foreach (var subTitleIcon in caseStudyImagesCollection)
+        {      
+            <img class="img-responsive acessiIcon" src="@subTitleIcon.Url" />
+        }                                                               
+}
+
+		
+			
+    </div>
+
+    <div class="row col-md-12 body-copy">
+      
+      <p style="padding-bottom:50px;">@Umbraco.Field("pageBodyText", removeParagraphTags: true)</p>
+
+
+<div class="panel panel-default" style=" border-radius: 0px; border: 0;  background-color: transparent;">
+    <div class="panel-heading" style="height: 36px; padding: 0; background-color: #134bab;"><h2 class="accordionTitle"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse1"><div class="accordionTitle" style="height: 100%; width: 88%; float:left;">Assessoria de Imprensa</div></a></h2>
+    </div>
+
+    <div id="collapse1" class="panel-collapse collapse in" style=" background-color: transparent;">
+      <div class="panel-body body-copy-grey" style="background-color: transparent;">
+
+
+       @Html.Partial("archetypeAssessoriaPartial")
+       
+          </div>
+    </div>
+</div>
+
+
+<div class="panel panel-default" style=" border-radius: 0px; border: 0;  background-color: transparent;">
+    <div class="susPanelMobile panel-heading" style="height: 36px; padding: 0; background-color: #ee4444;">
+    <h2 class="accordionTitle"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse2"><div class="accordionTitle" style="height: 100%; width: 88%; float:left;">Comunicação CCR Metrô Bahia</div></a></h2>
+    </div>
+
+    <div id="collapse2" class="panel-collapse collapse in" style=" background-color: transparent;">
+      <div class="panel-body body-copy-grey" style="background-color: transparent;">
+
+       @Html.Partial("archetypeComunicacaoPartial")
+
+      </div>
+    </div>
+  </div>
+
+    </div>
+</div>
