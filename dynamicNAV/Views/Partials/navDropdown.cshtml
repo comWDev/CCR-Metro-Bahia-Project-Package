@@ -1,4 +1,5 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using Umbraco.Web.Models
 
 @*
     This snippet makes a list of links of all visible pages of the site, as nested unordered html lists.
@@ -75,7 +76,30 @@
                             </ul>
                             </li>
                             }
-                  
+
+                            else if (childPage.GetPropertyValue("anchorLinkOption")==true)
+                            {
+                            
+                                var typedRelatedLinksConverted = Model.Content.GetPropertyValue<RelatedLinks>("anchorLinkadd");
+
+                                if (typedRelatedLinksConverted.Any())
+                                {
+                                    
+                                        foreach (var item in typedRelatedLinksConverted)
+                                        {
+                                            var linkTarget = (item.NewWindow) ? "_blank" : null;
+                                            
+                                            <li class="@(childPage.IsAncestorOrSelf(CurrentPage) ? "selected" : null)">
+                                                <a class="@item.Link" target="@linkTarget" href="#">@item.Caption</a>
+                                            </li>
+
+                                        }
+                                    
+                                }
+                            
+                            }
+
+
                             else
                             {
                                 <li class="@(childPage.IsAncestorOrSelf(CurrentPage) ? "selected" : null)">

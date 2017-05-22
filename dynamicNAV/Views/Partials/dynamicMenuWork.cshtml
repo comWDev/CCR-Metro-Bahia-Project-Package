@@ -1,0 +1,22 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using Archetype.Models;
+@using Archetype.Extensions;
+
+@{
+    Layout = null;
+}
+
+@( var menuData = Model.Content.AncestorOrSelf("faleComAAssessoria").GetPropertyValue<IPublishedContent>("nome").GetPropertyValue<ArchetypeModel>("assessoriaAtypeList"))
+{
+	
+	<div class="assessoriaBlock"><img class="assessoriaIcon" src="/media/1045/assessoria-icon.png">
+          <p>
+            <span class="assessoriaNome"><strong>@menuData.GetValue("nome")</strong></span><br>
+            <span class="assessoriaTitle">@menuData.GetValue("titulo")</span><br>
+            <span class="assessoriaEmail"><strong><a class="assessoriaEmailAddy" href="mailto:#">@menuData.GetValue("eMail")</a></strong></span><br>
+            <span class="assessoriaTel"><strong>@menuData.GetValue("telefone")</strong></span>
+          </p>
+          </div>
+
+}

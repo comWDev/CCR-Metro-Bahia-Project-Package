@@ -46,12 +46,30 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Anchor Link
+		/// anchorLinkadd
 		///</summary>
-		[ImplementPropertyType("anchorLink")]
-		public Umbraco.Web.Models.RelatedLinks AnchorLink
+		[ImplementPropertyType("anchorLinkadd")]
+		public Umbraco.Web.Models.RelatedLinks AnchorLinkadd
 		{
-			get { return this.GetPropertyValue<Umbraco.Web.Models.RelatedLinks>("anchorLink"); }
+			get { return this.GetPropertyValue<Umbraco.Web.Models.RelatedLinks>("anchorLinkadd"); }
+		}
+
+		///<summary>
+		/// anchorLinkOption
+		///</summary>
+		[ImplementPropertyType("anchorLinkOption")]
+		public bool AnchorLinkOption
+		{
+			get { return this.GetPropertyValue<bool>("anchorLinkOption"); }
+		}
+
+		///<summary>
+		/// anchorRLink
+		///</summary>
+		[ImplementPropertyType("anchorRLink")]
+		public Umbraco.Web.Models.RelatedLinks AnchorRlink
+		{
+			get { return this.GetPropertyValue<Umbraco.Web.Models.RelatedLinks>("anchorRLink"); }
 		}
 	}
 }

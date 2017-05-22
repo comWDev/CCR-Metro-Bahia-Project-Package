@@ -1,0 +1,15 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using Archetype.Models;
+@using Archetype.Extensions;
+
+
+@{
+    Layout = null;
+}
+
+
+
+@foreach(var fieldset in Model.Content.GetPropertyValue<ArchetypeModel>("anchorRLink"))
+  {
+    fieldset.GetValue<RelatedLinks>("relatedcontentlinks");
+  }
