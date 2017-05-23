@@ -76,27 +76,21 @@
                             </li>
                             }
 
-                            else if (childPage.GetPropertyValue("anchorLinkOption")==true)
-                            {
-                            
-                                var typedRelatedLinksConverted = Model.Content.GetPropertyValue<RelatedLinks>("rLinksTarget");
+                              else if (childPage.GetPropertyValue("anchorLinkOption")==true)
+        {
+            if (childPage.HasValue("rLinksTarget") && childPage.rLinksTarget.ToString().Length > 2)
+            {
+                foreach (var item in childPage.rLinksTarget)
+                {
+                    var linkTarget = (item.NewWindow) ? "_blank" : null;
 
-                                if (typedRelatedLinksConverted.Any())
-                                {
-                                    
-                                        foreach (var item in typedRelatedLinksConverted)
-                                        {
-                                            var linkTarget = (item.NewWindow) ? "_blank" : null;
-                                            
-                                            <li class="@(childPage.IsAncestorOrSelf(CurrentPage) ? "selected" : null)">
-                                                <a class="@item.Link" target="@linkTarget" href="@item.Link">@item.Caption</a>
-                                            </li>
+                    <li class="@(childPage.IsAncestorOrSelf(CurrentPage) ? "selected" : null)">
+                        <a class="@item.Link" target="@linkTarget" href="@item.Link">@item.Caption</a>
+                    </li>
+                }
+            }
+        }
 
-                                        }
-                                    
-                                }
-                            
-                            }
 
 
                             else
