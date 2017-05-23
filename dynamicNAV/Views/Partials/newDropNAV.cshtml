@@ -79,7 +79,7 @@
                             else if (childPage.GetPropertyValue("anchorLinkOption")==true)
                             {
                             
-                                var typedRelatedLinksConverted = Model.Content.GetPropertyValue<RelatedLinks>("anchorRLink");
+                                var typedRelatedLinksConverted = Model.Content.GetPropertyValue<RelatedLinks>("rLinksTarget");
 
                                 if (typedRelatedLinksConverted.Any())
                                 {
@@ -89,7 +89,7 @@
                                             var linkTarget = (item.NewWindow) ? "_blank" : null;
                                             
                                             <li class="@(childPage.IsAncestorOrSelf(CurrentPage) ? "selected" : null)">
-                                                <a class="@item.Link" target="@linkTarget" href="#">@item.Caption</a>
+                                                <a class="@item.Link" target="@linkTarget" href="@item.Link">@item.Caption</a>
                                             </li>
 
                                         }
