@@ -10,14 +10,6 @@
     <div class="row col-12-md">
     <h2 class="subhead">@Umbraco.Field("subTitle", removeParagraphTags: true)</h2>
 		
-		
-		    <!-- ---------- DYNAMIC HEADER TEST ----------- -->
-
-        @Html.Partial("archetypeSectionHeaderPartial")
-    
-<!-- ---------- DYNAMIC HEADER TEST ----------- -->
-		
-		
 @if (Model.Content.HasValue("subTitleIcon"))
 {
     var caseStudyImagesList1 = Model.Content.GetPropertyValue<string>("subTitleIcon").Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse);
