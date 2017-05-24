@@ -22,7 +22,7 @@ namespace Umbraco.Web.PublishedContentModels
 {
 	/// <summary>home</summary>
 	[PublishedContentModel("home")]
-	public partial class Home : Master, IRLinks
+	public partial class Home : Master
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "home";
@@ -61,24 +61,6 @@ namespace Umbraco.Web.PublishedContentModels
 		public IEnumerable<IPublishedContent> SliderPictures
 		{
 			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("sliderPictures"); }
-		}
-
-		///<summary>
-		/// anchorLinkOption
-		///</summary>
-		[ImplementPropertyType("anchorLinkOption")]
-		public bool AnchorLinkOption
-		{
-			get { return Umbraco.Web.PublishedContentModels.RLinks.GetAnchorLinkOption(this); }
-		}
-
-		///<summary>
-		/// r Links Target
-		///</summary>
-		[ImplementPropertyType("rLinksTarget")]
-		public Umbraco.Web.Models.RelatedLinks RLinksTarget
-		{
-			get { return Umbraco.Web.PublishedContentModels.RLinks.GetRLinksTarget(this); }
 		}
 	}
 }

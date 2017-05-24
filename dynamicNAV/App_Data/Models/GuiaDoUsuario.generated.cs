@@ -46,6 +46,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Section Header Data
+		///</summary>
+		[ImplementPropertyType("sectionHeaderData")]
+		public Archetype.Models.ArchetypeModel SectionHeaderData
+		{
+			get { return this.GetPropertyValue<Archetype.Models.ArchetypeModel>("sectionHeaderData"); }
+		}
+
+		///<summary>
 		/// Section Icon
 		///</summary>
 		[ImplementPropertyType("sectionIcon")]

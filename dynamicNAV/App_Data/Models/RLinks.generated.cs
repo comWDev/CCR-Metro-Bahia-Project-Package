@@ -20,20 +20,9 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.Web.PublishedContentModels
 {
-	// Mixin content Type 1290 with alias "rLinks"
-	/// <summary>rLinks</summary>
-	public partial interface IRLinks : IPublishedContent
-	{
-		/// <summary>anchorLinkOption</summary>
-		bool AnchorLinkOption { get; }
-
-		/// <summary>r Links Target</summary>
-		Umbraco.Web.Models.RelatedLinks RLinksTarget { get; }
-	}
-
 	/// <summary>rLinks</summary>
 	[PublishedContentModel("rLinks")]
-	public partial class RLinks : PublishedContentModel, IRLinks
+	public partial class RLinks : PublishedContentModel
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "rLinks";
@@ -62,11 +51,8 @@ namespace Umbraco.Web.PublishedContentModels
 		[ImplementPropertyType("anchorLinkOption")]
 		public bool AnchorLinkOption
 		{
-			get { return GetAnchorLinkOption(this); }
+			get { return this.GetPropertyValue<bool>("anchorLinkOption"); }
 		}
-
-		/// <summary>Static getter for anchorLinkOption</summary>
-		public static bool GetAnchorLinkOption(IRLinks that) { return that.GetPropertyValue<bool>("anchorLinkOption"); }
 
 		///<summary>
 		/// r Links Target
@@ -74,10 +60,7 @@ namespace Umbraco.Web.PublishedContentModels
 		[ImplementPropertyType("rLinksTarget")]
 		public Umbraco.Web.Models.RelatedLinks RLinksTarget
 		{
-			get { return GetRLinksTarget(this); }
+			get { return this.GetPropertyValue<Umbraco.Web.Models.RelatedLinks>("rLinksTarget"); }
 		}
-
-		/// <summary>Static getter for r Links Target</summary>
-		public static Umbraco.Web.Models.RelatedLinks GetRLinksTarget(IRLinks that) { return that.GetPropertyValue<Umbraco.Web.Models.RelatedLinks>("rLinksTarget"); }
 	}
 }

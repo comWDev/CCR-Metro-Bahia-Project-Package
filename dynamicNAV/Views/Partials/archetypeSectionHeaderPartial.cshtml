@@ -1,0 +1,34 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using Archetype.Models;
+@using Archetype.Extensions;
+
+@{
+    var menuData = Model.Content.AncestorOrSelf("guiaDoUsuario").GetPropertyValue<ArchetypeModel>("sectionHeaderData");
+
+
+foreach(var fieldset in menuData)
+{
+   
+   	<div class="container-fluid heroWrap heroSpaceGuia">
+        <div class="header-icon">	
+@if (Model.Content.HasValue("icon"))
+{
+    var caseStudyImagesList1 = Model.Content.GetPropertyValue<string>("icon").Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse);
+    var caseStudyImagesCollection1 = Umbraco.TypedMedia(caseStudyImagesList1).Where(x => x != null);
+
+    foreach (var icon in caseStudyImagesCollection1)
+        {      
+            <img src="@icon.Url" />      
+        }                                                               
+}
+
+			
+			</div>
+        <div>
+           <h1 class="internal-header">@Umbraco.Field("titulo")</h1>
+        </div>
+        <p class="intro-text">@Umbraco.Field("intro", removeParagraphTags: true)</p>
+  </div>
+  }
+  
+  }

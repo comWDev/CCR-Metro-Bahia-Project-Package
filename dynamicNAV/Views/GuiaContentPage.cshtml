@@ -6,28 +6,34 @@
 
   <div class="mobileMargins container-fluid col-centered">
     <div class="container-fluid greyBody"  style="max-width: 1200px; background-color: #f9f9f9;">
+    
     <div class="row col-12-md">
     <h2 class="subhead">@Umbraco.Field("subTitle", removeParagraphTags: true)</h2>
-	
+		
+		
+		    <!-- ---------- DYNAMIC HEADER TEST ----------- -->
+
+        @Html.Partial("archetypeSectionHeaderPartial")
+    
+<!-- ---------- DYNAMIC HEADER TEST ----------- -->
+		
 		
 @if (Model.Content.HasValue("subTitleIcon"))
 {
-    var caseStudyImagesList = Model.Content.GetPropertyValue<string>("subTitleIcon").Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse);
-    var caseStudyImagesCollection = Umbraco.TypedMedia(caseStudyImagesList).Where(x => x != null);
+    var caseStudyImagesList1 = Model.Content.GetPropertyValue<string>("subTitleIcon").Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse);
+    var caseStudyImagesCollection1 = Umbraco.TypedMedia(caseStudyImagesList1).Where(x => x != null);
 
-    foreach (var subTitleIcon in caseStudyImagesCollection)
+    foreach (var subTitleIcon in caseStudyImagesCollection1)
         {      
-            <img class="img-responsive acessiIcon" src="@subTitleIcon.Url" />
+            <img src="@subTitleIcon.Url" />      
         }                                                               
-}
-
-		
-			
-    </div>
-
-    <div class="row col-md-12 body-copy">
-      
-      <p>@Umbraco.Field("pageBodyText", removeParagraphTags: true)</p>
+}    
+            </div>
+        <div>
+           <h1 class="internal-header">@Umbraco.Field("sectionTitle")</h1>
+        </div>
+        <p class="intro-text">@Umbraco.Field("pageBodyText", removeParagraphTags: true)</p>
+  </div>
 
 <!-- ------------------ Slider ------------------ -->
   
@@ -49,6 +55,7 @@
 <!-- ------------------ Tabs ------------------ -->
 
     @Html.Partial("archetypeCustGridTabs")
+
 
 <!-- ------------------ Tabs ------------------ -->
 
