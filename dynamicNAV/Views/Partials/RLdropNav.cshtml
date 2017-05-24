@@ -85,7 +85,7 @@
                     var linkTarget = (item.NewWindow) ? "_blank" : null;
 
                     <li class="@(childPage.IsAncestorOrSelf(CurrentPage) ? "selected" : null)">
-                        <a class="@item.Link" target="@linkTarget" href="@item.Link">@item.Caption</a>
+                        <a class="menuTextMain" target="@linkTarget" href="@item.Link">@item.Caption</a>
                     </li>
                 }
             }

@@ -8,7 +8,7 @@
 @foreach(var fieldset in Model.Content.GetPropertyValue<ArchetypeModel>("customTabsA"))
 {
 
-<div class="panel panel-default" style=" border-radius: 0px; border: 0;  background-color: transparent;">
+<div class="panel panel-default" id="@fieldset.GetValue("anchorID")" style=" border-radius: 0px; border: 0;  background-color: transparent;">
     <div class="susPanelMobile panel-heading" style="height: 36px; padding: 0; background-color: #134bab;">
     <h2 class="accordionTitle"><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#@fieldset.GetValue("nome")">
         <div class="accordionTitle" style="height: 100%; width: 88%; float:left;">@fieldset.GetValue("tabTitle")</div></a></h2>
