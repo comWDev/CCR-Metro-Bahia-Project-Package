@@ -1,0 +1,106 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+
+@*
+    This snippet makes a list of links of all visible pages of the site, as nested unordered html lists.
+
+    How it works:
+    - It uses a custom Razor helper called Traverse() to select and display the markup and links.
+*@
+
+@{ var selection = CurrentPage.Site(); 
+
+    var isHome = true;
+
+}
+
+   <div class="container-fluid footWrap col-centered text-center">
+    <div class="container-fluid footColWrap">
+    <div class="container-fluid footColCenter">
+      <ul class="footer-ul">  
+    @* Render the sitemap by passing the root node to the traverse helper, below *@
+    @Traverse(selection, isHome)
+    </ul>
+      <div class="row col-md-12">
+        <div class="row col-md-7 text-left footer-address-wrap">
+
+        <div class="footer-icon"><img src="/media/1014/pin.png"></div><span class="footer-address-text">Rua Afeganistão, s/nº Calabetão, Salvador – BA  / CEP: 41227-002</span>
+        </div>
+        <div class="row col-md-2 text-left footer-address-wrap">
+        <div class="footer-icon"><img src="/media/1015/Phone-footer.png"></div><span class="footer-address-text">71 3205-1100</span>
+        </div>
+    
+
+        <div class="row col-md-3 footer-marca"><a href="/home/"><img src="/media/1006/CCR_Metro_Bahia_154x61.png"></a></div>
+      </div>
+
+    </div>
+    </div>
+   </div>
+
+
+@* Helper method to travers through all descendants *@
+@helper Traverse(dynamic node, bool isHome)
+{
+    @* Update the level to reflect how deep you want the sitemap to go *@
+    var maxLevelForSitemap = 3;
+
+    @* Select visible children *@
+    var selection = node.Children.Where("Visible").Where("Level <= " + maxLevelForSitemap);
+
+       @* If any items are returned, render a list *@
+      if (selection.Any())
+       {
+            
+            
+            if(isHome) {
+                            var cssClass = CurrentPage.Site().Id == CurrentPage.Id ? "active" : null;
+                            isHome = false;
+                        }
+            foreach (var childPage in selection.Where("Visible"))
+                        {   
+                            if (childPage.Children.Any())
+                            {                        
+                            <div class="row col-md-2 footerNavCols">
+                                
+                                <li class="has-child @(childPage.IsAncestorOrSelf(CurrentPage) ? "selected" : null) menuHeaderFoot footer-header text-left" style="list-style-type:none;">@childPage.Name</li>
+                                
+                            <ul class="footer-ul">
+                                <li class="footNavLink">
+                                    @* Run the traverse helper again for any child pages *@
+                                    @Traverse(childPage, isHome)
+                                </li>
+                            </ul>
+                            </div>
+                            
+                            }
+
+                              else if (childPage.GetPropertyValue("anchorLinkOption")==true)
+                            {
+                                if (childPage.HasValue("rLinksTarget") && childPage.rLinksTarget.ToString().Length > 2)
+                                {
+                                    foreach (var item in childPage.rLinksTarget)
+                                    {
+                                        var linkTarget = (item.NewWindow) ? "_blank" : null;
+
+                                        <li class="@(childPage.IsAncestorOrSelf(CurrentPage) ? "selected" : null) footNavLink">
+                                        <a target="@linkTarget" href="@item.Link">@item.Caption</a>
+                                        </li>
+                                    }
+                                }
+                            }
+                            
+                            else
+                            {
+                                
+                                <li class="@(childPage.IsAncestorOrSelf(CurrentPage) ? "selected" : null) footNavLink">
+                                <a href="@childPage.Url">@childPage.Name</a>
+                                </li>
+                                
+                            }            
+
+                           
+                        }
+                
+        }
+            
+    }
