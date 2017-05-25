@@ -18,7 +18,7 @@
     <div id="@fieldset.GetValue("nome")" class="panel-collapse collapse" style=" background-color: transparent;">
       <div class="panel-body body-copy-grey" style="background-color: transparent;">
 
-            @fieldset.GetValue("tabTexto")
+            @Html.Raw(@fieldset.GetValue<string>("tabTexto"))
 
 
       </div>

@@ -14,7 +14,7 @@
            <div class="row col-md-12 metroNumerosWrap">
       
       <div class="metroNumeroInnerWrap"><p class="metroNumeros">@fieldset.GetValue("numberInput")<br><span class="metroDetail">@fieldset.GetValue("numberDetail")</span></p></div>
-      <div class="metroBodyWrap">@fieldset.GetValue("descriptionInput")</div>
+      <div class="metroBodyWrap">@Html.Raw(@fieldset.GetValue<string>("descriptionInput"))</div>
 
     </div>
     

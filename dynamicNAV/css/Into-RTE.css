@@ -6,4 +6,5 @@
 .intro-body{font-family: 'robotoitalic', Arial, sans-serif;
 font-size: 14px;
 line-height: 23px;
-color: #134bab;}
+color: #134bab;
+max-width: 750px;}

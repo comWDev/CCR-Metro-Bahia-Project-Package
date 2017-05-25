@@ -53,32 +53,5 @@ namespace Umbraco.Web.PublishedContentModels
 		{
 			get { return this.GetPropertyValue<Archetype.Models.ArchetypeModel>("hSectionItems"); }
 		}
-
-		///<summary>
-		/// Section Icon
-		///</summary>
-		[ImplementPropertyType("sectionIcon")]
-		public IPublishedContent SectionIcon
-		{
-			get { return this.GetPropertyValue<IPublishedContent>("sectionIcon"); }
-		}
-
-		///<summary>
-		/// Section Intro
-		///</summary>
-		[ImplementPropertyType("sectionIntro")]
-		public IHtmlString SectionIntro
-		{
-			get { return this.GetPropertyValue<IHtmlString>("sectionIntro"); }
-		}
-
-		///<summary>
-		/// Section Title
-		///</summary>
-		[ImplementPropertyType("sectionTitle")]
-		public string SectionTitle
-		{
-			get { return this.GetPropertyValue<string>("sectionTitle"); }
-		}
 	}
 }
