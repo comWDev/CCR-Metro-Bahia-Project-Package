@@ -1,0 +1,33 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using Archetype.Models;
+@using Archetype.Extensions;
+
+@{
+var menuData = Model.Content.AncestorOrSelf("guiaDoUsuario").GetPropertyValue<ArchetypeModel>("hSectionItems");
+
+
+foreach(var fieldset in menuData)
+{
+   
+   	<div class="container-fluid heroWrap heroSpaceGuia">
+        <div class="header-icon">	
+
+    @{
+        var imageUrl = fieldset.GetValue<IPublishedContent>("hIcon").Url;
+     }
+     <img src="@imageUrl"/>  
+
+			
+			</div>
+        <div>
+           <h1 class="internal-header">@fieldset.GetValue("hTitle")</h1>
+        </div>
+       <div>@fieldset.GetValue("hIntro")</div>
+  </div>
+  
+  }
+  }
+  
+  
+  
+  
