@@ -46,12 +46,12 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Section Header Data
+		/// hSection Items
 		///</summary>
-		[ImplementPropertyType("sectionHeaderData")]
-		public Archetype.Models.ArchetypeModel SectionHeaderData
+		[ImplementPropertyType("hSectionItems")]
+		public Archetype.Models.ArchetypeModel HSectionItems
 		{
-			get { return this.GetPropertyValue<Archetype.Models.ArchetypeModel>("sectionHeaderData"); }
+			get { return this.GetPropertyValue<Archetype.Models.ArchetypeModel>("hSectionItems"); }
 		}
 
 		///<summary>

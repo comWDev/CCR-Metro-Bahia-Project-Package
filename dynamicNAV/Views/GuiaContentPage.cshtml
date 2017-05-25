@@ -4,30 +4,41 @@
 	Layout = "GuiaDoUsuario.cshtml";
 }
 
+<!-- ------------------ Dynamic Header ------------------ -->
+
+@Html.Partial("archetypeSectionHeaderPartial")
+
+<!-- ------------------ Dynamic Header ------------------ -->
+
   <div class="mobileMargins container-fluid col-centered">
     <div class="container-fluid greyBody"  style="max-width: 1200px; background-color: #f9f9f9;">
-    
     <div class="row col-12-md">
     <h2 class="subhead">@Umbraco.Field("subTitle", removeParagraphTags: true)</h2>
+	
 		
 @if (Model.Content.HasValue("subTitleIcon"))
 {
-    var caseStudyImagesList1 = Model.Content.GetPropertyValue<string>("subTitleIcon").Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse);
-    var caseStudyImagesCollection1 = Umbraco.TypedMedia(caseStudyImagesList1).Where(x => x != null);
+    var caseStudyImagesList = Model.Content.GetPropertyValue<string>("subTitleIcon").Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse);
+    var caseStudyImagesCollection = Umbraco.TypedMedia(caseStudyImagesList).Where(x => x != null);
 
-    foreach (var subTitleIcon in caseStudyImagesCollection1)
+    foreach (var subTitleIcon in caseStudyImagesCollection)
         {      
-            <img src="@subTitleIcon.Url" />      
+            <img class="img-responsive acessiIcon" src="@subTitleIcon.Url" />
         }                                                               
-}    
-            </div>
-        <div>
-           <h1 class="internal-header">@Umbraco.Field("sectionTitle")</h1>
-        </div>
-        <p class="intro-text">@Umbraco.Field("pageBodyText", removeParagraphTags: true)</p>
-  </div>
+}
 
-<!-- ------------------ Slider ------------------ -->
+		
+			
+    </div>
+
+    <div class="row col-md-12 body-copy">
+      
+      <p>@Umbraco.Field("pageBodyText", removeParagraphTags: true)</p>
+
+    </div>
+
+    <div class="row col-md-12 body-copy">
+    <!-- ------------------ Slider ------------------ -->
   
       <div class="sliderBicicletario" style="padding-bottom: 50px">
 
@@ -43,13 +54,13 @@
   </div>
 
 <!-- ------------------ Slider ------------------ -->
-
+</div>
+<div class="row col-md-12 body-copy">
 <!-- ------------------ Tabs ------------------ -->
 
     @Html.Partial("archetypeCustGridTabs")
 
-
-<!-- ------------------ Tabs ------------------ -->
-
+<!-- ------------------ Tabs ------------------ -->    
     </div>
-</div>
+    </div>
+    </div>

@@ -2,33 +2,26 @@
 @using Archetype.Models;
 @using Archetype.Extensions;
 
-@{
-    var menuData = Model.Content.AncestorOrSelf("guiaDoUsuario").GetPropertyValue<ArchetypeModel>("sectionHeaderData");
 
-
-foreach(var fieldset in menuData)
+@foreach(var fieldset in Model.Content.GetPropertyValue<ArchetypeModel>("hSectionItems"))
 {
    
    	<div class="container-fluid heroWrap heroSpaceGuia">
         <div class="header-icon">	
-@if (Model.Content.HasValue("icon"))
-{
-    var caseStudyImagesList1 = Model.Content.GetPropertyValue<string>("icon").Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse);
-    var caseStudyImagesCollection1 = Umbraco.TypedMedia(caseStudyImagesList1).Where(x => x != null);
 
-    foreach (var icon in caseStudyImagesCollection1)
-        {      
-            <img src="@icon.Url" />      
-        }                                                               
-}
+    @{
+        var imageUrl = fieldset.GetValue<IPublishedContent>("hIcon").Url;
+     }
+     <img src="@imageUrl"/>      
+
 
 			
 			</div>
         <div>
-           <h1 class="internal-header">@Umbraco.Field("titulo")</h1>
+           <h1 class="internal-header">@fieldset.GetValue("hTitle")</h1>
         </div>
-        <p class="intro-text">@Umbraco.Field("intro", removeParagraphTags: true)</p>
+       <div>@fieldset.GetValue("hIntro")</div>
   </div>
-  }
   
   }
+  
