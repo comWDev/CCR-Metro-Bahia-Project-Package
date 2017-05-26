@@ -401,6 +401,9 @@
     <Content Include="App_Plugins\LeBlender\editors\leblendereditor\leblenderproperties.html" />
     <Content Include="App_Plugins\LeBlender\editors\textstring\textstringconfig.html" />
     <Content Include="App_Plugins\LeBlender\views_samples\sample_styles.css" />
+    <Content Include="App_Plugins\LePainter\assets\LePainter.css" />
+    <Content Include="App_Plugins\LePainter\LePainter.controller.js" />
+    <Content Include="App_Plugins\LePainter\LePainter.html" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -444,6 +447,9 @@
     <Content Include="App_Plugins\LeBlender\package.manifest" />
     <Content Include="App_Plugins\LeBlender\editors\leblendereditor\views\LeBlender.cshtml" />
     <Content Include="App_Plugins\LeBlender\editors\leblendereditor\views\Base.cshtml" />
+    <Content Include="App_Plugins\LePainter\package.manifest" />
+    <Content Include="App_Plugins\Grid\package.manifest" />
+    <Content Include="Views\Partials\Grid\Editors\LeBlender.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
