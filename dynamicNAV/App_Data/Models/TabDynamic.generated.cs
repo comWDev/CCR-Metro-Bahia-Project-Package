@@ -46,15 +46,6 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Tab Grid Content
-		///</summary>
-		[ImplementPropertyType("tabContent")]
-		public Newtonsoft.Json.Linq.JToken TabContent
-		{
-			get { return this.GetPropertyValue<Newtonsoft.Json.Linq.JToken>("tabContent"); }
-		}
-
-		///<summary>
 		/// Tab Title
 		///</summary>
 		[ImplementPropertyType("tabTitle")]

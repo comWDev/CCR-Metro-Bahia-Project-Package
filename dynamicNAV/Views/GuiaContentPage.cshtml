@@ -40,7 +40,7 @@
     <div class="row col-md-12 body-copy">
     <!-- ------------------ Slider ------------------ -->
   
-      <div class="sliderBicicletario" style="padding-bottom: 50px">
+      <div class="sliderBicicletario" style="margin-bottom: 50px">
 
 @if (Model.Content.HasValue("sliderPictures"))
 {
@@ -56,11 +56,20 @@
 <!-- ------------------ Slider ------------------ -->
 </div>
 <div class="row col-md-12 body-copy">
+
+<!-- ------------------ GRID ------------------ -->
+
+      @CurrentPage.GetGridHtml("gridLayout", "Bootstrap3-Fluid-CCR")
+
+<!-- ------------------ GRID ------------------ -->     
+
 <!-- ------------------ Tabs ------------------ -->
 
-    @Html.Partial("archetypeCustGridTabs")
+      @Html.Partial("archetypeCustGridTabs")
 
-<!-- ------------------ Tabs ------------------ -->    
+<!-- ------------------ Tabs ------------------ -->  
+
     </div>
     </div>
     </div>
+
