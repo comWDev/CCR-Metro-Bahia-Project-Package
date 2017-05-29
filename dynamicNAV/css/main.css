@@ -736,18 +736,12 @@ h2.accordionTitle {
     font-size: 12px;
     line-height: 16px;
     text-align:center;
-    border-bottom: 2px solid #FFFFFF !important;
     padding-top: 8px !important;
     background-color: #f0f0f0; 
     color: #134bab;
     text-transform: uppercase !important;
 
 }
-
-.pNumero {
-    margin-bottom: 5px !important;
-}
-
 
 /* Popover Body */
 .popover-content {
@@ -765,7 +759,8 @@ h2.accordionTitle {
 }
 
 .popHoras {
-    line-height: 16px;
+	font-size: 14px !important;
+    line-height:16px;
     color: #969696 !important;
 }
 
@@ -777,8 +772,8 @@ h2.accordionTitle {
 
 .popNumero {
     font-family: 'robotomedium', Arial, sans-serif !important;
-    font-size: 14px;
-    padding-top:5px;
+    font-size: 14px !important;
+	margin-bottom: 5px !important;
     color: #134bab;
 }
 

@@ -13,19 +13,19 @@ foreach(var fieldset in menuData)
   <script type="text/javascript">
 $(document).ready(function(){
     $("#clockPopover").popover({
-         title: "<p class='popAlt'>HORARIO</p>",
-        content : "<p class='popHoras'><span class='popHorasBold'>SEG a SEX,</span><br>7 às 22 horas.</p><p class='popHoras'><span class='popHorasBold'>SÁB,</span><br>7 às 22 horas.</p>",
+         title: "<p class=''>HORARIO DE FUNCIONAMENTO</p>",
+        content : "<p class='popHoras'></p>",
         placement: "bottom",
         trigger: "click",
-        template: '<div class="popover popover2"><div class="arrow"></div><div class="popover-inner"><h3 class="popover-title popAlt"></h3><p class="pNumero">@fieldset.GetValue("atendimentoNumero")</p><div class="popover-content popAlt"><p class="popHoras"></p><p class="popHoras"></p></div></div></div>', 
+        template: '<div class="popover popover2"><div class="arrow"></div><div class="popover-inner"><h3 class="popover-title popAlt"></h3><div class="popover-content popAlt"><p class="popHoras"></p></div><p class="popHoras"><span class="popHorasBold">@fieldset.GetValue("dias")</span><br>@fieldset.GetValue("horas")</p><p class="popHoras"><span class="popHorasBold">@fieldset.GetValue("dias2")</span><br>@fieldset.GetValue("horas2")</p><p class="popHorasBold pMod">@fieldset.GetValue("especial")</p><p class="popHoras pModEsp"><span class="popHorasBold">@fieldset.GetValue("diasEspeciais")</span><br>@fieldset.GetValue("horasEspeciais")</p></div>', 
         html: true
     });
     $("#phonePopover").popover({
-        title: "<p class='popAlt'>CENTRAL DE ATENDIMENTO<br></p><p class='popNumero'>0800 071 8020</p>",
-        content : "<p class='popHoras'><span class='popHorasBold'>SEG a SEX,</span><br>7 às 22 horas.</p><p class='popHoras'><span class='popHorasBold'>SÁB,</span><br>7 às 22 horas.</p>",
+         title: "<p class='popAlt'>CENTRO DE ATENDIMENTO</p>",
+        content : "<p class='popHoras'></p>",
         placement: "bottom",
         trigger: "click",
-        template: '<div class="popover"><div class="arrow"></div><div class="popover-inner"><h3 class="popover-title popAlt"></h3><div class="popover-content popAlt"><p class="popHoras"></p><p class="popHoras"></p></div></div></div>', 
+        template: '<div class="popover"><div class="arrow"></div><div class="popover-inner"><h3 class="popover-title popAlt"></h3><p class="popNumero">@fieldset.GetValue("atendimentoNumero")</p><div class="popover-content popAlt"><p class="popHoras"></p></div><p class="popHoras"><span class="popHorasBold">@fieldset.GetValue("atendimentoDias")</span><br>@fieldset.GetValue("atendimentoHoras")</p><p class="popHoras" style="padding-bottom:10px;"><span class="popHorasBold">@fieldset.GetValue("atendimentoDias2")</span><br>@fieldset.GetValue("atendimentoHoras2")</p></div>', 
         html: true
     }); 
 });

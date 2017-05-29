@@ -13,11 +13,11 @@ foreach(var fieldset in menuData)
   <script type="text/javascript">
 $(document).ready(function(){
     $("#clockPopover").popover({
-         title: "<p class='popAlt'>HORARIO<br></p><p class='popNumero'></p>",
+         title: "<p class='popAlt'>HORARIO</p>",
         content : "<p class='popHoras'><span class='popHorasBold'>SEG a SEX,</span><br>7 às 22 horas.</p><p class='popHoras'><span class='popHorasBold'>SÁB,</span><br>7 às 22 horas.</p>",
         placement: "bottom",
         trigger: "click",
-        template: '<div class="popover popover2"><div class="arrow"></div><div class="popover-inner"><h3 class="popover-title popAlt"></h3><p></p><p>@fieldset.GetValue("atendimentoNumero")</p><div class="popover-content popAlt"><p class="popHoras"></p><p class="popHoras"></p></div></div></div>', 
+        template: '<div class="popover popover2"><div class="arrow"></div><div class="popover-inner"><h3 class="popover-title popAlt"></h3><p class="popNumero">@fieldset.GetValue("atendimentoNumero")</p><div class="popover-content popAlt"><p class="popHoras"></p><p class="popHoras"></p></div></div></div>', 
         html: true
     });
     $("#phonePopover").popover({
