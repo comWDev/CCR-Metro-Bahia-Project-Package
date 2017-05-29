@@ -1,6 +1,6 @@
 
     $(document).ready(function(){
-        $('.slider1').slick({
+        $('.slider-1').slick({
       	prevArrow:"<img class='a-left control-c prev slick-prev' src='/media/1012/prev_60x60.png'>",
       nextArrow:"<img class='a-right control-c next slick-next' src='/media/1013/next_60x60.png'>",
       dots: true,
@@ -41,7 +41,7 @@
   ]
 
 });
-        $('.slider2').slick({
+        $('.slider-2').slick({
       	prevArrow:"<img class='a-left control-c prev slick-prev' src='/media/1012/prev_60x60.png'>",
       nextArrow:"<img class='a-right control-c next slick-next' src='/media/1013/next_60x60.png'>",
       dots: true,
@@ -82,7 +82,7 @@
   ]
 
 });
-        $('.slider3').slick({
+        $('.slider-3').slick({
       	prevArrow:"<img class='a-left control-c prev slick-prev' src='/media/1012/prev_60x60.png'>",
       nextArrow:"<img class='a-right control-c next slick-next' src='/media/1013/next_60x60.png'>",
       dots: true,
@@ -123,7 +123,7 @@
   ]
 
 });
-        $('.slider4').slick({
+        $('.slider-4').slick({
       	prevArrow:"<img class='a-left control-c prev slick-prev' src='/media/1012/prev_60x60.png'>",
       nextArrow:"<img class='a-right control-c next slick-next' src='/media/1013/next_60x60.png'>",
       dots: true,
@@ -164,7 +164,7 @@
   ]
 
 });
-      $('.slider5').slick({
+      $('.slider-5').slick({
       	prevArrow:"<img class='a-left control-c prev slick-prev' src='/media/1012/prev_60x60.png'>",
       nextArrow:"<img class='a-right control-c next slick-next' src='/media/1013/next_60x60.png'>",
       dots: true,
