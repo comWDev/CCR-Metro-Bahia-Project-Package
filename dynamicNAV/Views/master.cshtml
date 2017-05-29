@@ -45,7 +45,8 @@
 }
 
 .popover2 {
-    border: 0;
+    border-top: 1px solid #134bab;
+    border-radius: 0;
     margin-left: -42px !important;
     width: 127px !important;
     max-width: 127px;
@@ -54,25 +55,42 @@
 
  /* Popover */
 .popover {
-    border: 0;
+    font-family: 'robotoregular', Arial, sans-serif !important;
+    font-size: 16px;
+    line-height: 23px;
+    color: #134bab;
+    border-top: 2px solid #134bab;
+    border-radius: 0;
+    background-color: #f0f0f0; 
     margin-left: 27px;
     z-index: 999999;
-    max-width: 125px;
+    width: 127px !important;
+    max-width: 127px;
+    text-align: center;
 }
 
 /* Popover Header */
 .popover-title {
-    background-color: #73AD21; 
-    color: #FFFFFF; 
-    font-size: 28px;
+    border-bottom: 2px solid #FFFFFF !important;
+    padding-top: 8px !important;
+    background-color: #f0f0f0; 
+    color: #134bab; 
+    font-size: 12px;
     text-align:center;
 }
 
 /* Popover Body */
 .popover-content {
+    border: 0;
+    border-radius: 0;
     background-color: #f0f0f0;
-    color: #FFFFFF;
-    padding: 25px;
+    color: #134bab;
+    font-size: 12px;
+    padding: 10px;
+}
+
+.popAlt {
+    padding-bottom:0 !important;
 }
 
     /* Popover Arrow */
@@ -138,16 +156,19 @@
 <script type="text/javascript">
 $(document).ready(function(){
     $("#clockPopover").popover({
-        content : "<p>HORARIO</p>",
+        title: "HORARIO<br><p>0800 071 8020</p>",
+        content : "<p>SEG a SEX,<br>7 às 22 horas.</p><p>SEG a SEX,<br>7 às 22 horas.</p>",
         placement: "bottom",
         trigger: "click",
-        template: '<div class="popover popover2"><div class="arrow"></div><div class="popover-inner"><h3 class="popover-title"></h3><div class="popover-content"><p></p></div></div></div>', 
+        template: '<div class="popover popover2"><div class="arrow"></div><div class="popover-inner"><h3 class="popover-title popAlt"></h3><div class="popover-content popAlt"></div></div></div>', 
         html: true
     });
     $("#phonePopover").popover({
-        content : "<p>CENTRAL DE ATENDIMENTO</p>",
+        title: "HORARIO<br><p>0800 071 8020</p>",
+        content : "<p>SEG a SEX,<br>7 às 22 horas.</p><p>SEG a SEX,<br>7 às 22 horas.</p>",
         placement: "bottom",
         trigger: "click",
+        template: '<div class="popover"><div class="arrow"></div><div class="popover-inner"><h3 class="popover-title popAlt"></h3><div class="popover-content popAlt"></div></div></div>', 
         html: true
     }); 
 });
