@@ -55,21 +55,21 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Sub Icon
-		///</summary>
-		[ImplementPropertyType("subIcon")]
-		public IPublishedContent SubIcon
-		{
-			get { return this.GetPropertyValue<IPublishedContent>("subIcon"); }
-		}
-
-		///<summary>
 		/// Sub Title
 		///</summary>
 		[ImplementPropertyType("subTitle")]
 		public string SubTitle
 		{
 			get { return this.GetPropertyValue<string>("subTitle"); }
+		}
+
+		///<summary>
+		/// Sub Title Icon
+		///</summary>
+		[ImplementPropertyType("subTitleIcon")]
+		public IPublishedContent SubTitleIcon
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("subTitleIcon"); }
 		}
 
 		///<summary>

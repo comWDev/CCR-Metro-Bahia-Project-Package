@@ -22,7 +22,7 @@ namespace Umbraco.Web.PublishedContentModels
 {
 	/// <summary>Guia Content Page</summary>
 	[PublishedContentModel("guiaContentPage")]
-	public partial class GuiaContentPage : GuiaDoUsuario, ICustomTabs
+	public partial class GuiaContentPage : GuiaDoUsuario, ICustomTabs, IPageSubContentBlock
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "guiaContentPage";
@@ -55,15 +55,6 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Page Body Text
-		///</summary>
-		[ImplementPropertyType("pageBodyText")]
-		public IHtmlString PageBodyText
-		{
-			get { return this.GetPropertyValue<IHtmlString>("pageBodyText"); }
-		}
-
-		///<summary>
 		/// Slider Pictures
 		///</summary>
 		[ImplementPropertyType("sliderPictures")]
@@ -73,12 +64,30 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// customTabsA
+		///</summary>
+		[ImplementPropertyType("customTabsA")]
+		public Archetype.Models.ArchetypeModel CustomTabsA
+		{
+			get { return Umbraco.Web.PublishedContentModels.CustomTabs.GetCustomTabsA(this); }
+		}
+
+		///<summary>
+		/// Page Body Text
+		///</summary>
+		[ImplementPropertyType("pageBodyText")]
+		public IHtmlString PageBodyText
+		{
+			get { return Umbraco.Web.PublishedContentModels.PageSubContentBlock.GetPageBodyText(this); }
+		}
+
+		///<summary>
 		/// Sub Title
 		///</summary>
 		[ImplementPropertyType("subTitle")]
 		public string SubTitle
 		{
-			get { return this.GetPropertyValue<string>("subTitle"); }
+			get { return Umbraco.Web.PublishedContentModels.PageSubContentBlock.GetSubTitle(this); }
 		}
 
 		///<summary>
@@ -87,16 +96,7 @@ namespace Umbraco.Web.PublishedContentModels
 		[ImplementPropertyType("subTitleIcon")]
 		public IPublishedContent SubTitleIcon
 		{
-			get { return this.GetPropertyValue<IPublishedContent>("subTitleIcon"); }
-		}
-
-		///<summary>
-		/// customTabsA
-		///</summary>
-		[ImplementPropertyType("customTabsA")]
-		public Archetype.Models.ArchetypeModel CustomTabsA
-		{
-			get { return Umbraco.Web.PublishedContentModels.CustomTabs.GetCustomTabsA(this); }
+			get { return Umbraco.Web.PublishedContentModels.PageSubContentBlock.GetSubTitleIcon(this); }
 		}
 	}
 }

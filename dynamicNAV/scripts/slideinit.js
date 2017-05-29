@@ -1,5 +1,210 @@
 
     $(document).ready(function(){
+        $('.slider1').slick({
+      	prevArrow:"<img class='a-left control-c prev slick-prev' src='/media/1012/prev_60x60.png'>",
+      nextArrow:"<img class='a-right control-c next slick-next' src='/media/1013/next_60x60.png'>",
+      dots: true,
+  infinite: true,
+  autoplay: true,
+  autoplaySpeed: 5500,
+  speed: 1000,
+  cssEase: 'cubic-bezier(.51,.01,.52,.99)',
+  arrows: true,
+
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        infinite: true,
+        arrows: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        infinite: true,
+        arrows: false,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        arrows: false,
+        dots:false,
+      }
+    }
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+  ]
+
+});
+        $('.slider2').slick({
+      	prevArrow:"<img class='a-left control-c prev slick-prev' src='/media/1012/prev_60x60.png'>",
+      nextArrow:"<img class='a-right control-c next slick-next' src='/media/1013/next_60x60.png'>",
+      dots: true,
+  infinite: true,
+  autoplay: true,
+  autoplaySpeed: 5500,
+  speed: 1000,
+  cssEase: 'cubic-bezier(.51,.01,.52,.99)',
+  arrows: true,
+
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        infinite: true,
+        arrows: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        infinite: true,
+        arrows: false,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        arrows: false,
+        dots:false,
+      }
+    }
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+  ]
+
+});
+        $('.slider3').slick({
+      	prevArrow:"<img class='a-left control-c prev slick-prev' src='/media/1012/prev_60x60.png'>",
+      nextArrow:"<img class='a-right control-c next slick-next' src='/media/1013/next_60x60.png'>",
+      dots: true,
+  infinite: true,
+  autoplay: true,
+  autoplaySpeed: 5500,
+  speed: 1000,
+  cssEase: 'cubic-bezier(.51,.01,.52,.99)',
+  arrows: true,
+
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        infinite: true,
+        arrows: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        infinite: true,
+        arrows: false,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        arrows: false,
+        dots:false,
+      }
+    }
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+  ]
+
+});
+        $('.slider4').slick({
+      	prevArrow:"<img class='a-left control-c prev slick-prev' src='/media/1012/prev_60x60.png'>",
+      nextArrow:"<img class='a-right control-c next slick-next' src='/media/1013/next_60x60.png'>",
+      dots: true,
+  infinite: true,
+  autoplay: true,
+  autoplaySpeed: 5500,
+  speed: 1000,
+  cssEase: 'cubic-bezier(.51,.01,.52,.99)',
+  arrows: true,
+
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        infinite: true,
+        arrows: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        infinite: true,
+        arrows: false,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        arrows: false,
+        dots:false,
+      }
+    }
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+  ]
+
+});
+      $('.slider5').slick({
+      	prevArrow:"<img class='a-left control-c prev slick-prev' src='/media/1012/prev_60x60.png'>",
+      nextArrow:"<img class='a-right control-c next slick-next' src='/media/1013/next_60x60.png'>",
+      dots: true,
+  infinite: true,
+  autoplay: true,
+  autoplaySpeed: 5500,
+  speed: 1000,
+  cssEase: 'cubic-bezier(.51,.01,.52,.99)',
+  arrows: true,
+
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        infinite: true,
+        arrows: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        infinite: true,
+        arrows: false,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        arrows: false,
+        dots:false,
+      }
+    }
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+  ]
+
+});
       $('.sliderTemp').slick({
       	prevArrow:"<img class='a-left control-c prev slick-prev' src='/media/1012/prev_60x60.png'>",
       nextArrow:"<img class='a-right control-c next slick-next' src='/media/1013/next_60x60.png'>",

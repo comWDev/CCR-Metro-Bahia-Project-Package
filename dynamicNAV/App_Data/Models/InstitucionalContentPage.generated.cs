@@ -22,7 +22,7 @@ namespace Umbraco.Web.PublishedContentModels
 {
 	/// <summary>Institucional Content Page</summary>
 	[PublishedContentModel("institucionalContentPage")]
-	public partial class InstitucionalContentPage : Institucional
+	public partial class InstitucionalContentPage : Institucional, ICustomTabs1, IPageSubContentBlock, ISliderPicturesComponent
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "institucionalContentPage";
@@ -46,12 +46,21 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Tabs Slider
+		///</summary>
+		[ImplementPropertyType("tabsSlider")]
+		public Archetype.Models.ArchetypeModel TabsSlider
+		{
+			get { return Umbraco.Web.PublishedContentModels.CustomTabs1.GetTabsSlider(this); }
+		}
+
+		///<summary>
 		/// Page Body Text
 		///</summary>
 		[ImplementPropertyType("pageBodyText")]
 		public IHtmlString PageBodyText
 		{
-			get { return this.GetPropertyValue<IHtmlString>("pageBodyText"); }
+			get { return Umbraco.Web.PublishedContentModels.PageSubContentBlock.GetPageBodyText(this); }
 		}
 
 		///<summary>
@@ -60,7 +69,7 @@ namespace Umbraco.Web.PublishedContentModels
 		[ImplementPropertyType("subTitle")]
 		public string SubTitle
 		{
-			get { return this.GetPropertyValue<string>("subTitle"); }
+			get { return Umbraco.Web.PublishedContentModels.PageSubContentBlock.GetSubTitle(this); }
 		}
 
 		///<summary>
@@ -69,7 +78,16 @@ namespace Umbraco.Web.PublishedContentModels
 		[ImplementPropertyType("subTitleIcon")]
 		public IPublishedContent SubTitleIcon
 		{
-			get { return this.GetPropertyValue<IPublishedContent>("subTitleIcon"); }
+			get { return Umbraco.Web.PublishedContentModels.PageSubContentBlock.GetSubTitleIcon(this); }
+		}
+
+		///<summary>
+		/// Slider Pictures Picker
+		///</summary>
+		[ImplementPropertyType("sliderPictures")]
+		public IEnumerable<IPublishedContent> SliderPictures
+		{
+			get { return Umbraco.Web.PublishedContentModels.SliderPicturesComponent.GetSliderPictures(this); }
 		}
 	}
 }

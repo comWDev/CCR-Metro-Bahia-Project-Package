@@ -3,7 +3,11 @@
 @{
 	Layout = "Institucional.cshtml";
 }
+<!-- ------------------ Dynamic Header ------------------ -->
 
+@Html.Partial("archetypeSHeadPartial-Inst")
+
+<!-- ------------------ Dynamic Header ------------------ -->
   <div class="mobileMargins container-fluid col-centered">
     <div class="container-fluid greyBody"  style="max-width: 1200px; background-color: #f9f9f9;">
     <div class="row col-12-md">
@@ -30,5 +34,29 @@
       <p>@Umbraco.Field("pageBodyText", removeParagraphTags: true)</p>
 
     </div>
-    
+
+<div class="row col-md-12 body-copy">
+    <!-- ------------------ Slider ------------------ -->
+  
+      <div class="@Umbraco.Field("tabNumero")" style="margin-bottom: 50px">
+
+@if (Model.Content.HasValue("sliderPictures"))
+{
+    var caseStudyImagesCollection = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("sliderPictures");
+
+    foreach (var sliderPictures in caseStudyImagesCollection)
+        {      
+            <div><img  class="img-responsive multiSlides" src="@sliderPictures.Url" /></div>      
+        }                                                               
+}
+  </div>
+
+<!-- ------------------ Slider ------------------ -->
+</div>
+<div class="row col-md-12 body-copy">
+<!-- ------------------ Tabs ------------------ -->
+
+
+<!-- ------------------ Tabs ------------------ -->    
+</div>
 </div>
