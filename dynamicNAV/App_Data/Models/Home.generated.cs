@@ -46,6 +46,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// atendimentoNum
+		///</summary>
+		[ImplementPropertyType("atendimentoNum")]
+		public Archetype.Models.ArchetypeModel AtendimentoNum
+		{
+			get { return this.GetPropertyValue<Archetype.Models.ArchetypeModel>("atendimentoNum"); }
+		}
+
+		///<summary>
 		/// Grid Content
 		///</summary>
 		[ImplementPropertyType("gridContent")]

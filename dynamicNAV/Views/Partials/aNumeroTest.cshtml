@@ -1,0 +1,39 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using Archetype.Models;
+@using Archetype.Extensions;
+
+
+@{
+var menuData = Model.Content.AncestorOrSelf("home").GetPropertyValue<ArchetypeModel>("atendimentoNum");
+
+
+foreach(var fieldset in menuData)
+{
+   
+  <script type="text/javascript">
+$(document).ready(function(){
+    $("#clockPopover").popover({
+         title: "<p class='popAlt'>HORARIO<br></p><p class='popNumero'></p>",
+        content : "<p class='popHoras'><span class='popHorasBold'>SEG a SEX,</span><br>7 às 22 horas.</p><p class='popHoras'><span class='popHorasBold'>SÁB,</span><br>7 às 22 horas.</p>",
+        placement: "bottom",
+        trigger: "click",
+        template: '<div class="popover popover2"><div class="arrow"></div><div class="popover-inner"><h3 class="popover-title popAlt"></h3><p></p><p>@fieldset.GetValue("atendimentoNumero")</p><div class="popover-content popAlt"><p class="popHoras"></p><p class="popHoras"></p></div></div></div>', 
+        html: true
+    });
+    $("#phonePopover").popover({
+        title: "<p class='popAlt'>CENTRAL DE ATENDIMENTO<br></p><p class='popNumero'>0800 071 8020</p>",
+        content : "<p class='popHoras'><span class='popHorasBold'>SEG a SEX,</span><br>7 às 22 horas.</p><p class='popHoras'><span class='popHorasBold'>SÁB,</span><br>7 às 22 horas.</p>",
+        placement: "bottom",
+        trigger: "click",
+        template: '<div class="popover"><div class="arrow"></div><div class="popover-inner"><h3 class="popover-title popAlt"></h3><div class="popover-content popAlt"><p class="popHoras"></p><p class="popHoras"></p></div></div></div>', 
+        html: true
+    }); 
+});
+</script>
+  
+  
+  
+  
+
+  }
+  }

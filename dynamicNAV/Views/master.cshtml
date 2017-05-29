@@ -37,66 +37,6 @@
 <!-- SEO END -->
 	<style type="text/css">
 
-.clockPosition {
-    float:right;
-}
-.phonePosition {
-    float:right;
-}
-
-.popover2 {
-    border-top: 1px solid #134bab;
-    border-radius: 0;
-    margin-left: -42px !important;
-    width: 127px !important;
-    max-width: 127px;
-    z-index: 999999;
-}
-
- /* Popover */
-.popover {
-    font-family: 'robotoregular', Arial, sans-serif !important;
-    font-size: 16px;
-    line-height: 23px;
-    color: #134bab;
-    border-top: 2px solid #134bab;
-    border-radius: 0;
-    background-color: #f0f0f0; 
-    margin-left: 27px;
-    z-index: 999999;
-    width: 127px !important;
-    max-width: 127px;
-    text-align: center;
-}
-
-/* Popover Header */
-.popover-title {
-    border-bottom: 2px solid #FFFFFF !important;
-    padding-top: 8px !important;
-    background-color: #f0f0f0; 
-    color: #134bab; 
-    font-size: 12px;
-    text-align:center;
-}
-
-/* Popover Body */
-.popover-content {
-    border: 0;
-    border-radius: 0;
-    background-color: #f0f0f0;
-    color: #134bab;
-    font-size: 12px;
-    padding: 10px;
-}
-
-.popAlt {
-    padding-bottom:0 !important;
-}
-
-    /* Popover Arrow */
-.arrow {
-    display: none !important;
-}
     
 </style>
   </head>
@@ -153,26 +93,7 @@
 <!-- initialization script -->
     <script type="text/javascript" src="/scripts/slideinit.js"></script>
 <!-- Popover Time initialization script -->
-<script type="text/javascript">
-$(document).ready(function(){
-    $("#clockPopover").popover({
-        title: "HORARIO<br><p>0800 071 8020</p>",
-        content : "<p>SEG a SEX,<br>7 às 22 horas.</p><p>SEG a SEX,<br>7 às 22 horas.</p>",
-        placement: "bottom",
-        trigger: "click",
-        template: '<div class="popover popover2"><div class="arrow"></div><div class="popover-inner"><h3 class="popover-title popAlt"></h3><div class="popover-content popAlt"></div></div></div>', 
-        html: true
-    });
-    $("#phonePopover").popover({
-        title: "HORARIO<br><p>0800 071 8020</p>",
-        content : "<p>SEG a SEX,<br>7 às 22 horas.</p><p>SEG a SEX,<br>7 às 22 horas.</p>",
-        placement: "bottom",
-        trigger: "click",
-        template: '<div class="popover"><div class="arrow"></div><div class="popover-inner"><h3 class="popover-title popAlt"></h3><div class="popover-content popAlt"></div></div></div>', 
-        html: true
-    }); 
-});
-</script>
+  @Html.Partial("archetypeANumero")
 
   </body>
 </html>
