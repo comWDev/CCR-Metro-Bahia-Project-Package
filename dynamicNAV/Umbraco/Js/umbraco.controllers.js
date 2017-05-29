@@ -4259,17 +4259,16 @@ angular.module("umbraco").controller("Umbraco.Overlays.MemberGroupPickerControll
 
 })();
 
-(function () {
+(function() {
     "use strict";
 
     function QueryBuilderOverlayController($scope, templateQueryResource, localizationService) {
 
-        var everything = localizationService.localize("template_allContent");
-        var myWebsite = localizationService.localize("template_websiteRoot");
+        var everything = "";
+        var myWebsite = "";
+        var ascendingTranslation = "";
+        var descendingTranslation = "";
 
-        var ascendingTranslation = localizationService.localize("template_ascending");
-        var descendingTranslation = localizationService.localize("template_descending");
-    
         var vm = this;
 
         vm.properties = [];
@@ -4280,34 +4279,6 @@ angular.module("umbraco").controller("Umbraco.Overlays.MemberGroupPickerControll
             pickDate: true,
             pickTime: false,
             format: "YYYY-MM-DD"
-        };
-
-        vm.query = {
-            contentType: {
-                name: everything
-            },
-            source: {
-                name: myWebsite
-            },
-            filters: [
-                {
-                    property: undefined,
-                    operator: undefined
-                }
-            ],
-            sort: {
-                property: {
-                    alias: "",
-                    name: "",
-                },
-                direction: "ascending", //This is the value for sorting sent to server
-                translation: {
-                    currentLabel: ascendingTranslation, //This is the localized UI value in the the dialog
-                    ascending: ascendingTranslation,
-                    descending: descendingTranslation
-                }
-
-            }
         };
 
         vm.chooseSource = chooseSource;
@@ -4324,21 +4295,48 @@ angular.module("umbraco").controller("Umbraco.Overlays.MemberGroupPickerControll
 
         function onInit() {
 
+            vm.query = {
+                contentType: {
+                    name: everything
+                },
+                source: {
+                    name: myWebsite
+                },
+                filters: [
+                    {
+                        property: undefined,
+                        operator: undefined
+                    }
+                ],
+                sort: {
+                    property: {
+                        alias: "",
+                        name: "",
+                    },
+                    direction: "ascending", //This is the value for sorting sent to server
+                    translation: {
+                        currentLabel: ascendingTranslation, //This is the localized UI value in the the dialog
+                        ascending: ascendingTranslation,
+                        descending: descendingTranslation
+                    }
+                }
+            };
+
             templateQueryResource.getAllowedProperties()
-                .then(function (properties) {
+                .then(function(properties) {
                     vm.properties = properties;
                 });
 
             templateQueryResource.getContentTypes()
-                .then(function (contentTypes) {
+                .then(function(contentTypes) {
                     vm.contentTypes = contentTypes;
                 });
 
             templateQueryResource.getFilterConditions()
-                .then(function (conditions) {
+                .then(function(conditions) {
                     vm.conditions = conditions;
                 });
-                
+
             throttledFunc();
 
         }
@@ -4372,10 +4370,11 @@ angular.module("umbraco").controller("Umbraco.Overlays.MemberGroupPickerControll
         }
 
         function getPropertyOperators(property) {
-            var conditions = _.filter(vm.conditions, function (condition) {
-                var index = condition.appliesTo.indexOf(property.type);
-                return index >= 0;
-            });
+            var conditions = _.filter(vm.conditions,
+                function(condition) {
+                    var index = condition.appliesTo.indexOf(property.type);
+                    return index >= 0;
+                });
             return conditions;
         }
 
@@ -4384,10 +4383,8 @@ angular.module("umbraco").controller("Umbraco.Overlays.MemberGroupPickerControll
         }
 
         function trashFilter(query, filter) {
-            for (var i = 0; i < query.filters.length; i++)
-            {
-                if (query.filters[i] == filter)
-                {
+            for (var i = 0; i < query.filters.length; i++) {
+                if (query.filters[i] == filter) {
                     query.filters.splice(i, 1);
                 }
             }
@@ -4434,7 +4431,7 @@ angular.module("umbraco").controller("Umbraco.Overlays.MemberGroupPickerControll
 
         function setFilterTerm(filter, term) {
             filter.term = term;
-            if(filter.constraintValue) {
+            if (filter.constraintValue) {
                 throttledFunc();
             }
         }
@@ -4444,22 +4441,32 @@ angular.module("umbraco").controller("Umbraco.Overlays.MemberGroupPickerControll
         }
 
         function datePickerChange(event, filter) {
-            if(event.date && event.date.isValid()) {
+            if (event.date && event.date.isValid()) {
                 filter.constraintValue = event.date.format(vm.datePickerConfig.format);
                 throttledFunc();
             }
         }
 
-        var throttledFunc = _.throttle(function () {
-            
-            templateQueryResource.postTemplateQuery(vm.query)
-                .then(function (response) {
-                    $scope.model.result = response;
-                });
+        var throttledFunc = _.throttle(function() {
 
-        }, 200);
+                templateQueryResource.postTemplateQuery(vm.query)
+                    .then(function(response) {
+                        $scope.model.result = response;
+                    });
 
-        onInit();
+            },
+            200);
+
+        localizationService.localizeMany([
+                "template_allContent", "template_websiteRoot", "template_ascending", "template_descending"
+            ])
+            .then(function(res) {
+                everything = res[0];
+                myWebsite = res[1];
+                ascendingTranslation = res[2];
+                descendingTranslation = res[3];
+                onInit();
+            });
     }
 
     angular.module("umbraco").controller("Umbraco.Overlays.QueryBuilderController", QueryBuilderOverlayController);
@@ -13314,11 +13321,18 @@ angular.module("umbraco")
 
 angular.module("umbraco")
     .controller("Umbraco.PropertyEditors.Grid.MediaController",
-    function ($scope, $rootScope, $timeout) {
+    function ($scope, $rootScope, $timeout, userService) {
+
+        if (!$scope.model.config.startNodeId) {
+            userService.getCurrentUser().then(function (userData) {
+                $scope.model.config.startNodeId = userData.startMediaId;
+            });
+        }
 
         $scope.setImage = function(){
             $scope.mediaPickerOverlay = {};
             $scope.mediaPickerOverlay.view = "mediapicker";
+            $scope.mediaPickerOverlay.startNodeId = $scope.model.config && $scope.model.config.startNodeId ? $scope.model.config.startNodeId : undefined;
             $scope.mediaPickerOverlay.cropSize = $scope.control.editor.config && $scope.control.editor.config.size ? $scope.control.editor.config.size : undefined;
             $scope.mediaPickerOverlay.showDetails = true;
             $scope.mediaPickerOverlay.disableFolderSelect = true;
@@ -16445,10 +16459,9 @@ angular.module('umbraco').controller("Umbraco.PropertyEditors.MediaPickerControl
                // content picker. THen we don't have to worry about setting ids, render models, models, we just set one and let the
                // watch do all the rest.
                 $timeout(function(){
-                    angular.forEach($scope.images, function(value, key){
-                        r.push(value.id);
+                    angular.forEach($scope.images, function(value, key) {
+                        r.push($scope.model.config.idType === "udi" ? value.udi : value.id);
                     });
-
                     $scope.ids = r;
                     $scope.sync();
                 }, 500, false);

@@ -15,8 +15,9 @@
     <title>@Umbraco.Field("pageName") | CCR Metrô Bahia</title>
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="~/css/bootstrap.css">
-    <link rel="stylesheet" href="~/css/main.css">
+    <link rel="stylesheet" type="text/css" href="~/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="~/css/main.css">
+    <link rel="stylesheet" type="text/css" href="~/css/sample_styles.css"/>    
     <!-- slick carosel -->
     <link rel="stylesheet" type="text/css" href="~/slick/slick.css"/>
     <!-- slick-theme.css if you want the default styling -->
@@ -34,7 +35,52 @@
 	<meta name="description" content="@Umbraco.Field("seoMetaDescription", removeParagraphTags: true)">
 	
 <!-- SEO END -->
-		
+	<style type="text/css">
+
+.clockPosition {
+    float:right;
+}
+.phonePosition {
+    float:right;
+}
+
+.popover2 {
+    border: 0;
+    margin-left: -42px !important;
+    width: 127px !important;
+    max-width: 127px;
+    z-index: 999999;
+}
+
+ /* Popover */
+.popover {
+    border: 0;
+    margin-left: 27px;
+    z-index: 999999;
+    max-width: 125px;
+}
+
+/* Popover Header */
+.popover-title {
+    background-color: #73AD21; 
+    color: #FFFFFF; 
+    font-size: 28px;
+    text-align:center;
+}
+
+/* Popover Body */
+.popover-content {
+    background-color: #f0f0f0;
+    color: #FFFFFF;
+    padding: 25px;
+}
+
+    /* Popover Arrow */
+.arrow {
+    display: none !important;
+}
+    
+</style>
   </head>
 
   <body data-spy="scroll" data-target=".navbar" data-offset="50">
@@ -49,10 +95,10 @@
 
           <div class="flagWrap"><a href="#"><img src="/media/1008/flag_us.png" alt=""/></a></div>
 
-          <a href="#"><img class="clockStyle" src="/media/1007/clock-icon.png" alt=""></a>
 
-          
-          <a href="#"><img class="phoneWrap" src="/media/1009/phone-icon.png" alt=""></a>
+          <a href="#" class="clockPosition" id="clockPopover" data-toggle="popover"><img class="clockStyle" src="/media/1007/clock-icon.png" alt=""></a>
+
+          <a href="#" class="phonePosition" id="phonePopover" data-toggle="popover" ><img class="phoneWrap" src="/media/1009/phone-icon.png" alt=""></a>
 
         </div>
       </div>
@@ -83,10 +129,29 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="~/scripts/bootstrap.min.js"></script>
-  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <!-- <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script> -->
 <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script type="text/javascript" src="~/slick/slick.min.js"></script>
 <!-- initialization script -->
     <script type="text/javascript" src="/scripts/slideinit.js"></script>
+<!-- Popover Time initialization script -->
+<script type="text/javascript">
+$(document).ready(function(){
+    $("#clockPopover").popover({
+        content : "<p>HORARIO</p>",
+        placement: "bottom",
+        trigger: "click",
+        template: '<div class="popover popover2"><div class="arrow"></div><div class="popover-inner"><h3 class="popover-title"></h3><div class="popover-content"><p></p></div></div></div>', 
+        html: true
+    });
+    $("#phonePopover").popover({
+        content : "<p>CENTRAL DE ATENDIMENTO</p>",
+        placement: "bottom",
+        trigger: "click",
+        html: true
+    }); 
+});
+</script>
+
   </body>
 </html>

@@ -22,7 +22,7 @@ namespace Umbraco.Web.PublishedContentModels
 {
 	/// <summary>Guia Content Page</summary>
 	[PublishedContentModel("guiaContentPage")]
-	public partial class GuiaContentPage : GuiaDoUsuario, ICustomTabs, IPageGridAreaContent
+	public partial class GuiaContentPage : GuiaDoUsuario, ICustomTabs
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "guiaContentPage";
@@ -43,6 +43,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<GuiaContentPage, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Grid Area
+		///</summary>
+		[ImplementPropertyType("gridArea")]
+		public Newtonsoft.Json.Linq.JToken GridArea
+		{
+			get { return this.GetPropertyValue<Newtonsoft.Json.Linq.JToken>("gridArea"); }
 		}
 
 		///<summary>
@@ -88,15 +97,6 @@ namespace Umbraco.Web.PublishedContentModels
 		public Archetype.Models.ArchetypeModel CustomTabsA
 		{
 			get { return Umbraco.Web.PublishedContentModels.CustomTabs.GetCustomTabsA(this); }
-		}
-
-		///<summary>
-		/// Grid Layout
-		///</summary>
-		[ImplementPropertyType("gridLayout")]
-		public Newtonsoft.Json.Linq.JToken GridLayout
-		{
-			get { return Umbraco.Web.PublishedContentModels.PageGridAreaContent.GetGridLayout(this); }
 		}
 	}
 }

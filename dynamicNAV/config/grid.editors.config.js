@@ -47,7 +47,7 @@
         "name": "Carousel",
         "alias": "carousel",
         "view": "/App_Plugins/LeBlender/editors/leblendereditor/LeBlendereditor.html",
-        "icon": "icon-photo-album",
+        "icon": "icon-picture",
         "render": "/App_Plugins/LeBlender/editors/leblendereditor/views/Base.cshtml",
         "config": {
             "editors": [
@@ -67,13 +67,53 @@
                     "name": "Summary",
                     "alias": "summary",
                     "propretyType": {},
-                    "dataType": "0cc0eba1-9960-42c9-bf9b-60e150b429ae"
+                    "dataType": "c6bac0dd-4ab9-45b1-8e30-e4b619ee5da3"
                 }
             ],
             "renderInGrid": "1",
             "min": 1,
             "max": 10,
-            "frontView": ""
+            "frontView": "/App_Plugins/LeBlender/editors/leblendereditor/views/LeBlender.cshtml",
+            "expiration": 1
+        }
+    },
+    {
+        "name": "Highlight",
+        "alias": "highlight",
+        "view": "/App_Plugins/LeBlender/editors/leblendereditor/LeBlendereditor.html",
+        "icon": "icon-alert-alt",
+        "render": "/App_Plugins/LeBlender/editors/leblendereditor/views/Base.cshtml",
+        "config": {
+            "editors": [
+                {
+                    "name": "Image",
+                    "alias": "image",
+                    "propretyType": {},
+                    "dataType": "135d60e0-64d9-49ed-ab08-893c9ba44ae5"
+                },
+                {
+                    "name": "Title",
+                    "alias": "title",
+                    "propretyType": {},
+                    "dataType": "0cc0eba1-9960-42c9-bf9b-60e150b429ae"
+                },
+                {
+                    "name": "Summary",
+                    "alias": "summary",
+                    "propretyType": {},
+                    "dataType": "c6bac0dd-4ab9-45b1-8e30-e4b619ee5da3"
+                },
+                {
+                    "name": "Content",
+                    "alias": "content",
+                    "propretyType": {},
+                    "dataType": "c6bac0dd-4ab9-45b1-8e30-e4b619ee5da3"
+                }
+            ],
+            "renderInGrid": "1",
+            "frontView": "",
+            "min": 1,
+            "max": 3
         }
     }
 ]

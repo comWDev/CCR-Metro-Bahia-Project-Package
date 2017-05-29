@@ -1,5 +1,4 @@
-﻿
-@inherits UmbracoViewPage<Lecoati.LeBlender.Extension.Models.LeBlenderModel>
+﻿@inherits UmbracoViewPage<Lecoati.LeBlender.Extension.Models.LeBlenderModel>
 
 @{
     Layout = "";
@@ -26,8 +25,7 @@
                     <img src="@(item.GetValue<string>("image") != "" ? Umbraco.TypedMedia(item.GetValue<string>("image")).Url : "http://lorempixel.com/1200/600/sports/" + (Model.Items.IndexOf(item) + 1))" alt="@item.GetValue("title")">
                     <div class="carousel-caption">
                         <h3>@item.GetValue("title")</h3>
-                                                <p>@item.GetValue("summary")</p>
-
+                        <p>@item.GetValue("summary")</p>
                     </div>
                 </div>
             }
@@ -46,3 +44,5 @@
     </div>
 
 }
+Contact GitHub API Training Shop Blog About
+© 2017 GitHub, Inc. Terms Privacy Security Status Help

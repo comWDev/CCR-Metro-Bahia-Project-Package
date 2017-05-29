@@ -20,17 +20,9 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.Web.PublishedContentModels
 {
-	// Mixin content Type 1322 with alias "pageGridAreaContent"
-	/// <summary>Page Grid Area Content</summary>
-	public partial interface IPageGridAreaContent : IPublishedContent
-	{
-		/// <summary>Grid Layout</summary>
-		Newtonsoft.Json.Linq.JToken GridLayout { get; }
-	}
-
 	/// <summary>Page Grid Area Content</summary>
 	[PublishedContentModel("pageGridAreaContent")]
-	public partial class PageGridAreaContent : PublishedContentModel, IPageGridAreaContent
+	public partial class PageGridAreaContent : PublishedContentModel
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "pageGridAreaContent";
@@ -59,10 +51,7 @@ namespace Umbraco.Web.PublishedContentModels
 		[ImplementPropertyType("gridLayout")]
 		public Newtonsoft.Json.Linq.JToken GridLayout
 		{
-			get { return GetGridLayout(this); }
+			get { return this.GetPropertyValue<Newtonsoft.Json.Linq.JToken>("gridLayout"); }
 		}
-
-		/// <summary>Static getter for Grid Layout</summary>
-		public static Newtonsoft.Json.Linq.JToken GetGridLayout(IPageGridAreaContent that) { return that.GetPropertyValue<Newtonsoft.Json.Linq.JToken>("gridLayout"); }
 	}
 }
