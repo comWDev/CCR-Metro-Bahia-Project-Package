@@ -23,13 +23,17 @@
 
 <div class="slider-@fieldset.GetValue("tabNumero")" style="margin-bottom: 50px">
 
-@{
-    var typedMultiMediaPicker = fieldset.GetValue<IEnumerable<IPublishedContent>>("selectImage");
-    foreach (var item in typedMultiMediaPicker)
+@{  var typedMultiMediaPicker = fieldset.GetValue<IEnumerable<IPublishedContent>>("selectImage");
+    var multiMediaPicker = typedMultiMediaPicker as IList<IPublishedContent> ?? typedMultiMediaPicker.ToList();
+    if (multiMediaPicker.Any())
     {
-        <div><img  class="img-responsive multiSlides" src="@item.Url" /></div>
+    foreach (var item in multiMediaPicker)
+    {
+        <div><img class="img-responsive multiSlides" src="@item.Url"/></div>
     }
 }
+}
+
   </div>
 
 
