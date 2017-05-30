@@ -44,14 +44,5 @@ namespace Umbraco.Web.PublishedContentModels
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
-
-		///<summary>
-		/// Grid Layout
-		///</summary>
-		[ImplementPropertyType("gridLayout")]
-		public Newtonsoft.Json.Linq.JToken GridLayout
-		{
-			get { return this.GetPropertyValue<Newtonsoft.Json.Linq.JToken>("gridLayout"); }
-		}
 	}
 }

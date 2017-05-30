@@ -46,12 +46,12 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Grid Area
+		/// LeGridBitches
 		///</summary>
-		[ImplementPropertyType("gridArea")]
-		public Newtonsoft.Json.Linq.JToken GridArea
+		[ImplementPropertyType("leGridBitches")]
+		public Newtonsoft.Json.Linq.JToken LeGridBitches
 		{
-			get { return this.GetPropertyValue<Newtonsoft.Json.Linq.JToken>("gridArea"); }
+			get { return this.GetPropertyValue<Newtonsoft.Json.Linq.JToken>("leGridBitches"); }
 		}
 
 		///<summary>
