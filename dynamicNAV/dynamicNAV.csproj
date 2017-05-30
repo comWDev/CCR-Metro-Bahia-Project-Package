@@ -432,7 +432,6 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\Partials\Grid\Editors\Base.cshtml" />
     <Content Include="config\trees.config" />
-    <Content Include="App_Plugins\Grid\package.manifest" />
     <Content Include="Views\Partials\Grid\Editors\Textstring.cshtml" />
     <Content Include="Views\Partials\Grid\Editors\Rte.cshtml" />
     <Content Include="Views\Partials\Grid\Editors\Media.cshtml" />
