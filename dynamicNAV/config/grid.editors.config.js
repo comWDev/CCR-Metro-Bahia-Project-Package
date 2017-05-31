@@ -76,5 +76,97 @@
             "max": 5,
             "expiration": 120
         }
+    },
+    {
+        "name": "Highlight",
+        "alias": "highlight",
+        "view": "/App_Plugins/LeBlender/editors/leblendereditor/LeBlendereditor.html",
+        "icon": "icon-lightbulb-active",
+        "render": "/App_Plugins/LeBlender/editors/leblendereditor/views/Base.cshtml",
+        "config": {
+            "editors": [
+                {
+                    "name": "Image",
+                    "alias": "image",
+                    "propretyType": {},
+                    "dataType": "760b113c-199f-4095-a450-c8f3ff785c2a"
+                },
+                {
+                    "name": "Title",
+                    "alias": "title",
+                    "propretyType": {},
+                    "dataType": "0cc0eba1-9960-42c9-bf9b-60e150b429ae"
+                },
+                {
+                    "name": "Summary",
+                    "alias": "summary",
+                    "propretyType": {},
+                    "dataType": "c6bac0dd-4ab9-45b1-8e30-e4b619ee5da3"
+                }
+            ],
+            "min": 1,
+            "max": 1,
+            "expiration": 120,
+            "frontView": "~/Views/Partials/Grid/Editors/highlight.cshtml",
+            "renderInGrid": "1"
+        }
+    },
+    {
+        "name": "tabs",
+        "alias": "tabs",
+        "view": "/App_Plugins/LeBlender/editors/leblendereditor/LeBlendereditor.html",
+        "icon": "icon-panel-show",
+        "render": "/App_Plugins/LeBlender/editors/leblendereditor/views/Base.cshtml",
+        "config": {
+            "editors": [
+                {
+                    "name": "Nome",
+                    "alias": "nome",
+                    "propretyType": {},
+                    "dataType": "0cc0eba1-9960-42c9-bf9b-60e150b429ae"
+                },
+                {
+                    "name": "Tab Numero",
+                    "alias": "tabNumero",
+                    "propretyType": {},
+                    "dataType": "0cc0eba1-9960-42c9-bf9b-60e150b429ae"
+                },
+                {
+                    "name": "Tab Title",
+                    "alias": "tabTitle",
+                    "propretyType": {},
+                    "dataType": "0cc0eba1-9960-42c9-bf9b-60e150b429ae"
+                },
+                {
+                    "name": "Tab Texto",
+                    "alias": "tabTexto",
+                    "propretyType": {},
+                    "dataType": "bd079ef5-b716-4cff-9fa0-1456c8f9d169"
+                },
+                {
+                    "name": "Anchor ID",
+                    "alias": "anchorID",
+                    "propretyType": {},
+                    "dataType": "0cc0eba1-9960-42c9-bf9b-60e150b429ae"
+                },
+                {
+                    "name": "Select Image",
+                    "alias": "selectImage",
+                    "propretyType": {},
+                    "dataType": "2e42a328-793d-40f0-8736-356d9e1125b7"
+                },
+                {
+                    "name": "Tab Cor",
+                    "alias": "tabCor",
+                    "propretyType": {},
+                    "dataType": "32d0aed3-5538-4a65-b6cf-07bff8d8915a"
+                }
+            ],
+            "renderInGrid": "1",
+            "min": 0,
+            "max": 5,
+            "expiration": 120,
+            "frontView": ""
+        }
     }
 ]

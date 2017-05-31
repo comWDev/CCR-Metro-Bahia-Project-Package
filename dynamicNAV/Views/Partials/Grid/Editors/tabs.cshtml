@@ -1,0 +1,57 @@
+﻿@inherits UmbracoViewPage<Lecoati.LeBlender.Extension.Models.LeBlenderModel>
+
+@{
+    Layout = "";
+}
+
+
+@if (Model.Items.Any())
+{
+foreach (var item in Model.Items){
+<div class="panel panel-default" id="@item.GetValue("anchorID")" style=" border-radius: 0px; border: 0;  background-color: transparent;">
+    <div class="susPanelMobile panel-heading @item.GetValue("isOpen") style="height: 36px; padding: 0; background-color: #@item.GetValue("tabCor");">
+    <h2 class="accordionTitle"><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#@item.GetValue("nome")">
+        <div class="accordionTitle" style="height: 100%; width: 88%; float:left;">@item.GetValue("tabTitle")</div></a></h2>
+    </div>
+
+    <div id="@item.GetValue("nome")" class="panel-collapse collapse" style=" background-color: transparent;">
+      <div class="panel-body body-copy-grey" style="background-color: transparent;">
+
+            @Html.Raw(@item.GetValue<string>("tabTexto"))
+
+<div class="slider-@item.GetValue("tabNumero")" style="margin-bottom: 50px">
+
+            @{
+                if (@item.GetValue("selectImage")){
+                    var typedMultiMediaPicker = @item.GetValue<IEnumerable<IPublishedContent>>("selectImage");
+                    if (typedMultiMediaPicker != null)
+                    {
+                        foreach (var item2 in typedMultiMediaPicker)
+                        {
+                            <div>
+                                <img class="img-responsive multiSlides" src="@item2.Url"/>
+                            </div>
+                        }
+                    }
+
+                    var mediaPicker = item2.GetValue<IPublishedContent>("selectImage");
+                    if (mediaPicker != null)
+                    {
+                        <div>
+                            <img class="img-responsive multiSlides" src="@mediaPicker.Url"/>
+                        </div>
+                    }
+                }
+            }
+
+  </div>
+  
+
+
+
+      </div>
+    </div>
+  </div>
+  }
+
+  }
