@@ -1,4 +1,12 @@
 
+@font-face {
+  font-family: 'Glyphicons Halflings';
+
+  src: url('../../../fonts/glyphicons-halflings-regular.eot');
+  src: url('../../../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../../../fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('../../../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../../../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../../../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+
+
     .leblender-exception {
         overflow: hidden;
     }
@@ -55,47 +63,66 @@
 
     /* carousel */
 
-    #carousel-generic {
-        padding:10px;
-        margin:0;
-    }
+    .glyphicon {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
 
-    #carousel-generic .carousel-inner {
-        background: rgba(0,0,0,0.75);
-    }
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-    #carousel-generic .carousel-inner .item img {
+.glyphicon-chevron-left:before {
+  content: "\e079";
+}
+
+.glyphicon-chevron-right:before {
+  content: "\e080";
+}
+
+#carousel-generic .carousel-inner .item img {
         width:100%;
-    }
-
-    #carousel-generic .carousel-inner > .item:not(.active) {
-        display: table-cell;
-        max-width: 175px;
-        vertical-align: middle;
     }
 
     #carousel-generic .carousel-inner > .item:not(.active) .carousel-caption {
         display:none;
     }
 
-    #carousel-generic .carousel-caption {
+        #carousel-generic .carousel-control {
+        display:none;
+    }
+    #carousel-generic .carousel-inner > .item:not(.active) {
+        display: table-cell;
+        max-width: 175px;
+        vertical-align: middle;
+    }
+        #carousel-generic .carousel-inner {
+        background: rgba(0,0,0,0.75);
+    }
+        #carousel-generic .carousel-caption h3 {
+        color: rgba(255, 255, 255, 0.74);
+    }
+        #carousel-generic .carousel-caption {
         top: 0;
         bottom:auto;
         padding: 5px 10px 10px 10px;
     }
-
-    #carousel-generic .carousel-caption h3 {
-        color: rgba(255, 255, 255, 0.74);
-    }
-
     #carousel-generic .carousel-indicators {
-        top: 20px;
-        right: 20px;
+    top: 20px;
+    right: 20px;
+    }
+    /*
+
+    #carousel-generic {
+        padding:10px;
+        margin:0;
     }
 
-    #carousel-generic .carousel-control {
-        display:none;
-    }
+    */
 
     /* tabs */
 
