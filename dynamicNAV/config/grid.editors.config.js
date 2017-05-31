@@ -71,7 +71,7 @@
                 }
             ],
             "frontView": "~/Views/Partials/Grid/Editors/carousel.cshtml",
-            "renderInGrid": "0",
+            "renderInGrid": "1",
             "min": 1,
             "max": 5,
             "expiration": 120
