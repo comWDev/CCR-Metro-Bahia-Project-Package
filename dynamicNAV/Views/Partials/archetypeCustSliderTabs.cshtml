@@ -23,16 +23,29 @@
 
 <div class="slider-@fieldset.GetValue("tabNumero")" style="margin-bottom: 50px">
 
-@{  var typedMultiMediaPicker = fieldset.GetValue<IEnumerable<IPublishedContent>>("selectImage");
-    var multiMediaPicker = typedMultiMediaPicker as IList<IPublishedContent> ?? typedMultiMediaPicker.ToList();
-    if (multiMediaPicker.Any())
-    {
-    foreach (var item in multiMediaPicker)
-    {
-        <div><img class="img-responsive multiSlides" src="@item.Url"/></div>
-    }
-}
-}
+@{
+                if (fieldset.HasValue("selectImage"))
+                {
+                    var typedMultiMediaPicker = fieldset.GetValue<IEnumerable<IPublishedContent>>("selectImage");
+                    if (typedMultiMediaPicker != null)
+                    {
+                        foreach (var item in typedMultiMediaPicker)
+                        {
+                            <div>
+                                <img class="img-responsive multiSlides" src="@item.Url"/>
+                            </div>
+                        }
+                    }
+
+                    var mediaPicker = fieldset.GetValue<IPublishedContent>("selectImage");
+                    if (mediaPicker != null)
+                    {
+                        <div>
+                            <img class="img-responsive multiSlides" src="@mediaPicker.Url"/>
+                        </div>
+                    }
+                }
+            }
 
   </div>
 
