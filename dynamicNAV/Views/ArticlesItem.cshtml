@@ -2,14 +2,35 @@
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
 	Layout = "master.cshtml";
-}<div id="main-container">
-	<div id="main" class="wrapper clearfix">
-		<section>
-			<h2>@Umbraco.Field("articleTitle")</h2>
-			
-			@Umbraco.Field("articleContents")
-			
-			
-		</section>
-	</div>
+}
+<div class="mobileMargins container-fluid col-centered">
+    <div class="container-fluid greyBody"  style="max-width: 1200px; background-color: #FFFFFF;">
+    <div class="row col-12-md">
+
+<div id="main-container">
+    
+    <div id="main" class="wrapper clearfix">
+        
+        <section>
+        
+        @{
+    var typedMediaPickerSingle = Model.Content.GetPropertyValue<IPublishedContent>("newsImage");
+    if (typedMediaPickerSingle != null)
+    {
+        <img src="@typedMediaPickerSingle.Url" style="width:200px" alt="@typedMediaPickerSingle.GetPropertyValue("alt")" />
+    }
+}      
+            
+            <h2>@Umbraco.Field("articleTitle")</h2>
+            <h4>@Umbraco.Field("newsSubtitle")</h4>
+            @Umbraco.Field("newsBodyText")
+            
+        </section>
+        
+    </div>
+    
+</div>
+
+</div>
+</div>
 </div>

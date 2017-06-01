@@ -46,21 +46,39 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Article Contents
-		///</summary>
-		[ImplementPropertyType("articleContents")]
-		public IHtmlString ArticleContents
-		{
-			get { return this.GetPropertyValue<IHtmlString>("articleContents"); }
-		}
-
-		///<summary>
-		/// Article Title
+		/// Name
 		///</summary>
 		[ImplementPropertyType("articleTitle")]
 		public string ArticleTitle
 		{
 			get { return this.GetPropertyValue<string>("articleTitle"); }
+		}
+
+		///<summary>
+		/// News Body Text
+		///</summary>
+		[ImplementPropertyType("newsBodyText")]
+		public IHtmlString NewsBodyText
+		{
+			get { return this.GetPropertyValue<IHtmlString>("newsBodyText"); }
+		}
+
+		///<summary>
+		/// News Image
+		///</summary>
+		[ImplementPropertyType("newsImage")]
+		public IPublishedContent NewsImage
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("newsImage"); }
+		}
+
+		///<summary>
+		/// News Subtitle
+		///</summary>
+		[ImplementPropertyType("newsSubtitle")]
+		public string NewsSubtitle
+		{
+			get { return this.GetPropertyValue<string>("newsSubtitle"); }
 		}
 	}
 }

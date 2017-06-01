@@ -63,7 +63,7 @@
                             
                             if (childPage.Children.Any())
                             {                    
-                                <li class="has-child @(childPage.IsAncestorOrSelf(CurrentPage) ? "selected" : null)">
+                                <li class="has-child @(childPage.IsAncestorOrSelf(CurrentPage) ? "active" : null)">
                                 <a class="menuHeader dropdown-toggle menuTextMain" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">@childPage.Name</a>
                                 
                             
@@ -84,7 +84,7 @@
                 {
                     var linkTarget = (item.NewWindow) ? "_blank" : null;
 
-                    <li class="@(childPage.IsAncestorOrSelf(CurrentPage) ? "selected" : null)">
+                    <li class="@(childPage.IsAncestorOrSelf(CurrentPage) ? "active" : null)">
                         <a class="menuTextMain" target="@linkTarget" href="@item.Link">@item.Caption</a>
                     </li>
                 }
@@ -95,7 +95,7 @@
 
                             else
                             {
-                                <li class="@(childPage.IsAncestorOrSelf(CurrentPage) ? "selected" : null)">
+                                <li class="@(childPage.IsAncestorOrSelf(CurrentPage) ? "active" : null)">
                                 <a class="menuTextMain" href="@childPage.Url">@childPage.Name</a>
                                 </li>
                             }            

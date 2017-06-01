@@ -1,0 +1,32 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+
+@{
+
+    var newsItems = CurrentPage.Site().FirstChild("articlesMain").Children("articlesItem").Where("Visible").OrderBy("CreateDate descending").Take(3);
+    
+}
+
+
+        
+      
+@foreach (var newsItem in newsItems)
+    {  
+    
+        
+                <div class="col-md-4">
+         @{
+                var media = Umbraco.TypedMedia(newsItem.GetPropertyValue("newsImage"));
+                var image = media.Url;
+                
+                <img class"imag-responsive macro-image" src="@image" alt="">
+         }
+
+                    <h3>@newsItem.Name</h3>
+                    <h4>@newsItem.NewsSubtitle</h4>
+                    <p>@Umbraco.Truncate(@newsItem.NewsBodyText,100)</p>
+                    <a class="btn btn-primary" href="@newsItem.Url"><span class="glyphicon glyphicon-chevron-right">Ler Mais</span></a>
+                    
+                </div>
+                
+        
+}        
