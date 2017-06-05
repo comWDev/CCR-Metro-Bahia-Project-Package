@@ -681,6 +681,10 @@ h2.accordionTitle {
 
 /* -------------------------- CUSTOM CSS START --------------------------  */
 
+.svgMap {
+    margin: 0 auto 0 auto;
+}
+
 .main-marca {
   float: left;
   margin: 0;

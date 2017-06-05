@@ -10,20 +10,20 @@
 {
     var oneColumn = ((System.Collections.ICollection)Model.sections).Count == 1;
     
-    <div class="umb-grid">
+    <div class="umb-grid" style="padding: 0; margin: 0;">
         @if (oneColumn)
         {
             foreach (var section in Model.sections) {
-                <div class="grid-section">
+                <div class="grid-section" style="padding: 0; margin: 0;">
                     @foreach (var row in section.rows) {
                         @renderRow(row);
                     }
                 </div>
             }   
         }else { 
-            <div class="row clearfix">
+            <div class="row clearfix" style="padding: 0; margin: 0;">
                 @foreach (var s in Model.sections) {
-                    <div class="grid-section">
+                    <div class="grid-section" style="padding: 0; margin: 0;">
                         <div class="col-md-@s.grid column">
                             @foreach (var row in s.rows) {
                                 @renderRow(row);
@@ -38,9 +38,9 @@
 
 @helper renderRow(dynamic row){
     <div @RenderElementAttributes(row)>
-        <div class="row clearfix">
+        <div class="row clearfix" style="padding: 0; margin: 0;">
             @foreach ( var area in row.areas ) {
-            <div class="col-md-@area.grid column">
+            <div class="col-md-@area.grid column" style="padding: 0; margin: 0;">
                 <div @RenderElementAttributes(area)>
                     @foreach (var control in area.controls) {
                         if (control !=null && control.editor != null && control.editor.view != null ) {

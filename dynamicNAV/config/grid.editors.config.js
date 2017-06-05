@@ -168,5 +168,33 @@
             "expiration": 120,
             "frontView": ""
         }
+    },
+    {
+        "name": "Image e Link",
+        "alias": "imageELink",
+        "view": "/App_Plugins/LeBlender/editors/leblendereditor/LeBlendereditor.html",
+        "icon": "icon-picture",
+        "render": "/App_Plugins/LeBlender/editors/leblendereditor/views/Base.cshtml",
+        "config": {
+            "editors": [
+                {
+                    "name": "Image",
+                    "alias": "image",
+                    "propretyType": {},
+                    "dataType": "760b113c-199f-4095-a450-c8f3ff785c2a"
+                },
+                {
+                    "name": "Link",
+                    "alias": "link",
+                    "propretyType": {},
+                    "dataType": "0cc0eba1-9960-42c9-bf9b-60e150b429ae"
+                }
+            ],
+            "renderInGrid": "1",
+            "min": 1,
+            "max": 1,
+            "frontView": "~/Views/Partials/Grid/Editors/ImageELink.cshtml",
+            "expiration": 120
+        }
     }
 ]

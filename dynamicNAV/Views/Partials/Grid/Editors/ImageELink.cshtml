@@ -1,0 +1,16 @@
+﻿@inherits UmbracoViewPage<Lecoati.LeBlender.Extension.Models.LeBlenderModel>
+
+@{
+    Layout="";
+}
+
+@{
+    
+    var imageELink = Model.Items.ElementAt(0);
+    
+    var imageUrl = String.IsNullOrEmpty(imageELink.GetValue<string>("image")) ? "#" : Umbraco.TypedMedia(imageELink.GetValue<string>("image")).Url;
+}
+
+        <a class="homeGridLinks" href="@imageELink.GetValue("link")">
+            <img class="img-responsive" src="@imageUrl" + (model.items.indexof(item) + 1))" />
+        </a>
