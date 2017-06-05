@@ -1,0 +1,13 @@
+﻿{
+    "gridEditors": [
+      {
+        "name": "Custom Code",
+        "alias": "customCode",
+        "view": "textstring",
+        "icon": "icon-code",
+        "config": {
+          "color": "red",
+          "text-align": "right"
+        }
+      }
+    ]

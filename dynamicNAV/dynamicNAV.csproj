@@ -475,6 +475,7 @@
     <Content Include="App_Plugins\LeBlender\package.manifest" />
     <Content Include="App_Plugins\LeBlender\editors\leblendereditor\views\LeBlender.cshtml" />
     <Content Include="App_Plugins\LeBlender\editors\leblendereditor\views\Base.cshtml" />
+    <Content Include="App_Plugins\Grid\package.manifest" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
