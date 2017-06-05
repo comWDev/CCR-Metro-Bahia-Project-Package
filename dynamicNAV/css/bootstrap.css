@@ -1598,7 +1598,7 @@ pre code {
 }
 @media (min-width: 992px) {
   .container {
-    width: 970px;
+    width: 992px;
   }
  
 }
@@ -4247,6 +4247,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   .container-fluid > .navbar-collapse {
     margin-right: 0;
     margin-left: 0;
+    padding: 0;
   }
 }
 .navbar-static-top {
@@ -5992,7 +5993,7 @@ button.close {
 }
 @media (min-width: 992px) {
   .modal-lg {
-    width: 900px;
+    width: 992px;
   }
 }
 .tooltip {
