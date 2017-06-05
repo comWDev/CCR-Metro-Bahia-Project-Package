@@ -1,25 +1,33 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
-
+@using Umbraco.Web.Models
 @{
 
-    var newsItems = CurrentPage.Site().FirstChild("articlesMain").Children("articlesItem").Where("Visible").OrderBy("CreateDate descending").Take(1);
+    var newsItems = CurrentPage.Site().FirstChild("articlesMain").Children("articlesItem").Where("Visible").OrderBy("CreateDate descending").Take(3);
     
 }
 
+
+        
+      
 @foreach (var newsItem in newsItems)
+    {  
+    
+        
+                <div class="col-md-4">
+         @{
+            var image = newsItem;
+            if(newsItem.HasValue("newsImage"))
     {
-        
-        
-        
-        
-                <div class="col-md-6">
+        <img src="@image.newsImage.Url" style="width:200px" />
+    }
+}      
+
                     <h3>@newsItem.Name</h3>
                     <h4>@newsItem.NewsSubtitle</h4>
-                    <p>@newsItem.NewsBodyText</p>
-                    <a class="btn btn-primary" href="#"><span class="glyphicon glyphicon-chevron-right">Ler Mais</span></a>
+                    <p>@Umbraco.Truncate(@newsItem.NewsBodyText,100)</p>
+                    <a class="btn btn-primary" href="@newsItem.Url"><span class="glyphicon glyphicon-chevron-right">Ler Mais</span></a>
                     
                 </div>
                 
         
 }        
-        

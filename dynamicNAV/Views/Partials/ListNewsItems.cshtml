@@ -1,5 +1,5 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
-
+@using Umbraco.Web.Models
 @{
 
     var newsItems = CurrentPage.Site().FirstChild("articlesMain").Children("articlesItem").Where("Visible").OrderBy("CreateDate descending").Take(3);
@@ -15,16 +15,17 @@
         
                 <div class="col-md-4">
          @{
-                var media = Umbraco.TypedMedia(newsItem.GetPropertyValue("newsImage"));
-                var image = media.Url;
-                
-                <img class"imag-responsive macro-image" src="@image" alt="">
-         }
+            var image = newsItem;
+            if(newsItem.HasValue("newsImage"))
+    {
+        <img src="@image.newsImage.Url" style="width:200px" />
+    }
+}      
 
                     <h3>@newsItem.Name</h3>
                     <h4>@newsItem.NewsSubtitle</h4>
-                    <p>@Umbraco.Truncate(@newsItem.NewsBodyText,100)</p>
-                    <a class="btn btn-primary" href="@newsItem.Url"><span class="glyphicon glyphicon-chevron-right">Ler Mais</span></a>
+                    <p>@Umbraco.Truncate(@newsItem.NewsBodyText,100) <a class="" href="@newsItem.Url"><span class="glyphicon glyphicon-chevron-right"></span><span class="popHorasBold"> Ler Mais</span></a></p>
+            
                     
                 </div>
                 
