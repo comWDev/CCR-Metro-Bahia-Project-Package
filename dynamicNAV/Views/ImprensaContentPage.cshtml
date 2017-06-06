@@ -29,7 +29,7 @@
       
       <p>@Umbraco.Field("pageBodyText", removeParagraphTags: true)</p>
 
-    @{ Html.RenderAction("RenderPostList", "ArticlesMain");}
+    @Html.Partial("List_Notices_Paged")
 
     </div>
     
