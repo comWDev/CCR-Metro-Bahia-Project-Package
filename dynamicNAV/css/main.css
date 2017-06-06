@@ -547,8 +547,8 @@ html, body {
 @media (min-width: 768px) {
 
     .navbar {
-    min-height: 0px !important;
-
+        min-height: 0px !important;
+    }
       .gridLinkImages {
     display: inherit;
     margin-bottom: 10px;
@@ -562,7 +562,9 @@ html, body {
 }
 
 @media (max-width: 650px) {
- 
+    .navbar {
+        min-height: 0px !important;
+    }
   .langWrap {
 	display: none !important;	
 }
