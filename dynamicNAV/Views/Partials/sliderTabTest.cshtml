@@ -27,7 +27,7 @@
     var typedMultiMediaPicker = fieldset.GetValue<IEnumerable<IPublishedContent>>("selectImage");
     foreach (var item in typedMultiMediaPicker)
     {
-        <div><img  class="img-responsive multiSlides" src="@item.Url" /></div>
+        <div class="slick-slide"><img  class="img-responsive multiSlides" src="@item.Url" /></div>
     }
 }
   </div>
