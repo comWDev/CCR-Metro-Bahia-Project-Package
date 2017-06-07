@@ -22,7 +22,7 @@ namespace Umbraco.Web.PublishedContentModels
 {
 	/// <summary>Comericial Content Page</summary>
 	[PublishedContentModel("comericialContentPage")]
-	public partial class ComericialContentPage : Comercial
+	public partial class ComericialContentPage : Comercial, IPageSubContentBlock
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "comericialContentPage";
@@ -51,7 +51,7 @@ namespace Umbraco.Web.PublishedContentModels
 		[ImplementPropertyType("pageBodyText")]
 		public IHtmlString PageBodyText
 		{
-			get { return this.GetPropertyValue<IHtmlString>("pageBodyText"); }
+			get { return Umbraco.Web.PublishedContentModels.PageSubContentBlock.GetPageBodyText(this); }
 		}
 
 		///<summary>
@@ -60,7 +60,7 @@ namespace Umbraco.Web.PublishedContentModels
 		[ImplementPropertyType("subTitle")]
 		public string SubTitle
 		{
-			get { return this.GetPropertyValue<string>("subTitle"); }
+			get { return Umbraco.Web.PublishedContentModels.PageSubContentBlock.GetSubTitle(this); }
 		}
 
 		///<summary>
@@ -69,7 +69,7 @@ namespace Umbraco.Web.PublishedContentModels
 		[ImplementPropertyType("subTitleIcon")]
 		public IPublishedContent SubTitleIcon
 		{
-			get { return this.GetPropertyValue<IPublishedContent>("subTitleIcon"); }
+			get { return Umbraco.Web.PublishedContentModels.PageSubContentBlock.GetSubTitleIcon(this); }
 		}
 	}
 }

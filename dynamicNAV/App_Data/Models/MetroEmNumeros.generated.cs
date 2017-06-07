@@ -22,7 +22,7 @@ namespace Umbraco.Web.PublishedContentModels
 {
 	/// <summary>Metrô em números</summary>
 	[PublishedContentModel("metroEmNumeros")]
-	public partial class MetroEmNumeros : PorDentroDoMetro, INumerosAtype
+	public partial class MetroEmNumeros : PorDentroDoMetro, INumerosAtype, IPageSubContentBlock
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "metroEmNumeros";
@@ -55,12 +55,21 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// numAtype
+		///</summary>
+		[ImplementPropertyType("numAtype")]
+		public Archetype.Models.ArchetypeModel NumAtype
+		{
+			get { return Umbraco.Web.PublishedContentModels.NumerosAtype.GetNumAtype(this); }
+		}
+
+		///<summary>
 		/// Page Body Text
 		///</summary>
 		[ImplementPropertyType("pageBodyText")]
 		public IHtmlString PageBodyText
 		{
-			get { return this.GetPropertyValue<IHtmlString>("pageBodyText"); }
+			get { return Umbraco.Web.PublishedContentModels.PageSubContentBlock.GetPageBodyText(this); }
 		}
 
 		///<summary>
@@ -69,7 +78,7 @@ namespace Umbraco.Web.PublishedContentModels
 		[ImplementPropertyType("subTitle")]
 		public string SubTitle
 		{
-			get { return this.GetPropertyValue<string>("subTitle"); }
+			get { return Umbraco.Web.PublishedContentModels.PageSubContentBlock.GetSubTitle(this); }
 		}
 
 		///<summary>
@@ -78,16 +87,7 @@ namespace Umbraco.Web.PublishedContentModels
 		[ImplementPropertyType("subTitleIcon")]
 		public IPublishedContent SubTitleIcon
 		{
-			get { return this.GetPropertyValue<IPublishedContent>("subTitleIcon"); }
-		}
-
-		///<summary>
-		/// numAtype
-		///</summary>
-		[ImplementPropertyType("numAtype")]
-		public Archetype.Models.ArchetypeModel NumAtype
-		{
-			get { return Umbraco.Web.PublishedContentModels.NumerosAtype.GetNumAtype(this); }
+			get { return Umbraco.Web.PublishedContentModels.PageSubContentBlock.GetSubTitleIcon(this); }
 		}
 	}
 }

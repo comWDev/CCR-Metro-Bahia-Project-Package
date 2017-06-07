@@ -1,0 +1,39 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using Archetype.Models;
+@using Archetype.Extensions;
+
+<!-- for accessing an archetype property on another page -->
+
+@{
+var menuData = Model.Content.AncestorOrSelf("comercial").GetPropertyValue<ArchetypeModel>("comercialHeader");
+
+
+foreach(var fieldset in menuData)
+{
+   
+   	<div class="container-fluid heroWrap heroSpaceGuia">
+        <div class="header-icon">	
+
+    @{
+        var imageUrl = fieldset.GetValue<IPublishedContent>("hIcon").Url;
+     }
+     <img src="@imageUrl"/>  
+
+			
+			</div>
+        <div>
+           <h1 class="internal-header">@fieldset.GetValue("hTitle")</h1>
+        </div>
+        
+        <div>@Html.Raw(@fieldset.GetValue<string>("hIntro"))</div>
+<!--        
+       <div><p class="intro-text">@fieldset.GetValue("hIntro")</p></div>
+-->
+  </div>
+  
+  }
+  }
+  
+  
+  
+  
