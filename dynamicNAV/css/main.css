@@ -469,6 +469,7 @@ html, body {
 /* -------------------------- CUSTOM NAV BREAK START -------------------- */
 
 @media (max-width: 991px) {
+
   .navbar-header {
       float: none;
       padding-right: 10px;
@@ -544,11 +545,12 @@ html, body {
 }
 
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
 
     .navbar {
         min-height: 0px !important;
     }
+
       .gridLinkImages {
     display: inherit;
     margin-bottom: 10px;
@@ -859,7 +861,6 @@ h2.accordionTitle {
 }
 
 .navbar {
-  min-height: 60px;
   margin-bottom: 0;
   z-index: 999997 !important;
   border-radius: 0 !important;
