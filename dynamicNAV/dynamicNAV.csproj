@@ -354,6 +354,14 @@
       <HintPath>..\packages\UmbracoCms.Core.7.6.1\lib\net45\UmbracoExamine.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="X.PagedList, Version=7.0.0.5500, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\X.PagedList.7.0.0\lib\net452\X.PagedList.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="X.PagedList.Mvc, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\X.PagedList.Mvc.7.0.0\lib\net452\X.PagedList.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Plugins\Archetype\assets\logo_50.png" />
