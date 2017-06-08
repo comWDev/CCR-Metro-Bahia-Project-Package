@@ -494,7 +494,6 @@ html, body {
   .navbar-nav {
       float: none!important;
       margin-top: 7.5px;
-      padding-left: 10px;
   }
   .navbar-nav>li {
       float: none;
@@ -550,7 +549,11 @@ html, body {
     .navbar {
         min-height: 0px !important;
     }
-
+      .navbar-nav {
+      float: none!important;
+      margin-top: 7.5px;
+      padding-left:10px !important;
+  }
       .gridLinkImages {
     display: inherit;
     margin-bottom: 10px;
