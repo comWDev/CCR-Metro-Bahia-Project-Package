@@ -1,23 +1,77 @@
-﻿@using PagedList.Mvc;
-@using PagedList;
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+
+@{
+    var pageSize = 3;
+    var page = 1; 
+	int.TryParse(Request.QueryString["page"], out page);
+    var items1 = Model.Content.Children().Where(x => x.DocumentTypeAlias == "articlesMain").OrderByDescending(x => x.CreateDate).ToList();
+    
+
+	var items = CurrentPage.Site().FirstChild("articlesMain").Children.Where("Visible");
+	var items2 = Umbraco.Content(1077).Children.Where("Visible").OrderBy("Name");
+	
+	
+	var totalPages = (int)Math.Ceiling((double)items.Count() / (double)pageSize);
+	
+    if (page > totalPages)
+    {
+        page = totalPages;
+    }
+    else if (page < 1)
+    {
+        page = 1;
+    }
+	
+	
+}
 
 
-                @foreach (var result in Model.SearchResults)
-                {
-                    
-<article class="search-result">
-                            
-<div class="col-md-11">
-                                <a title="@result.Name" href="@result.Url" >
-                                    @result.Name
-                                </a>
-                            </div>
 
-                    </article>
+<div class="container">
+	
+	<div class="row">
+		
+		<div class="box">
+	
+	<h1>Testing pagination</h1>
+			
+	<p>Page size = @pageSize</p>
+	<p>page = @page</p>
+	<p>items = @items.ToList()</p>
+	<p>total page = @totalPages</p>
+	<p></p>
+	
+    @foreach (var item in items.Skip((page - 1) * pageSize).Take(pageSize))
+    {
+        @Umbraco.Truncate(@item.GetGridHtml("bodyText", "mybootstrap3"), 300)
 
-                }
+		<a href="@item.Url" class="btn btn-default btn-lg">Read More</a>
+			
+		<br />
+    }
 
-                
-<div class="pagination-area">
-                    @Html.PagedListPager(Model.SearchResults, page => "htt://www.yourwebsiteurl" + HttpContext.Current.Request.QueryString["p"])
-                </div>
+    @if (totalPages > 1)
+    {
+		<ul class="pagination">
+			
+			@if (page > 1)
+            {
+				<li class="previous"><a href="?page=@(page-1)">Prev</a></li>
+			}
+		
+			@for (int p = 1; p < totalPages + 1; p++)
+            {
+				var active = (p == page) ? "active" : string.Empty;
+				
+				<li class="@active"><a href="?page=@p">@p</a></li>
+			}
+    		@if (page < items.Count() && page != totalPages)
+			{
+				<li class="next"><a href="?page=@(page+1)">Next</a></li>
+			}
+		
+		</ul>
+    }
+</div>
+	
+	</div></div>
