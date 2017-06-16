@@ -7,7 +7,7 @@
 }
 
 
-        
+<div class="row" style="padding: 25px 0 25px 0;">
       
 @foreach (var newsItem in newsItems)
     {  
@@ -18,7 +18,7 @@
             var image = newsItem;
             if(newsItem.HasValue("newsImage"))
     {
-        <img src="@image.newsImage.Url" style="width:200px" />
+        <img class="img-responsive" src="@image.newsImage.Url" />
     }
 }      
 
@@ -26,8 +26,9 @@
                     <h4>@newsItem.NewsSubtitle</h4>
                     <p>@Umbraco.Truncate(@newsItem.NewsBodyText,100) <a class="" href="@newsItem.Url"><span class="glyphicon glyphicon-chevron-right"></span><span class="popHorasBold"> Ler Mais</span></a></p>
             
-                    
                 </div>
                 
         
 }        
+
+</div>

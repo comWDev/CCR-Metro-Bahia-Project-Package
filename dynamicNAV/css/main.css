@@ -630,6 +630,10 @@ html, body {
   margin: 0 !important;
 }
 
+.greyBodyMod {
+    padding: 40px 53px 20px 53px;
+}
+
 h1.internal-header {
     font-family: 'unisanssemibolditalicBdIt', Arial, sans-serif;
     font-size: 38px;
@@ -731,6 +735,10 @@ h2.accordionTitle {
 }
 
 /* -------------------------- CUSTOM CSS START --------------------------  */
+
+.hr {
+        border-top: 2px solid #ebebeb !important;
+}
 
 .svgMap {
     margin: 0 auto 0 auto;
@@ -936,6 +944,10 @@ h2.accordionTitle {
 
 .greyBody {
   padding: 40px 40px 100px 53px;
+}
+
+.greyBodyMod {
+    padding: 40px 53px 20px 53px;
 }
 
 .body-copy {

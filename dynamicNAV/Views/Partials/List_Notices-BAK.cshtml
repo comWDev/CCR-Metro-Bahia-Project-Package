@@ -1,16 +1,13 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 
 @{
-    var pageSize = 3;
+    var pageSize = 6;
     var page = 1; 
 	int.TryParse(Request.QueryString["page"], out page);
-    var items1 = Model.Content.Children().Where(x => x.DocumentTypeAlias == "articlesMain").OrderByDescending(x => x.CreateDate).ToList();
     
+    
+	var items = CurrentPage.Site().FirstChild("articlesMain").Children("articlesItem").Where("Visible").OrderBy("CreateDate descending");
 
-	var items = CurrentPage.Site().FirstChild("articlesMain").Children.Where("Visible");
-	var items2 = Umbraco.Content(1077).Children.Where("Visible").OrderBy("Name");
-	
-	
 	var totalPages = (int)Math.Ceiling((double)items.Count() / (double)pageSize);
 	
     if (page > totalPages)
@@ -27,12 +24,12 @@
 
 
 
-<div class="container">
+<div class="container-fluid">
 	
 	<div class="row">
 		
-		<div class="box">
-	
+		<div class="container-fluid">
+	<!--
 	<h1>Testing pagination</h1>
 			
 	<p>Page size = @pageSize</p>
@@ -40,31 +37,34 @@
 	<p>items = @items.ToList()</p>
 	<p>total page = @totalPages</p>
 	<p></p>
-	
-        
+    -->	
+	<div class="row" style="margin-top:25px;">
+    
     @foreach (var item in items.Skip((page - 1) * pageSize).Take(pageSize))
     {
-    
-    {
+        <div class="col-md-4" style="min-height: 540px;margin-top:15px;margin-bottom:15px;padding:10px;">
+    @{
         var image = item;
         if(item.HasValue("newsImage"))
     {
-        <img src="@image.newsImage.Url" style="width:200px" />
+        <img class="img-responsive" src="@image.newsImage.Url" />
     }
     }
 
                     <h3>@item.Name</h3>
                     <h4>@item.NewsSubtitle</h4>
-                    <p>@Umbraco.Truncate(@item.NewsBodyText,100) <a class="" href="@item.Url"><span class="glyphicon glyphicon-chevron-right"></span><span class="popHorasBold"> Ler Mais</span></a></p>
+                    <p>@Umbraco.Truncate(@item.NewsBodyText,150) <a class="" href="@item.Url"><span class="glyphicon glyphicon-chevron-right"></span><span class="popHorasBold"> Ler Mais</span></a></p>
 
             
 
 
-		<a href="@item.Url" class="btn btn-default btn-lg">Read More</a>
-			
+		<a href="@item.Url" class="btn btn-default btn-lg btn-danger"><span class="glyphicon glyphicon-chevron-right"></span> Ler Mais</a>
+        			
 		<br />
-		
+		</div>
     }
+
+    </div>
 
     @if (totalPages > 1)
     {
