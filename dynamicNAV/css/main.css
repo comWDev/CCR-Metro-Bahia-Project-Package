@@ -863,6 +863,69 @@ h2.accordionTitle {
 
 /* ----------------- Popover Styles END --------------------- */
 
+/* ----------------- Flip Styles START ----------------------- */
+
+  .vaCards {
+    max-width: 270px;
+    min-height: 178px;
+    padding: 0 0 0 0;
+    margin: 0 5px 0 5px;
+    float: none !important;
+    display:inline-block !important;
+  }
+  .cardsRow {
+    align-content: center;
+    margin-top: 65px;
+  }
+  .cardsRow2 {
+   align-content: center;
+   margin: 65px 0 65px 0;
+  }
+.flip {
+  -webkit-perspective: 800;   
+          perspective: 800;
+        position: relative;
+        text-align: center;
+}
+.flip .card.flipped {
+  -webkit-transform: rotatey(-180deg);
+          transform: rotatey(-180deg);
+}
+.flip .card {
+    max-width: 290px;
+    height: 165px;
+    -webkit-transform-style: preserve-3d;
+    -webkit-transition: 0.5s;
+    transform-style: preserve-3d;
+    transition: 0.5s;
+    border-radius: 8px;
+    box-shadow: 0px 0px 8px #888888;
+}
+.flip .card .face {
+  -webkit-backface-visibility: hidden ;
+    backface-visibility: hidden ;
+   z-index: 2;
+}
+.flip .card .front {
+   position: absolute;
+   max-width: 270px;
+   z-index: 1;
+}
+.flip .card .img {
+   position: relaitve;
+   max-width: 270px;
+   z-index: 1;
+   border: 2px solid #000;
+}
+.flip .card .back {
+  padding-top: 5%;
+  -webkit-transform: rotatey(-180deg);
+          transform: rotatey(-180deg);
+}
+  .inner{margin:0px !important;}
+
+/* ----------------- Flip Styles END ------------------------- */
+
 .glyphicon-search {
   color: #003b9d;
 }

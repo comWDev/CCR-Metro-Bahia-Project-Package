@@ -101,8 +101,17 @@
 <script type="text/javascript" src="~/slick/slick.min.js"></script>
 <!-- initialization script -->
     <script type="text/javascript" src="/scripts/slideinit.js"></script>
+<script type="text/javascript">
+  
+  $('.flip').click(function(){
+        $(this).find('.card').toggleClass('flipped');
+
+    });
+
+</script>
 <!-- Popover Time initialization script -->
  @Html.Partial("archetypeANumero")
+ 
 
   </body>
 </html>
