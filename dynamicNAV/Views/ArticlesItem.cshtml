@@ -10,24 +10,32 @@
 <div id="main-container">
     
     <div id="main" class="wrapper clearfix">
+        <div class="articleDateBox text-center" style="background-color:red; max-width:100px;margin: 0 0 0 0;padding:8px 8px 8px 8px;color:#FFFFFF;">
+            <strong>@(Model.Content.GetPropertyValue<DateTime>("articleDate").ToString("MM/dd/yyyy"))</strong>
+        </div>
         
-        <section>
+    <h2>@Umbraco.Field("articleTitle")</h2>
+    <h4>@Umbraco.Field("newsSubtitle")</h4>
+        
+        <div>
         
         @{
     var typedMediaPickerSingle = Model.Content.GetPropertyValue<IPublishedContent>("newsImage");
     if (typedMediaPickerSingle != null)
     {
-        <img src="@typedMediaPickerSingle.Url" style="width:200px" alt="@typedMediaPickerSingle.GetPropertyValue("alt")" />
+        <img src="@typedMediaPickerSingle.Url" style="max-width:800px;margin-bottom:25px;" alt="@typedMediaPickerSingle.GetPropertyValue("alt")" />
     }
 }      
+            <p style="max-width:800px;">@Umbraco.Field("newsBodyText", removeParagraphTags: true)</p>
             
-            <h2>@Umbraco.Field("articleTitle")</h2>
-            <h4>@Umbraco.Field("newsSubtitle")</h4>
-            @Umbraco.Field("newsBodyText")
-            
-        </section>
+        </div>
         
     </div>
+    
+    <hr>
+
+<a href="/imprensa/notícias-grid/" class="btn btn-default btn-md btn-danger pull-left" style="width:100px;border-radius:0;">VOLTAR</a>
+
     
 </div>
 

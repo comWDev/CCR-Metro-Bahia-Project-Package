@@ -46,6 +46,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Article Date
+		///</summary>
+		[ImplementPropertyType("articleDate")]
+		public DateTime ArticleDate
+		{
+			get { return this.GetPropertyValue<DateTime>("articleDate"); }
+		}
+
+		///<summary>
 		/// Name
 		///</summary>
 		[ImplementPropertyType("articleTitle")]
