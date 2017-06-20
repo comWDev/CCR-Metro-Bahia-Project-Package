@@ -22,7 +22,9 @@ namespace dynamicNAV.Controllers
             if(ModelState.IsValid)
             {
                 SendEmail(model);
+                TempData["ContactSuccess"] = true;
                 return RedirectToCurrentUmbracoPage();
+
             }
             return CurrentUmbracoPage();
         }

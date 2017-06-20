@@ -22,7 +22,7 @@ namespace Umbraco.Web.PublishedContentModels
 {
 	/// <summary>Contato Content Page</summary>
 	[PublishedContentModel("contatoContentPage")]
-	public partial class ContatoContentPage : Contato, IPageSubContentBlock
+	public partial class ContatoContentPage : Contato
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "contatoContentPage";
@@ -46,30 +46,21 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Page Body Text
+		/// Atendimento Image
 		///</summary>
-		[ImplementPropertyType("pageBodyText")]
-		public IHtmlString PageBodyText
+		[ImplementPropertyType("atendimentoImage")]
+		public IPublishedContent AtendimentoImage
 		{
-			get { return Umbraco.Web.PublishedContentModels.PageSubContentBlock.GetPageBodyText(this); }
+			get { return this.GetPropertyValue<IPublishedContent>("atendimentoImage"); }
 		}
 
 		///<summary>
-		/// Sub Title
+		/// Horário Image
 		///</summary>
-		[ImplementPropertyType("subTitle")]
-		public string SubTitle
+		[ImplementPropertyType("horarioImage")]
+		public IPublishedContent HorarioImage
 		{
-			get { return Umbraco.Web.PublishedContentModels.PageSubContentBlock.GetSubTitle(this); }
-		}
-
-		///<summary>
-		/// Sub Title Icon
-		///</summary>
-		[ImplementPropertyType("subTitleIcon")]
-		public IPublishedContent SubTitleIcon
-		{
-			get { return Umbraco.Web.PublishedContentModels.PageSubContentBlock.GetSubTitleIcon(this); }
+			get { return this.GetPropertyValue<IPublishedContent>("horarioImage"); }
 		}
 	}
 }
