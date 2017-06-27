@@ -1,40 +1,53 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.ContatoContentPage>
-@using ContentModels = Umbraco.Web.PublishedContentModels;
-@{
-	Layout = "Contato.cshtml";
-}  
-<!-- ------------------ Dynamic Header ------------------ -->
+    @using ContentModels = Umbraco.Web.PublishedContentModels;
+    @{
+    Layout = "Contato.cshtml";
+    }
+    <!-- ------------------ Dynamic Header ------------------ -->
+    @Html.Partial("archetypeSHeadPartial-Contato")
 
-@Html.Partial("archetypeSHeadPartial-Contato")
+    <!-- ------------------ Dynamic Header ------------------ -->
 
-<!-- ------------------ Dynamic Header ------------------ -->
+    <div class="mobileMargins container-fluid col-centered">
+        <div class="container-fluid greyBody" style="max-width: 1200px; background-color: #f9f9f9;">
 
-  <div class="mobileMargins container-fluid col-centered">
-    <div class="container-fluid greyBody"  style="max-width: 1200px; background-color: #f9f9f9;">
-    <div class="row col-12-md">
-    <h2 class="subhead">@Umbraco.Field("subTitle", removeParagraphTags: true)</h2>
-	
-		
-@if (Model.Content.HasValue("subTitleIcon"))
-{
-    var caseStudyImagesList = Model.Content.GetPropertyValue<string>("subTitleIcon").Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse);
-    var caseStudyImagesCollection = Umbraco.TypedMedia(caseStudyImagesList).Where(x => x != null);
 
-    foreach (var subTitleIcon in caseStudyImagesCollection)
-        {      
-            <img class="img-responsive acessiIcon" src="@subTitleIcon.Url" />
-        }                                                               
-}
+            <div class="row col-md-12 body-copy">
+                <div class="row col-sm-4" style="margin:0 0 10px 0;">
+                    @{
+                    var typedMediaPickerSingle = Model.Content.GetPropertyValue<IPublishedContent>
+                        ("atendimentoImage");
+                        if (typedMediaPickerSingle != null)
+                        {
+                        <img class="img-responsive" src="@typedMediaPickerSingle.Url" style="" alt="@typedMediaPickerSingle.GetPropertyValue(" alt")" />
+                        }
+                        }
+                </div>
+                <div class="row col-sm-4" style="margin: 0 3px 10px 0;">
+                    @{
+                    var typedMediaPickerSingle2 = Model.Content.GetPropertyValue<IPublishedContent>
+                        ("horarioImage");
+                        if (typedMediaPickerSingle2 != null)
+                        {
+                        <img class="img-responsive" src="@typedMediaPickerSingle2.Url" style="" alt="@typedMediaPickerSingle2.GetPropertyValue(" alt")" />
+                        }
+                        }
+                </div>
+                <div class="row col-sm-12">
+                    @if(TempData["ContactSuccess"] != null && (bool)TempData["ContactSuccess"])
+                    {
+                    <p>Your message was sent successfully</p>
+                    }
+                    else
+                    {
+                    Html.RenderAction("RenderForm", "ContactSurface");
+                    }
 
-		
-			
+
+
+                </div>
+
+            </div>
+
+        </div>
     </div>
-
-    <div class="row col-md-12 body-copy">
-      
-      <p>@Umbraco.Field("pageBodyText", removeParagraphTags: true)</p>
-
-    </div>
-    
-    </div>
-</div>
