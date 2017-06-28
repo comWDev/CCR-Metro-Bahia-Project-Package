@@ -15,6 +15,7 @@
     <title>@Umbraco.Field("pageName") | CCR Metrô Bahia</title>
 
     <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="~/css/home-map.css"/>   
     <link rel="stylesheet" type="text/css" href="~/css/sample_styles.css"/>    
     <link rel="stylesheet" type="text/css" href="~/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="~/css/main.css">
@@ -110,9 +111,16 @@
     });
 
 </script>
+
+<!-- Google Maps. -->
+<script type="text/javascript" async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2W9qUMTm-B6wIWoAppPkH2135O7icPV0&callback=initMap">
+</script> 
+
 <!-- Popover Time initialization script -->
  @Html.Partial("archetypeANumero")
- 
+
+
 
   </body>
 </html>
