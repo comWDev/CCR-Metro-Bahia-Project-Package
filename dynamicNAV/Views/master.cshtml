@@ -37,18 +37,46 @@
 	<meta name="description" content="@Umbraco.Field("seoMetaDescription", removeParagraphTags: true)">
 	
 <!-- SEO END -->
+
 	<style type="text/css">
+		
 
-.pMod {
-    margin-bottom:0 !important;
+			/* Always set the map height explicitly to define the size of the div
+ * element that contains the map. */
+#map {
+    height:100%;
+  min-height: 600px;
+}
+/* Optional: Makes the sample page fill the window. */
+
+#floating-panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw ! important;
+  z-index: 5;
+  color: #ffffff;
+  background-color: #03297a;
+  padding: 25px 0 0 0;
+  text-align: center;
+  font-family: 'Roboto','sans-serif';
+  line-height: 30px;
+  padding-left: 10px;
+  border:none;
+}
+.modDrop {
+  height:40px;
+  width:180px;
+  margin:0 15px 0 15px;
+  color: #134bab;
+}
+.pontoTexto {
+  
 }
 
-.pModEsp {
-    padding: 0 0 10px 0 !important;
-    margin: 0 !important;
-}
-    
-</style>
+
+	</style>
+
   </head>
 
   <body data-spy="scroll" data-target=".navbar" data-offset="50">
@@ -92,6 +120,8 @@
         <div class="copyright">&#169;Copyright 2017 - CCR Metro Bahia. Todos os direitos reservados. Política de Privacidade.</div>
 
       </div>
+
+
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
