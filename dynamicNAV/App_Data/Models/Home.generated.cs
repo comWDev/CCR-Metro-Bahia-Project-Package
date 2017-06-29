@@ -55,6 +55,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Google Map Content
+		///</summary>
+		[ImplementPropertyType("googleMapContent")]
+		public IHtmlString GoogleMapContent
+		{
+			get { return this.GetPropertyValue<IHtmlString>("googleMapContent"); }
+		}
+
+		///<summary>
 		/// Grid Content
 		///</summary>
 		[ImplementPropertyType("gridContent")]
