@@ -56,20 +56,22 @@
 
     <div class="row col-md-12" style="margin:0; padding:0;">
 
-<!-- Google Maps iframe -->
+    <object type="image/svg+xml" data="/media/1049/map-complete.svg" class="img-responsive svgMap"/></object>
+
+<!-- Google Maps -->
 
 <div id="floating-panel">
 <select class="modDrop" id="start">
-  <option value="" selected disabled>De Onde</option>
-  <option value="Copacabana, Rio de Janeiro - State of Rio de Janeiro">Copacabana</option>
-  <option value="Lapa - Santa Teresa, Rio de Janeiro - State of Rio de Janeiro">Lapa</option>
+  <option class="initMapControlText" value="" selected disabled>De Onde</option>
+  <option class="mapSelection"  value="Copacabana, Rio de Janeiro - State of Rio de Janeiro">Copacabana</option>
+  <option class="mapSelection"  value="Lapa - Santa Teresa, Rio de Janeiro - State of Rio de Janeiro">Lapa</option>
  
 </select>
   
 <select class="modDrop" id="end">
-  <option value="" selected disabled>Para Onde</option>
-  <option value="Copacabana, Rio de Janeiro - State of Rio de Janeiro">Copacabana</option>
-  <option value="Lapa - Santa Teresa, Rio de Janeiro - State of Rio de Janeiro">Lapa</option>
+  <option class="initMapControlText" value="" selected disabled>Para Onde</option>
+  <option class="mapSelection"  value="Copacabana, Rio de Janeiro - State of Rio de Janeiro">Copacabana</option>
+  <option class="mapSelection"  value="Lapa - Santa Teresa, Rio de Janeiro - State of Rio de Janeiro">Lapa</option>
 
 </select>
 </div>
@@ -91,10 +93,9 @@
     scaleControl: true,
     streetViewControl: true,
     rotateControl: false,
-    fullscreenControl: false
+    fullscreenControl: true
   });
   directionsDisplay.setMap(map);
-  directionsDisplay.setPanel(document.getElementById('right-panel'));
 
   var control = document.getElementById('floating-panel');
   control.style.display = 'block';
@@ -113,7 +114,11 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
   directionsService.route({
     origin: start,
     destination: end,
-    travelMode: 'TRANSIT'
+    travelMode: 'TRANSIT',
+    transitOptions: {
+    modes: ['RAIL' , 'BUS'],
+    routingPreference: 'FEWER_TRANSFERS'
+  }
   }, function(response, status) {
     if (status === 'OK') {
       directionsDisplay.setDirections(response);
@@ -125,14 +130,7 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
 
 </script>
 
-<!-- Google Maps iframe -->
-
-
-<!-- Replace the value of the key parameter with your own API key. -->
-
-
-    <object type="image/svg+xml" data="/media/1049/map-complete.svg" class="img-responsive svgMap"/></object>
-        
+<!-- Google Maps -->
     </div>
     </div>
     <div class="container-fluid" style="background-color: #fbff81; height: 62px;">

@@ -40,12 +40,15 @@
 
 	<style type="text/css">
 		
+.svgMap {
+    margin: 0 auto 25px auto;
+}
 
-			/* Always set the map height explicitly to define the size of the div
+/* Always set the map height explicitly to define the size of the div
  * element that contains the map. */
 #map {
     height:100%;
-  min-height: 600px;
+    min-height: 600px;
 }
 /* Optional: Makes the sample page fill the window. */
 
@@ -57,23 +60,28 @@
   z-index: 5;
   color: #ffffff;
   background-color: #03297a;
-  padding: 25px 0 0 0;
+  padding: 25px 0 25px 0;
   text-align: center;
-  font-family: 'Roboto','sans-serif';
-  line-height: 30px;
-  padding-left: 10px;
   border:none;
 }
 .modDrop {
   height:40px;
-  width:180px;
-  margin:0 15px 0 15px;
+  width:280px;
+  margin: 0 15px 0 15px;
+  padding-left: 15px;
   color: #134bab;
+  font-size: 16px;
+  font-family: 'Roboto','sans-serif';
 }
-.pontoTexto {
-  
+.mapSelection .select:hover  {
+  color: red;
+  padding: 15px 0 15px 0;
 }
-
+/* ----------------------------------------- PICKUP STYLE WORK
+input[type=text]:focus {
+    width: 250px;
+}
+*/
 
 	</style>
 

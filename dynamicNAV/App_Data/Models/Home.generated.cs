@@ -55,15 +55,6 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Google Maps API
-		///</summary>
-		[ImplementPropertyType("googleMapsAPI")]
-		public IHtmlString GoogleMapsApi
-		{
-			get { return this.GetPropertyValue<IHtmlString>("googleMapsAPI"); }
-		}
-
-		///<summary>
 		/// Grid Content
 		///</summary>
 		[ImplementPropertyType("gridContent")]
