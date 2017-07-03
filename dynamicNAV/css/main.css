@@ -117,6 +117,51 @@ will be correctly compiled during `gulp serve` and `gulp`
 
 }
 
+@font-face {
+    font-family: 'bebas_neuebold';
+    src: url('../fonts/bebasneue_bold-webfont.woff2') format('woff2'),
+         url('../fonts/bebasneue_bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'bebas_neuebook';
+    src: url('../fonts/bebasneue_book-webfont.woff2') format('woff2'),
+         url('../fonts/bebasneue_book-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'bebas_neuelight';
+    src: url('../fonts/bebasneue_light-webfont.woff2') format('woff2'),
+         url('../fonts/bebasneue_light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'bebas_neue_regularregular';
+    src: url('../fonts/bebasneue_regular-webfont.woff2') format('woff2'),
+         url('../fonts/bebasneue_regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'bebas_neuethin';
+    src: url('../fonts/bebasneue_thin-webfont.woff2') format('woff2'),
+         url('../fonts/bebasneue_thin-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 h1.homepage {
     font-family: 'unisanslightitalicitalic', Arial, sans-serif;
     font-size: 35px;
@@ -139,6 +184,51 @@ h1.internal-header {
     color: #134bab;
     padding: 7px 0 0px 0;
     margin: 0 0 15px 0;
+}
+
+h1.contactAtendimento {
+    font-family: 'bebas_neuebold';
+    font-size: 2.1em;
+    line-height: 1.1em;
+    color: #ffffff;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+}
+.contactAtendimentoNumero{
+    font-family: 'bebas_neuebold';
+    font-size: 3em;
+    line-height: 1em;
+    color: #134bab;
+    padding: 0 0 0 0;
+    margin: 3px 0 3px 0;
+}
+
+.atendimentoDaysHours {
+    font-family: 'robotoregular';
+    font-size: 1em;
+    line-height: 1.2em;
+    color: #ffffff;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+}
+
+h1.contactHorarioTitle {
+    font-family: 'bebas_neuebold';
+    font-size: 2.3em;
+    line-height: 1.1em;
+    color: #ffffff;
+    padding: 0 0 0 0;
+    margin: 0 0 10px 0;
+}
+
+
+.funcionamentoDaysHours {
+    font-family: 'robotoregular';
+    font-size: 1em;
+    line-height: 1.2em;
+    color: #ffffff;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
 }
 
 h2.subhead {
@@ -192,7 +282,7 @@ h3.gridSliderTitle {
     font-size: 28px !important;
     width: 100%;
     color: #FFFFFF;
-    text-shadow: rgb(0, 0, 0, 0.6) 0px 1px 2px;
+    text-shadow: rgba(0, 0, 0, 0.6) 0px 1px 2px;
     padding: 0 0 0 0;
     margin-top: 0;
     text-align: center;
@@ -526,6 +616,7 @@ html, body {
   height: 50px !important;
 }
 
+
 .dezInstrucoesNumeros {
     font-family: 'uni_sansthin_italic_caps', Arial, sans-serif;
     font-size: 35px;
@@ -540,6 +631,9 @@ html, body {
   height: 65px !important;
 }
 
+.copyright {
+    height: 100px;
+}
 
 }
 
@@ -589,6 +683,15 @@ html, body {
      .navbar-header {
       float: none;
   }
+
+.svgMap {
+    display: none !important;
+}
+
+
+.copyright {
+    height: 100px;
+}
 
   .gridLinkImages {
     display: inherit;
@@ -730,6 +833,77 @@ h2.accordionTitle {
 .assessoriaBlock { 
   float: left; min-width: 270px;
   margin-bottom: 10px;
+}
+
+.contactAtendimentoTitle {
+    background-color:#5282e9;
+    width:280px !important;
+    height:175px;
+    float:left;
+    margin-right:20px;
+    padding: 20px 25px 0 20px;
+}
+
+.contactHorario {
+    background-color:#134bab;
+    width:280px !important;
+    height: 165px;
+    float:left;
+    margin-right:20px;
+    padding: 20px 25px 0 20px;
+}
+
+h1.contactAtendimento {
+    font-family: 'bebas_neuebold';
+    font-size: 2.1em;
+    line-height: 1.1em;
+    color: #ffffff;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+}
+.contactAtendimentoNumero{
+    font-family: 'bebas_neuebold';
+    font-size: 2.65em;
+    line-height: 1em;
+    color: #134bab;
+    padding: 0 0 0 0;
+    margin: 3px 0 3px 0;
+}
+
+.atendimentoDaysHours {
+    font-family: 'robotoregular';
+    font-size: 1em;
+    line-height: 1.2em;
+    color: #ffffff;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+}
+
+h1.contactHorarioTitle {
+    font-family: 'bebas_neuebold';
+    font-size: 2.3em;
+    line-height: 1.1em;
+    color: #ffffff;
+    padding: 0 0 0 0;
+    margin: 0 0 10px 0;
+}
+
+
+.funcionamentoDaysHours {
+    font-family: 'robotoregular';
+    font-size: 1em;
+    line-height: 1.2em;
+    color: #ffffff;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+}
+
+.contactIcon {
+    width:60px;
+}
+
+.horarioIcon {
+    width:60px;
 }
 
 }
@@ -908,7 +1082,7 @@ h2.accordionTitle {
    z-index: 1;
 }
 .flip .card .img {
-   position: relaitve;
+   position: relative;
    max-width: 270px;
    z-index: 1;
    border: 2px solid #000;
@@ -1511,3 +1685,20 @@ a.assessoriaEmailAddy:hover {
 	background-color: #ffffff;
 }
 
+.contactAtendimentoTitle {
+    background-color:#5282e9;
+    width:320px;
+    height:185px;
+    float:left;
+    margin-right:20px;
+    padding: 20px 25px 0 20px;
+}
+
+.contactHorario {
+    background-color:#134bab;
+    width:320px;
+    height: 185px;
+    float:left;
+    margin-right:20px;
+    padding: 20px 25px 0 20px;
+}

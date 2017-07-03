@@ -46,6 +46,24 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// atendimentoAtype
+		///</summary>
+		[ImplementPropertyType("atendimentoAtype")]
+		public Archetype.Models.ArchetypeModel AtendimentoAtype
+		{
+			get { return this.GetPropertyValue<Archetype.Models.ArchetypeModel>("atendimentoAtype"); }
+		}
+
+		///<summary>
+		/// hFuncionaAtype
+		///</summary>
+		[ImplementPropertyType("hFuncionaAtype")]
+		public Archetype.Models.ArchetypeModel HFuncionaAtype
+		{
+			get { return this.GetPropertyValue<Archetype.Models.ArchetypeModel>("hFuncionaAtype"); }
+		}
+
+		///<summary>
 		/// Page Body Text
 		///</summary>
 		[ImplementPropertyType("pageBodyText")]

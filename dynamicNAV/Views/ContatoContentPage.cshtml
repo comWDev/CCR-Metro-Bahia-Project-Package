@@ -3,14 +3,45 @@
     @{
     Layout = "Contato.cshtml";
     }
+
     <!-- ------------------ Dynamic Header ------------------ -->
+    
     @Html.Partial("archetypeSHeadPartial-Contato")
 
     <!-- ------------------ Dynamic Header ------------------ -->
 
+
     <div class="mobileMargins container-fluid col-centered">
         <div class="container-fluid greyBody" style="max-width: 1200px; background-color: #f9f9f9;">
 
+    
+    <div style="display:inline-block;">
+    <!-- Dynamic Atendimento e Horario content -->
+    
+    <div class="col-4-sm contactAtendimentoTitle">
+        <img src="/media/1082/atendimento-phone-icon.png" class="img-responsive contactIcon" style="float:right;" alt="" />
+        <h1 class="contactAtendimento">Central<br>De Atendimento</h1>
+        <p class="contactAtendimentoNumero">0800 071 8020</p>
+        <p class="atendimentoDaysHours">De SEG a SEX, das 7 às 22h.<br>
+        SÁB, das 7 às 14h.</p>
+    </div>
+    
+    <div class="col-4-sm contactHorario">
+        <img src="/media/1083/horario-clock-icon.png" class="img-responsive horarioIcon" style="float:right;" alt="" />
+        <h1 class="contactHorarioTitle">Horário De<br>Funcionamento</h1>
+        <p class="funcionamentoDaysHours">De SEG a SEX, das 0 às 0h.<br>
+        Finais de semana e feriados,<br>das 7 às 14h.</p>
+    </div>
+    
+    <!-- Dynamic Atendimento e Horario content -->    
+    </div>
+
+<div class="panel panel-default" style="border-radius: 0px; border: 0; margin-top:15px; background-color: transparent;">
+    <div class="panel-heading" style="height: 36px; padding: 0; background-color: #134bab;"><h2 class="accordionTitle"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse1"><div class="accordionTitle" style="height: 100%; width: 88%; float:left;">Assessoria de Imprensa</div></a></h2>
+    </div>
+
+    <div id="collapse1" class="panel-collapse collapse in" style=" background-color: transparent;">
+      <div class="panel-body body-copy-grey" style="background-color: transparent;">
 
             <div class="row col-md-12 body-copy">
                 <div class="row col-sm-4" style="margin:0 0 10px 0;">
@@ -43,7 +74,9 @@
                     Html.RenderAction("RenderForm", "ContactSurface");
                     }
 
-
+    </div>
+    </div>
+</div>
 
                 </div>
 

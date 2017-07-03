@@ -1,0 +1,22 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using Archetype.Models;
+@using Archetype.Extensions;
+
+@{
+    Layout = null;
+}
+@foreach(var fieldset in Model.Content.GetPropertyValue<ArchetypeModel>("hFuncionaAtype"))
+{
+
+
+    <div class="col-4-sm contactHorario">
+
+        <img src="/media/1083/horario-clock-icon.png" class="img-responsive horarioIcon" style="float:right;" alt="" />
+
+        <h1 class="contactHorarioTitle">Horário De<br>Funcionamento</h1>
+
+        <p class="funcionamentoDaysHours">@fieldset.GetValue("diasEHoras-h1")<br>@fieldset.GetValue("diasEHoras-h2")</p>
+    </div>
+
+    
+}

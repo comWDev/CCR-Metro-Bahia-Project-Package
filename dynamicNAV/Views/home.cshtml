@@ -60,7 +60,7 @@
 
     <div class="row col-md-12" style="margin:0; padding:0;">
 
-<!-- SVG US Map -->
+<!-- SVG US Map 
 
     <svg viewBox="0 0 959 593" class="svg-states">
   <title>U.S. States</title>
@@ -232,7 +232,7 @@ svgStates.forEach(function(el) {
 </script>
 
 
-<!-- SVG US Map -->
+SVG US Map -->
 
 
 <!-- SVG Station Map -->
@@ -242,6 +242,10 @@ svgStates.forEach(function(el) {
 <!-- Google Maps -->
 
 <div id="floating-panel">
+    <div class="container-fluid">
+    <div class"col-2-sm" style="width:300px;display:inline-block !important;"><img class="planejeLockup" style="padding: 0 0 0 0;" src="/media/1081/planeje-lockup.png" alt=""></div>
+
+<div class"col-5-sm" style="display:inline-block !important;">
 <select class="modDrop" id="start">
   <option class="initMapControlText" value="" selected disabled>De Onde</option>
   <option class="mapSelection"  value="Copacabana, Rio de Janeiro - State of Rio de Janeiro">Copacabana</option>
@@ -249,12 +253,17 @@ svgStates.forEach(function(el) {
  
 </select>
   
+
 <select class="modDrop" id="end">
   <option class="initMapControlText" value="" selected disabled>Para Onde</option>
   <option class="mapSelection"  value="Copacabana, Rio de Janeiro - State of Rio de Janeiro">Copacabana</option>
   <option class="mapSelection"  value="Lapa - Santa Teresa, Rio de Janeiro - State of Rio de Janeiro">Lapa</option>
 
 </select>
+
+</div>
+</div>
+
 </div>
 <div id="map"></div>
 <!-- Replace the value of the key parameter with your own API key. -->
