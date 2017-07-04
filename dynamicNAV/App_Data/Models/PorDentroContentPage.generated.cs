@@ -22,7 +22,7 @@ namespace Umbraco.Web.PublishedContentModels
 {
 	/// <summary>Por Dentro Content Page</summary>
 	[PublishedContentModel("porDentroContentPage")]
-	public partial class PorDentroContentPage : PorDentroDoMetro, IPageSubContentBlock
+	public partial class PorDentroContentPage : PorDentroDoMetro, ICustomTabs1, IPageSubContentBlock, ISliderPicturesComponent
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "porDentroContentPage";
@@ -43,6 +43,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<PorDentroContentPage, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Tabs Slider
+		///</summary>
+		[ImplementPropertyType("tabsSlider")]
+		public Archetype.Models.ArchetypeModel TabsSlider
+		{
+			get { return Umbraco.Web.PublishedContentModels.CustomTabs1.GetTabsSlider(this); }
 		}
 
 		///<summary>
@@ -70,6 +79,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public IPublishedContent SubTitleIcon
 		{
 			get { return Umbraco.Web.PublishedContentModels.PageSubContentBlock.GetSubTitleIcon(this); }
+		}
+
+		///<summary>
+		/// Slider Pictures Picker
+		///</summary>
+		[ImplementPropertyType("sliderPictures")]
+		public IEnumerable<IPublishedContent> SliderPictures
+		{
+			get { return Umbraco.Web.PublishedContentModels.SliderPicturesComponent.GetSliderPictures(this); }
 		}
 	}
 }
