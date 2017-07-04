@@ -229,6 +229,7 @@ h1.contactHorarioTitle {
     color: #ffffff;
     padding: 0 0 0 0;
     margin: 0 0 0 0;
+    max-width: 200px;
 }
 
 h2.subhead {
@@ -896,6 +897,7 @@ h1.contactHorarioTitle {
     color: #ffffff;
     padding: 0 0 0 0;
     margin: 0 0 0 0;
+    max-width: 200px;
 }
 
 .contactIcon {
