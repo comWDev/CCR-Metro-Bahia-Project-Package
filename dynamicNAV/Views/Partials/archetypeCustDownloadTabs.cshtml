@@ -1,0 +1,58 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using Archetype.Models;
+@using Archetype.Extensions;
+
+
+@{
+    Layout = null;
+}
+
+@foreach(var fieldset in Model.Content.GetPropertyValue<ArchetypeModel>("downloadPicker"))
+{
+
+<div class="panel panel-default" id="@fieldset.GetValue("anchorID")" style=" border-radius: 0px; border: 0;  background-color: transparent;">
+    <div class="susPanelMobile panel-heading @fieldset.GetValue("isOpen")" style="height: 36px; padding: 0; background-color: #@fieldset.GetValue("tabCor");">
+    <h2 class="accordionTitle"><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#@fieldset.GetValue("nome")">
+        <div class="accordionTitle" style="height: 100%; width: 88%; float:left;">@fieldset.GetValue("tabTitle")</div></a></h2>
+    </div>
+
+    <div id="@fieldset.GetValue("nome")" class="panel-collapse collapse" style=" background-color: transparent;">
+      <div class="panel-body body-copy-grey" style="background-color: transparent;">
+
+            @Html.Raw(@fieldset.GetValue<string>("tabTexto"))
+
+<div class=" " style="margin-bottom: 50px">
+
+@{
+                if (fieldset.HasValue("downloads"))
+                {
+                    var typedMultiMediaPicker = fieldset.GetValue<IEnumerable<IPublishedContent>>("downloads");
+                    if (typedMultiMediaPicker != null)
+                    {
+                        foreach (var item in typedMultiMediaPicker)
+                        {
+                            <p class=" ">
+                                <a class="archiveDownload" href="@item.Url"><i class="glyphicon glyphicon-save"></i>&nbsp; @item.Name</p>
+                        }
+                    }
+
+                    var mediaPicker = fieldset.GetValue<IPublishedContent>("downloads");
+                    if (mediaPicker != null)
+                    {
+                        <p class=" ">
+                            <a href="@mediaPicker.Url">@mediaPicker.Url</a>
+                        </p>
+                    }
+                }
+            }
+
+  </div>
+
+
+
+
+      </div>
+    </div>
+  </div>
+  
+  }
