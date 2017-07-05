@@ -29,11 +29,36 @@
 			
     </div>
 
-    <div class="row col-md-12 body-copy">
+   <div class="row col-md-12 body-copy">
       
       <p>@Umbraco.Field("pageBodyText", removeParagraphTags: true)</p>
 
     </div>
-    
-    </div>
+
+    <div class="row col-md-12 body-copy">
+    <!-- ------------------ Slider ------------------ -->
+  
+      <div class="sliderBicicletario" style="margin-bottom: 50px">
+
+@if (Model.Content.HasValue("sliderPictures"))
+{
+    var caseStudyImagesCollection = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("sliderPictures");
+
+    foreach (var sliderPictures in caseStudyImagesCollection)
+        {      
+            <div><img  class="img-responsive multiSlides" src="@sliderPictures.Url" /></div>      
+        }                                                               
+}
+  </div>
+
+<!-- ------------------ Slider ------------------ -->
+</div>
+<div class="row col-md-12 body-copy">
+<!-- ------------------ Tabs ------------------ -->
+
+    @Html.Partial("archetypeCustDownloadTabs")
+
+<!-- ------------------ Tabs ------------------ -->    
+</div>
+</div>
 </div>

@@ -1,0 +1,44 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.ClippingItem>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+	Layout = "master.cshtml";
+}
+<div class="mobileMargins container-fluid col-centered">
+    <div class="container-fluid greyBody"  style="max-width: 1200px; background-color: #FFFFFF;">
+    <div class="row col-12-md">
+
+<div id="main-container">
+    
+    <div id="main" class="wrapper clearfix">
+        <div class="articleDateBox text-center" style="background-color:red; max-width:100px;margin: 0 0 0 0;padding:8px 8px 8px 8px;color:#FFFFFF;">
+            <strong>@(Model.Content.GetPropertyValue<DateTime>("articleDateClip").ToString("MM/dd/yyyy"))</strong>
+        </div>
+        
+    <h2>@Umbraco.Field("articleTitleClip")</h2>
+    <h4>@Umbraco.Field("newsSubtitleClip")</h4>
+        
+        <div>
+        
+        @{
+    var typedMediaPickerSingle = Model.Content.GetPropertyValue<IPublishedContent>("newsImageClip");
+    if (typedMediaPickerSingle != null)
+    {
+        <img src="@typedMediaPickerSingle.Url" style="max-width:800px;margin-bottom:25px;" alt="@typedMediaPickerSingle.GetPropertyValue("alt")" />
+    }
+}      
+            <p style="max-width:800px;">@Umbraco.Field("newsBodyTextClip", removeParagraphTags: true)</p>
+            
+        </div>
+        
+    </div>
+    
+    <hr>
+
+<a href="/imprensa/mídia/" class="btn btn-default btn-md btn-danger pull-left" style="width:100px;border-radius:0;">VOLTAR</a>
+
+    
+</div>
+
+</div>
+</div>
+</div>

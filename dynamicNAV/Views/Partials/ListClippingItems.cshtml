@@ -1,0 +1,44 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using Umbraco.Web.Models
+@{
+
+    var newsItems = CurrentPage.Site().FirstChild("clippingMain").Children("clippingItem").Where("Visible").OrderBy("CreateDate descending").Take(3);
+    
+}
+
+
+<div class="row" style="padding: 25px 0 25px 0;">
+      
+      
+@foreach (var newsItem in newsItems)
+    {  
+    
+        
+                <div class="col-md-4">
+                    <div class="articleDateBox text-center" style="background-color:red; max-width:100px;margin: 0 0 10px 0;padding:8px 8px 8px 8px;color:#FFFFFF;">
+                    @{
+                        var dateTimeGet = newsItem;
+                        if(newsItem.HasValue("articleDateClip"))
+                        {
+                        <strong>@(Model.Content.GetPropertyValue<DateTime>("dateTimeGet").ToString("MM/dd/yyyy"))</strong>
+                        }
+                    }
+                    </div>
+         @{
+            var image = newsItem;
+            if(newsItem.HasValue("newsImageClip"))
+    {
+        <img class="img-responsive" src="@image.newsImageClip.Url" />
+    }
+}      
+
+                    <h3>@newsItem.NameClip</h3>
+                    <h4>@newsItem.NewsSubtitleClip</h4>
+                    <p>@Umbraco.Truncate(@newsItem.NewsBodyTextClip,100) <a class="" href="@newsItem.Url"><span class="glyphicon glyphicon-chevron-right"></span><span class="popHorasBold"> Ler Mais</span></a></p>
+            
+                </div>
+                
+        
+}        
+
+</div>

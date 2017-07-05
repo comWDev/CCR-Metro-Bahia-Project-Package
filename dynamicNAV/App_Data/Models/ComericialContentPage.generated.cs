@@ -22,7 +22,7 @@ namespace Umbraco.Web.PublishedContentModels
 {
 	/// <summary>Comericial Content Page</summary>
 	[PublishedContentModel("comericialContentPage")]
-	public partial class ComericialContentPage : Comercial, IPageSubContentBlock
+	public partial class ComericialContentPage : Comercial, ICustomDownloadTabs, IPageSubContentBlock
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "comericialContentPage";
@@ -43,6 +43,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ComericialContentPage, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Download Picker
+		///</summary>
+		[ImplementPropertyType("downloadPicker")]
+		public Archetype.Models.ArchetypeModel DownloadPicker
+		{
+			get { return Umbraco.Web.PublishedContentModels.CustomDownloadTabs.GetDownloadPicker(this); }
 		}
 
 		///<summary>
