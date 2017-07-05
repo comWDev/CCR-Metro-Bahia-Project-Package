@@ -908,6 +908,10 @@ h1.contactHorarioTitle {
     width:60px;
 }
 
+.downloadContainer {
+	margin: 25px 0 50px 0;
+}
+
 }
 
 /* -------------------------- CUSTOM CSS START --------------------------  */
@@ -1595,7 +1599,10 @@ a.archiveDownload:hover {
 .downloadFloodFill {
   background-color: #ececec;
     padding:10px 0 12px 15px;
-    margin-top: 25px;
+}
+
+.downloadContainer {
+	margin: 25px 0 50px 15px;
 }
 
 .glyphicon-padRight {
