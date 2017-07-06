@@ -1,0 +1,41 @@
+/**umb_name:Vermelho Maiúscula*/
+.red-intro{
+	font-family: 'robotomedium', Arial, sans-serif;
+	font-size: 14px;
+	line-height: 19px;
+	color: #cf3d3d;
+	text-transform: uppercase;
+}
+
+/**umb_name:Vermelho Itálico*/
+.red-italic{
+	font-family: 'robotoregular', Arial, sans-serif;
+	font-size: 14px;
+	line-height: 19px;
+	color: #cf3d3d;
+}
+
+/**umb_name:Azul Maiúscula*/
+.blue-intro{
+	font-family: 'robotomedium', Arial, sans-serif;
+	font-size: 14px;
+	line-height: 19px;
+	color: #134bab;
+	text-transform: uppercase;
+}
+
+/**umb_name:Azul Itálico*/
+.blue-italic{
+	font-family: 'robotoregular', Arial, sans-serif;
+	font-size: 14px;
+	line-height: 19px;
+	color: #134bab;
+}
+
+/**umb_name:Corpo Texto Cinza*/
+.grey-body{
+	font-family: 'robotoregular', Arial, sans-serif;
+	font-size: 14px;
+	line-height: 19px;
+	color: #777777;
+}
