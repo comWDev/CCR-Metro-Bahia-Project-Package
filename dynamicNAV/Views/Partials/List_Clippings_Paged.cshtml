@@ -1,0 +1,84 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+
+@{
+    var pageSize = 9;
+    var page = 1; 
+	int.TryParse(Request.QueryString["page"], out page);
+    
+    
+	var items = CurrentPage.Site().FirstChild("clippingMain").Children("clippingItem").Where("Visible").OrderBy("CreateDate descending");
+
+	var totalPages = (int)Math.Ceiling((double)items.Count() / (double)pageSize);
+	
+    if (page > totalPages)
+    {
+        page = totalPages;
+    }
+    else if (page < 1)
+    {
+        page = 1;
+    }
+	
+	
+}
+
+
+
+<div class="container-fluid">
+	
+	<div class="row">
+		
+		<div class="container-fluid">
+
+	<div class="row" style="margin-top:25px;">
+    
+    @foreach (var item in items.Skip((page - 1) * pageSize).Take(pageSize))
+    {
+        <div class="col-md-4" style="min-height: 520px;margin-top:15px;margin-bottom:15px;padding:10px;">
+    @{
+        var image = item;
+        if(item.HasValue("newsImageClip"))
+    {
+        <img class="img-responsive" src="@image.newsImageClip.Url" />
+    }
+    }
+
+                    <h3>@item.NameClip</h3>
+                    <h4>@item.NewsSubtitleClip</h4>
+                    <p>@Umbraco.Truncate(@item.NewsBodyTextClip,150) <a class="" href="@item.Url"><span class="glyphicon glyphicon-chevron-right"></span><span class="popHorasBold"> Ler Mais</span></a></p>
+
+            
+
+
+
+		<br />
+		</div>
+    }
+
+    </div>
+
+    @if (totalPages > 1)
+    {
+		<ul class="pagination">
+			
+			@if (page > 1)
+            {
+				<li class="previous"><a href="?page=@(page-1)">Prev</a></li>
+			}
+		
+			@for (int p = 1; p < totalPages + 1; p++)
+            {
+				var active = (p == page) ? "active" : string.Empty;
+				
+				<li class="@active"><a href="?page=@p">@p</a></li>
+			}
+    		@if (page < items.Count() && page != totalPages)
+			{
+				<li class="next"><a href="?page=@(page+1)">Next</a></li>
+			}
+		
+		</ul>
+    }
+</div>
+	
+	</div></div>
